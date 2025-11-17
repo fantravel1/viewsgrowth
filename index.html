@@ -11,7 +11,10 @@
     
     <!-- Preload hero image -->
     <link rel="preload" as="image" href="images/hero.webp" type="image/webp">
-    
+
+    <!-- DNS Prefetch & Preconnect for Performance -->
+    <link rel="dns-prefetch" href="https://schema.org">
+
     <!-- Open Graph -->
     <meta property="og:title" content="ViewsGrowth - YouTube Growth Framework 2025">
     <meta property="og:description" content="Master YouTube growth with proven strategies that scaled channels to millions">
@@ -41,20 +44,28 @@
     <!-- Main CSS -->
     <link rel="stylesheet" href="css/style.css">
     
-    <!-- Schema.org -->
+    <!-- Schema.org WebSite + Organization -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "WebSite",
         "name": "ViewsGrowth",
         "url": "https://viewsgrowth.com/",
-        "description": "Comprehensive guide to YouTube growth strategies and tools"
+        "description": "Comprehensive guide to YouTube growth strategies and tools",
+        "publisher": {
+            "@type": "Organization",
+            "name": "ViewsGrowth",
+            "url": "https://viewsgrowth.com/"
+        }
     }
     </script>
 </head>
 <body>
+    <!-- Skip to Main Content -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <!-- Navigation -->
-    <nav>
+    <nav role="navigation" aria-label="Main navigation">
         <div class="container">
             <a href="getting-started.html">Getting Started</a>
             <a href="tools.html">Tools</a>
@@ -69,11 +80,11 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" role="banner">
         <div class="container">
             <h1>The Complete YouTube Growth Framework That Scaled Diary of a CEO to 5M+ Subscribers</h1>
             <p>Learn the exact strategies, tools, and systems that transformed a 7,000 subscriber channel into one of the world's most successful podcasts. Based on Grace Andrews' proven methods and 2025's latest algorithm updates.</p>
-            <img src="images/hero.webp" alt="YouTube Growth Framework Dashboard" width="1200" height="600" loading="eager">
+            <img src="images/hero.webp" alt="YouTube Growth Framework Dashboard showing analytics, subscriber growth charts, and content strategy tools" width="1200" height="600" loading="eager">
         </div>
     </section>
 
@@ -104,7 +115,7 @@
     </section>
 
     <!-- Main Content -->
-    <main>
+    <main id="main-content" role="main">
         <section class="container">
             <h2>Your YouTube Growth Journey Starts Here</h2>
             <p>The YouTube landscape has transformed dramatically in 2024-2025. Success now depends on leveraging AI-powered tools, understanding algorithm changes that favor small creators, and implementing sophisticated monetization strategies beyond traditional ad revenue.</p>
@@ -226,10 +237,13 @@
     </main>
 
     <!-- Footer -->
-    <footer>
+    <footer role="contentinfo">
         <div class="container">
             <p>&copy; 2025 ViewsGrowth. Based on experts that scaled channels to millions. <a href="downloads/complete-guide.pdf" download>Download Complete PDF Guide</a></p>
         </div>
     </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" aria-label="Back to top">↑</a>
 </body>
 </html>

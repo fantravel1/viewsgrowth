@@ -8,7 +8,10 @@
     
     <!-- Canonical -->
     <link rel="canonical" href="https://viewsgrowth.com/production.html">
-    
+
+    <!-- DNS Prefetch & Preconnect for Performance -->
+    <link rel="dns-prefetch" href="https://schema.org">
+
     <!-- Open Graph -->
     <meta property="og:title" content="YouTube Production Systems Guide - ViewsGrowth">
     <meta property="og:description" content="Master batch production, multi-camera setups, and efficient workflows. Create more content in less time.">
@@ -30,7 +33,26 @@
     
     <!-- Main CSS -->
     <link rel="stylesheet" href="css/style.css">
-    
+
+    <!-- Schema.org BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://viewsgrowth.com/"
+        }, {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Production",
+            "item": "https://viewsgrowth.com/production.html"
+        }]
+    }
+    </script>
+
     <!-- Schema.org HowTo -->
     <script type="application/ld+json">
     {
@@ -55,8 +77,11 @@
     </script>
 </head>
 <body>
+    <!-- Skip to Main Content -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <!-- Navigation -->
-    <nav>
+    <nav role="navigation" aria-label="Main navigation">
         <div class="container">
             <a href="index.html">Home</a>
             <a href="getting-started.html">Getting Started</a>
@@ -70,8 +95,18 @@
         </div>
     </nav>
 
+    <!-- Breadcrumb Navigation -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <div class="container">
+            <ol>
+                <li><a href="index.html">Home</a></li>
+                <li>Production</li>
+            </ol>
+        </div>
+    </nav>
+
     <!-- Main Content -->
-    <main class="container">
+    <main id="main-content" role="main" class="container">
         <h1>Content Production Systems That Save 75% of Your Time</h1>
         <p class="lead">Learn the exact production methods that scaled Diary of a CEO from bedroom podcast to global phenomenon. Master batch creation, multi-camera setups, and professional workflows.</p>
 
@@ -466,10 +501,13 @@
     </main>
 
     <!-- Footer -->
-    <footer>
+    <footer role="contentinfo">
         <div class="container">
             <p>&copy; 2025 ViewsGrowth. Create more content in less time. <a href="downloads/complete-guide.pdf" download>Download Complete PDF Guide</a></p>
         </div>
     </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" aria-label="Back to top">↑</a>
 </body>
 </html>

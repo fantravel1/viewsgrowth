@@ -8,7 +8,10 @@
     
     <!-- Canonical -->
     <link rel="canonical" href="https://viewsgrowth.com/case-studies.html">
-    
+
+    <!-- DNS Prefetch & Preconnect for Performance -->
+    <link rel="dns-prefetch" href="https://schema.org">
+
     <!-- Open Graph -->
     <meta property="og:title" content="YouTube Success Stories - ViewsGrowth">
     <meta property="og:description" content="Learn from real creators who scaled their channels using these exact strategies.">
@@ -30,7 +33,26 @@
     
     <!-- Main CSS -->
     <link rel="stylesheet" href="css/style.css">
-    
+
+    <!-- Schema.org BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://viewsgrowth.com/"
+        }, {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Case Studies",
+            "item": "https://viewsgrowth.com/case-studies.html"
+        }]
+    }
+    </script>
+
     <!-- Schema.org Case Study -->
     <script type="application/ld+json">
     {
@@ -46,8 +68,11 @@
     </script>
 </head>
 <body>
+    <!-- Skip to Main Content -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <!-- Navigation -->
-    <nav>
+    <nav role="navigation" aria-label="Main navigation">
         <div class="container">
             <a href="index.html">Home</a>
             <a href="getting-started.html">Getting Started</a>
@@ -61,8 +86,18 @@
         </div>
     </nav>
 
+    <!-- Breadcrumb Navigation -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <div class="container">
+            <ol>
+                <li><a href="index.html">Home</a></li>
+                <li>Case Studies</li>
+            </ol>
+        </div>
+    </nav>
+
     <!-- Main Content -->
-    <main class="container">
+    <main id="main-content" role="main" class="container">
         <h1>Case Studies: Real Growth Stories That Inspire</h1>
         <p class="lead">Theory is important, but results matter more. These creators used the exact strategies in this guide to transform their channels. Learn from their journeys, mistakes, and breakthroughs.</p>
 
@@ -393,10 +428,13 @@
     </main>
 
     <!-- Footer -->
-    <footer>
+    <footer role="contentinfo">
         <div class="container">
             <p>&copy; 2025 ViewsGrowth. Your success story is waiting to be written. <a href="downloads/complete-guide.pdf" download>Download Complete PDF Guide</a></p>
         </div>
     </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" aria-label="Back to top">↑</a>
 </body>
 </html>

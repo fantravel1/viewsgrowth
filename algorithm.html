@@ -8,7 +8,10 @@
     
     <!-- Canonical -->
     <link rel="canonical" href="https://viewsgrowth.com/algorithm.html">
-    
+
+    <!-- DNS Prefetch & Preconnect for Performance -->
+    <link rel="dns-prefetch" href="https://schema.org">
+
     <!-- Open Graph -->
     <meta property="og:title" content="YouTube Algorithm 2025 Explained - ViewsGrowth">
     <meta property="og:description" content="Decode YouTube's algorithm changes. Small creators now get equal promotion. Master SEO and ranking factors.">
@@ -31,6 +34,25 @@
     <!-- Main CSS -->
     <link rel="stylesheet" href="css/style.css">
     
+    <!-- Schema.org BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://viewsgrowth.com/"
+        }, {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Algorithm",
+            "item": "https://viewsgrowth.com/algorithm.html"
+        }]
+    }
+    </script>
+
     <!-- Schema.org HowTo -->
     <script type="application/ld+json">
     {
@@ -53,10 +75,43 @@
         }]
     }
     </script>
+
+    <!-- Schema.org FAQPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [{
+            "@type": "Question",
+            "name": "How does the YouTube algorithm work in 2025?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "YouTube's 2025 algorithm focuses on viewer satisfaction through four key metrics: Click (thumbnail and title performance), Watch (retention rate), Satisfaction (likes, comments, shares), and Return (subscriber engagement). The algorithm now actively promotes channels under 500 subscribers alongside established creators."
+            }
+        }, {
+            "@type": "Question",
+            "name": "What CTR should I target for YouTube videos?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Target a 4-6% click-through rate (CTR) for YouTube videos. Anything above 6% is exceptional and will significantly boost your video's promotion. Improve CTR through compelling thumbnails with faces, emotional triggers, and clear value propositions in titles."
+            }
+        }, {
+            "@type": "Question",
+            "name": "Does YouTube favor small creators now?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. YouTube's 2025 update actively promotes channels with under 500 subscribers in recommendations alongside established channels. This levels the playing field and rewards authenticity and content quality over production value."
+            }
+        }]
+    }
+    </script>
 </head>
 <body>
+    <!-- Skip to Main Content -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <!-- Navigation -->
-    <nav>
+    <nav role="navigation" aria-label="Main navigation">
         <div class="container">
             <a href="index.html">Home</a>
             <a href="getting-started.html">Getting Started</a>
@@ -70,8 +125,18 @@
         </div>
     </nav>
 
+    <!-- Breadcrumb Navigation -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <div class="container">
+            <ol>
+                <li><a href="index.html">Home</a></li>
+                <li>Algorithm</li>
+            </ol>
+        </div>
+    </nav>
+
     <!-- Main Content -->
-    <main class="container">
+    <main id="main-content" role="main" class="container">
         <h1>YouTube Algorithm Mastery: 2025 Edition</h1>
         
         <!-- Major Update Alert -->
@@ -430,10 +495,13 @@
     </main>
 
     <!-- Footer -->
-    <footer>
+    <footer role="contentinfo">
         <div class="container">
             <p>&copy; 2025 ViewsGrowth. Master the algorithm, grow your channel. <a href="downloads/complete-guide.pdf" download>Download Complete PDF Guide</a></p>
         </div>
     </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" aria-label="Back to top">↑</a>
 </body>
 </html>
