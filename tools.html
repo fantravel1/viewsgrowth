@@ -129,6 +129,26 @@
         <h1>Essential Tools & Software for YouTube Creators</h1>
         <p class="lead">Build your perfect tech stack from our tested recommendations. Every tool listed here is actively used by successful creators in 2025.</p>
 
+        <!-- Progress Tracker -->
+        <div class="progress-tracker">
+            <h4>Your Learning Progress</h4>
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+            <span class="progress-text">0/9 sections completed (0%)</span>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="filter-buttons">
+            <button data-filter="all" class="active">All Tools</button>
+            <button data-filter="seo">SEO & Analytics</button>
+            <button data-filter="editing">Video Editing</button>
+            <button data-filter="design">Design & Thumbnails</button>
+            <button data-filter="audio">Audio & Music</button>
+            <button data-filter="automation">Automation</button>
+            <button data-filter="free">Free Options</button>
+        </div>
+
         <!-- Quick Budget Navigation -->
         <section class="budget-nav">
             <h2>Choose Your Budget Level:</h2>
@@ -141,7 +161,7 @@
         </section>
 
         <!-- VidIQ vs TubeBuddy Comparison -->
-        <section>
+        <section data-category="seo">
             <h2>The Big Decision: VidIQ vs TubeBuddy</h2>
             <p>The two titans of YouTube optimization. Here's our detailed comparison based on real-world testing:</p>
             
@@ -217,7 +237,7 @@
         </section>
 
         <!-- Beginner Stack -->
-        <section id="beginner-stack">
+        <section id="beginner-stack" data-category="editing">
             <h2>Beginner Stack: $250-400/Year</h2>
             <p>Everything you need to create professional content without breaking the bank.</p>
             
@@ -284,7 +304,7 @@
         </section>
 
         <!-- Professional Stack -->
-        <section id="professional-stack">
+        <section id="professional-stack" data-category="editing">
             <h2>Professional Stack: $1,400-2,000/Year</h2>
             <p>Scale your production quality and efficiency as your channel grows.</p>
             
@@ -351,7 +371,7 @@
         </section>
 
         <!-- Enterprise Stack -->
-        <section id="enterprise-stack">
+        <section id="enterprise-stack" data-category="automation">
             <h2>Enterprise Stack: $5,000-8,000/Year</h2>
             <p>For established channels with teams and complex workflows.</p>
             
@@ -417,7 +437,7 @@
         </section>
 
         <!-- Free Tools Section -->
-        <section id="free-tools">
+        <section id="free-tools" data-category="free">
             <h2>Powerful Free Alternatives</h2>
             <p>Start here if you're bootstrapping. These tools can take you surprisingly far.</p>
             
@@ -465,7 +485,7 @@
         </section>
 
         <!-- Tool Categories -->
-        <section>
+        <section data-category="all">
             <h2>Tools by Category</h2>
             
             <div class="category-grid">
@@ -568,6 +588,31 @@
             </div>
         </section>
 
+        <!-- Read Next Section -->
+        <section class="read-next-section">
+            <h2>Continue Your Learning Journey</h2>
+            <div class="read-next-grid">
+                <a href="algorithm.html" class="read-next-card">
+                    <span class="content-type-badge tutorial">Tutorial</span>
+                    <h3>Master the 2025 Algorithm</h3>
+                    <p>Learn ranking factors, CTR optimization, and the new small creator advantage.</p>
+                    <span class="arrow">Read Next →</span>
+                </a>
+                <a href="production.html" class="read-next-card">
+                    <span class="content-type-badge tutorial">Tutorial</span>
+                    <h3>Content Production Systems</h3>
+                    <p>Batch produce 4-6 videos in one day and save 75% of your time.</p>
+                    <span class="arrow">Read Next →</span>
+                </a>
+                <a href="ai-tools.html" class="read-next-card">
+                    <span class="content-type-badge tools">Tools</span>
+                    <h3>AI Tools & Automation</h3>
+                    <p>Discover AI-powered editing, dubbing, and workflow automation.</p>
+                    <span class="arrow">Read Next →</span>
+                </a>
+            </div>
+        </section>
+
         <!-- CTA Section -->
         <section class="cta-section">
             <h2>Ready to Master the Algorithm?</h2>
@@ -585,5 +630,8 @@
 
     <!-- Back to Top Button -->
     <a href="#" class="back-to-top" aria-label="Back to top">↑</a>
+
+    <!-- Main JavaScript -->
+    <script src="js/main.js"></script>
 </body>
 </html>
