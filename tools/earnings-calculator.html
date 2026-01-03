@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Money Calculator - Estimate Earnings by Views & Niche | ViewsGrowth</title>
+    <meta name="description" content="Calculate how much money YouTubers make per view. Estimate earnings by niche, geography, and content type. Free YouTube earnings calculator with CPM data.">
+    <meta name="keywords" content="youtube money calculator, youtube earnings calculator, how much do youtubers make, youtube CPM calculator, youtube revenue calculator">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://viewsgrowth.com/tools/earnings-calculator.html">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="YouTube Money Calculator - Estimate Your Earnings | ViewsGrowth">
+    <meta property="og:description" content="Calculate how much money you can make on YouTube based on views, niche, and geography. Free calculator with real CPM data.">
+    <meta property="og:image" content="https://viewsgrowth.com/images/og-image.jpg">
+    <meta property="og:url" content="https://viewsgrowth.com/tools/earnings-calculator.html">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="YouTube Money Calculator - Estimate Earnings">
+    <meta name="twitter:description" content="Free calculator to estimate YouTube earnings by views, niche, and geography.">
+
+    <!-- Schema.org BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://viewsgrowth.com/"
+        }, {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Tools",
+            "item": "https://viewsgrowth.com/tools/"
+        }, {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Earnings Calculator",
+            "item": "https://viewsgrowth.com/tools/earnings-calculator.html"
+        }]
+    }
+    </script>
+
+    <!-- Schema.org WebApplication -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "YouTube Earnings Calculator",
+        "description": "Free calculator to estimate YouTube ad revenue based on views, niche CPM rates, and geographic location of your audience.",
+        "url": "https://viewsgrowth.com/tools/earnings-calculator.html",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "featureList": [
+            "CPM rates by niche",
+            "Geographic revenue adjustment",
+            "Shorts vs long-form toggle",
+            "Revenue split breakdown",
+            "Monthly and annual projections"
+        ]
+    }
+    </script>
+
+    <!-- Schema.org FAQPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [{
+            "@type": "Question",
+            "name": "How much does YouTube pay per 1000 views?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "YouTube pays creators between $1-30 per 1000 views depending on niche, audience location, and content type. Finance and business channels earn $10-30 CPM, while gaming and entertainment channels earn $1-5 CPM. US-based viewers generate 2-3x more revenue than international audiences."
+            }
+        }, {
+            "@type": "Question",
+            "name": "How much do YouTubers make per view?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "On average, YouTubers make $0.003-0.005 per view, or roughly $3-5 per 1000 views. However, this varies significantly by niche - finance YouTubers can earn $0.01-0.03 per view, while gaming channels might earn $0.001-0.003 per view."
+            }
+        }, {
+            "@type": "Question",
+            "name": "What percentage does YouTube take from creators?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "YouTube takes 45% of ad revenue and pays creators 55%. For YouTube Premium revenue, creators receive 55% based on watch time from Premium subscribers. For Shorts revenue, creators receive 45% from the Shorts revenue pool."
+            }
+        }, {
+            "@type": "Question",
+            "name": "How much money do you get from 1 million YouTube views?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "With 1 million views, YouTubers typically earn $3,000-5,000 on average. However, this ranges from $1,000-2,000 for gaming/entertainment to $10,000-30,000 for finance and business content, depending on audience location and ad engagement rates."
+            }
+        }]
+    }
+    </script>
+
+    <!-- Critical CSS -->
+    <style>
+        body{margin:0;font-family:system-ui,-apple-system,sans-serif;line-height:1.6;color:#212121}
+        .container{max-width:1200px;margin:0 auto;padding:0 20px}
+        h1{font-size:2.5rem;margin:2rem 0 1rem}
+        @media(max-width:768px){h1{font-size:1.8rem}}
+    </style>
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- Calculator styles -->
+    <style>
+        .calculator-container {
+            background: var(--bg-light);
+            border-radius: 12px;
+            padding: var(--spacing-lg);
+            margin: var(--spacing-lg) 0;
+        }
+
+        .calc-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-xl);
+        }
+
+        @media (max-width: 768px) {
+            .calc-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .input-group {
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .input-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .input-group input[type="number"],
+        .input-group select {
+            width: 100%;
+            padding: 12px 16px;
+            font-size: 16px;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            background: var(--white);
+        }
+
+        .input-group input:focus,
+        .input-group select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .slider-group {
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .slider-group label {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .slider-value {
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        input[type="range"] {
+            width: 100%;
+            height: 8px;
+            border-radius: 4px;
+            background: var(--border-color);
+            outline: none;
+            -webkit-appearance: none;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            cursor: pointer;
+        }
+
+        .toggle-group {
+            display: flex;
+            gap: 8px;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .toggle-btn {
+            flex: 1;
+            padding: 12px;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            background: var(--white);
+            cursor: pointer;
+            font-weight: 500;
+            text-align: center;
+            transition: all 0.2s;
+        }
+
+        .toggle-btn.active {
+            background: var(--primary-color);
+            color: var(--white);
+            border-color: var(--primary-color);
+        }
+
+        .results-panel {
+            background: var(--white);
+            border-radius: 12px;
+            padding: var(--spacing-lg);
+            border: 2px solid var(--border-color);
+        }
+
+        .result-main {
+            text-align: center;
+            padding: var(--spacing-lg) 0;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .result-main .label {
+            font-size: 14px;
+            color: #666;
+            margin: 0;
+        }
+
+        .result-main .amount {
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin: 8px 0;
+        }
+
+        .result-main .period {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .result-breakdown {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-md);
+        }
+
+        .breakdown-item {
+            background: var(--bg-light);
+            padding: var(--spacing-md);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .breakdown-item .value {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text-color);
+        }
+
+        .breakdown-item .label {
+            font-size: 12px;
+            color: #666;
+        }
+
+        .revenue-split {
+            margin-top: var(--spacing-lg);
+            padding-top: var(--spacing-lg);
+            border-top: 1px solid var(--border-color);
+        }
+
+        .split-bar {
+            display: flex;
+            height: 24px;
+            border-radius: 4px;
+            overflow: hidden;
+            margin: var(--spacing-sm) 0;
+        }
+
+        .split-creator {
+            background: #10b981;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .split-youtube {
+            background: #ef4444;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .split-legend {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: #666;
+        }
+
+        .cpm-table {
+            margin: var(--spacing-lg) 0;
+        }
+
+        .cpm-table h3 {
+            margin-bottom: var(--spacing-md);
+        }
+
+        .niche-cpm {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .niche-cpm:last-child {
+            border-bottom: none;
+        }
+
+        .niche-name {
+            font-weight: 500;
+        }
+
+        .niche-range {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .disclaimer {
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            padding: var(--spacing-md);
+            margin: var(--spacing-lg) 0;
+            border-radius: 0 8px 8px 0;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip to Main Content -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Navigation -->
+    <nav role="navigation" aria-label="Main navigation">
+        <div class="container">
+            <a href="../index.html">Home</a>
+            <a href="../getting-started.html">Getting Started</a>
+            <a href="../tools.html">Tools</a>
+            <a href="../algorithm.html">Algorithm</a>
+            <a href="../production.html">Production</a>
+            <a href="../analytics.html">Analytics</a>
+            <a href="../monetization.html">Monetization</a>
+            <a href="../ai-tools.html">AI Tools</a>
+            <a href="../case-studies.html">Case Studies</a>
+            <a href="../resources.html">Resources</a>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <div class="container">
+            <ol>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="index.html">Tools</a></li>
+                <li>Earnings Calculator</li>
+            </ol>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="main-content" role="main" class="container">
+        <h1>YouTube Money Calculator</h1>
+        <p class="lead">Estimate how much money you can earn from YouTube based on views, your niche, audience location, and content type. Our calculator uses real CPM data from 2026.</p>
+
+        <!-- Calculator -->
+        <div class="calculator-container">
+            <div class="calc-grid">
+                <!-- Input Panel -->
+                <div class="input-panel">
+                    <h2>Enter Your Details</h2>
+
+                    <!-- Views Input -->
+                    <div class="input-group">
+                        <label for="dailyViews">Daily Views</label>
+                        <input type="number" id="dailyViews" value="10000" min="0" step="1000">
+                    </div>
+
+                    <!-- Niche Select -->
+                    <div class="input-group">
+                        <label for="niche">Content Niche</label>
+                        <select id="niche">
+                            <option value="finance" data-cpm-min="12" data-cpm-max="30">Finance & Business</option>
+                            <option value="tech" data-cpm-min="8" data-cpm-max="18">Technology & Software</option>
+                            <option value="education" data-cpm-min="6" data-cpm-max="15">Education & How-To</option>
+                            <option value="health" data-cpm-min="5" data-cpm-max="14">Health & Fitness</option>
+                            <option value="lifestyle" data-cpm-min="3" data-cpm-max="10" selected>Lifestyle & Vlog</option>
+                            <option value="beauty" data-cpm-min="3" data-cpm-max="10">Beauty & Fashion</option>
+                            <option value="food" data-cpm-min="3" data-cpm-max="8">Food & Cooking</option>
+                            <option value="travel" data-cpm-min="4" data-cpm-max="12">Travel</option>
+                            <option value="gaming" data-cpm-min="2" data-cpm-max="6">Gaming</option>
+                            <option value="entertainment" data-cpm-min="2" data-cpm-max="5">Entertainment & Comedy</option>
+                            <option value="music" data-cpm-min="1" data-cpm-max="4">Music</option>
+                        </select>
+                    </div>
+
+                    <!-- Geography -->
+                    <div class="input-group">
+                        <label for="geography">Primary Audience Location</label>
+                        <select id="geography">
+                            <option value="us" data-multiplier="1">United States</option>
+                            <option value="uk" data-multiplier="0.85">United Kingdom</option>
+                            <option value="canada" data-multiplier="0.80">Canada</option>
+                            <option value="australia" data-multiplier="0.75">Australia</option>
+                            <option value="germany" data-multiplier="0.70">Germany</option>
+                            <option value="europe" data-multiplier="0.60">Other Europe</option>
+                            <option value="latam" data-multiplier="0.35">Latin America</option>
+                            <option value="asia" data-multiplier="0.30">Asia</option>
+                            <option value="india" data-multiplier="0.20">India</option>
+                            <option value="other" data-multiplier="0.25">Other Regions</option>
+                            <option value="mixed" data-multiplier="0.50" selected>Mixed/Global</option>
+                        </select>
+                    </div>
+
+                    <!-- Content Type Toggle -->
+                    <div class="input-group">
+                        <label>Content Type</label>
+                        <div class="toggle-group">
+                            <button class="toggle-btn active" data-type="longform">Long-form Video</button>
+                            <button class="toggle-btn" data-type="shorts">YouTube Shorts</button>
+                        </div>
+                    </div>
+
+                    <!-- CPM Slider -->
+                    <div class="slider-group">
+                        <label>
+                            <span>Estimated CPM</span>
+                            <span class="slider-value" id="cpmValue">$5.00</span>
+                        </label>
+                        <input type="range" id="cpmSlider" min="0.5" max="30" step="0.5" value="5">
+                        <small style="color:#666;">Adjust based on your actual CPM if known</small>
+                    </div>
+                </div>
+
+                <!-- Results Panel -->
+                <div class="results-panel">
+                    <h2>Estimated Earnings</h2>
+
+                    <div class="result-main">
+                        <p class="label">Your estimated monthly earnings</p>
+                        <p class="amount" id="monthlyEarnings">$825</p>
+                        <p class="period">Based on <span id="monthlyViews">300,000</span> views/month</p>
+                    </div>
+
+                    <div class="result-breakdown">
+                        <div class="breakdown-item">
+                            <div class="value" id="dailyEarnings">$27.50</div>
+                            <div class="label">Per Day</div>
+                        </div>
+                        <div class="breakdown-item">
+                            <div class="value" id="yearlyEarnings">$9,900</div>
+                            <div class="label">Per Year</div>
+                        </div>
+                        <div class="breakdown-item">
+                            <div class="value" id="perThousand">$2.75</div>
+                            <div class="label">Per 1K Views (RPM)</div>
+                        </div>
+                        <div class="breakdown-item">
+                            <div class="value" id="millionViews">$2,750</div>
+                            <div class="label">Per 1M Views</div>
+                        </div>
+                    </div>
+
+                    <div class="revenue-split">
+                        <h4>Revenue Split</h4>
+                        <div class="split-bar">
+                            <div class="split-creator" id="creatorSplit" style="width:55%;">You: 55%</div>
+                            <div class="split-youtube" style="width:45%;">YouTube: 45%</div>
+                        </div>
+                        <div class="split-legend">
+                            <span>Creator Share: <strong id="creatorAmount">$825</strong></span>
+                            <span>YouTube Share: <strong id="youtubeAmount">$675</strong></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Disclaimer -->
+        <div class="disclaimer">
+            <strong>Disclaimer:</strong> These are estimates based on industry averages. Actual earnings vary based on ad engagement, viewer demographics, seasonality, and other factors. Many creators earn more through sponsorships, memberships, and merchandise than from ads alone.
+        </div>
+
+        <!-- CPM by Niche Table -->
+        <section class="cpm-table">
+            <h2>Average YouTube CPM by Niche (2026)</h2>
+            <p>CPM (Cost Per Mille) is how much advertisers pay per 1,000 ad impressions. Your RPM (Revenue Per Mille) is lower because not all views generate ad impressions, and YouTube takes 45%.</p>
+
+            <div class="card">
+                <div class="niche-cpm">
+                    <span class="niche-name">Finance & Business</span>
+                    <span class="niche-range">$12 - $30</span>
+                </div>
+                <div class="niche-cpm">
+                    <span class="niche-name">Technology & Software</span>
+                    <span class="niche-range">$8 - $18</span>
+                </div>
+                <div class="niche-cpm">
+                    <span class="niche-name">Education & How-To</span>
+                    <span class="niche-range">$6 - $15</span>
+                </div>
+                <div class="niche-cpm">
+                    <span class="niche-name">Health & Fitness</span>
+                    <span class="niche-range">$5 - $14</span>
+                </div>
+                <div class="niche-cpm">
+                    <span class="niche-name">Travel</span>
+                    <span class="niche-range">$4 - $12</span>
+                </div>
+                <div class="niche-cpm">
+                    <span class="niche-name">Lifestyle & Vlogs</span>
+                    <span class="niche-range">$3 - $10</span>
+                </div>
+                <div class="niche-cpm">
+                    <span class="niche-name">Beauty & Fashion</span>
+                    <span class="niche-range">$3 - $10</span>
+                </div>
+                <div class="niche-cpm">
+                    <span class="niche-name">Food & Cooking</span>
+                    <span class="niche-range">$3 - $8</span>
+                </div>
+                <div class="niche-cpm">
+                    <span class="niche-name">Gaming</span>
+                    <span class="niche-range">$2 - $6</span>
+                </div>
+                <div class="niche-cpm">
+                    <span class="niche-name">Entertainment & Comedy</span>
+                    <span class="niche-range">$2 - $5</span>
+                </div>
+                <div class="niche-cpm">
+                    <span class="niche-name">Music</span>
+                    <span class="niche-range">$1 - $4</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section>
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="card" style="margin-bottom:var(--spacing-md);">
+                <h3>How much does YouTube pay per 1000 views?</h3>
+                <p>YouTube pays creators between $1-30 per 1000 views depending on niche, audience location, and content type. Finance and business channels earn $10-30 CPM, while gaming and entertainment channels earn $1-5 CPM. US-based viewers generate 2-3x more revenue than international audiences. On average across all niches, expect $3-5 per 1000 views.</p>
+            </div>
+
+            <div class="card" style="margin-bottom:var(--spacing-md);">
+                <h3>How much do YouTubers make per view?</h3>
+                <p>On average, YouTubers make $0.003-0.005 per view, or roughly $3-5 per 1000 views. However, this varies significantly by niche - finance YouTubers can earn $0.01-0.03 per view, while gaming channels might earn $0.001-0.003 per view. The key factors are your niche, audience location, and engagement rate.</p>
+            </div>
+
+            <div class="card" style="margin-bottom:var(--spacing-md);">
+                <h3>What percentage does YouTube take from creators?</h3>
+                <p>YouTube takes 45% of ad revenue and pays creators 55%. For YouTube Premium revenue, creators receive 55% based on watch time from Premium subscribers. For Shorts revenue from the Shorts Fund, the split varies but is typically around 45% to creators from the revenue pool allocated to Shorts.</p>
+            </div>
+
+            <div class="card" style="margin-bottom:var(--spacing-md);">
+                <h3>How much money do you get from 1 million YouTube views?</h3>
+                <p>With 1 million views, YouTubers typically earn $3,000-5,000 on average. However, this ranges from $1,000-2,000 for gaming/entertainment to $10,000-30,000 for finance and business content, depending on audience location and ad engagement rates. The actual amount depends heavily on your specific niche and audience demographics.</p>
+            </div>
+
+            <div class="card" style="margin-bottom:var(--spacing-md);">
+                <h3>How much do YouTube Shorts pay?</h3>
+                <p>YouTube Shorts currently pay significantly less than long-form content - typically $0.03-0.06 per 1000 views compared to $3-5 for long-form. This means 1 million Shorts views might earn $30-60, while 1 million long-form views could earn $3,000-5,000. However, Shorts can drive channel growth and funnel viewers to long-form content.</p>
+            </div>
+        </section>
+
+        <!-- Related Tools -->
+        <section>
+            <h2>More Free YouTube Tools</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Thumbnail Preview Tool</h3>
+                    <p>See how your thumbnail will look across YouTube before uploading.</p>
+                    <a href="thumbnail-preview.html">Preview Thumbnails &rarr;</a>
+                </div>
+                <div class="card">
+                    <h3>Video Title Analyzer</h3>
+                    <p>Get optimization scores and suggestions for your video titles.</p>
+                    <a href="title-analyzer.html">Analyze Title &rarr;</a>
+                </div>
+                <div class="card">
+                    <h3>Channel Audit Checklist</h3>
+                    <p>Interactive checklist to optimize your channel for growth.</p>
+                    <a href="channel-audit.html">Start Audit &rarr;</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <h2>Want to Maximize Your YouTube Revenue?</h2>
+            <p>Learn the 7 revenue streams successful YouTubers use beyond AdSense.</p>
+            <a href="../monetization.html" class="cta-button">Monetization Guide &rarr;</a>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer role="contentinfo">
+        <div class="container">
+            <p>&copy; 2026 ViewsGrowth. Free tools for YouTube creators. <a href="../resources.html">More Resources</a></p>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <a href="#" class="back-to-top" aria-label="Back to top">↑</a>
+
+    <!-- Calculator JavaScript -->
+    <script>
+        // DOM Elements
+        const dailyViewsInput = document.getElementById('dailyViews');
+        const nicheSelect = document.getElementById('niche');
+        const geographySelect = document.getElementById('geography');
+        const cpmSlider = document.getElementById('cpmSlider');
+        const cpmValue = document.getElementById('cpmValue');
+        const toggleBtns = document.querySelectorAll('.toggle-btn');
+
+        // Result elements
+        const monthlyEarningsEl = document.getElementById('monthlyEarnings');
+        const monthlyViewsEl = document.getElementById('monthlyViews');
+        const dailyEarningsEl = document.getElementById('dailyEarnings');
+        const yearlyEarningsEl = document.getElementById('yearlyEarnings');
+        const perThousandEl = document.getElementById('perThousand');
+        const millionViewsEl = document.getElementById('millionViews');
+        const creatorAmountEl = document.getElementById('creatorAmount');
+        const youtubeAmountEl = document.getElementById('youtubeAmount');
+        const creatorSplitEl = document.getElementById('creatorSplit');
+
+        let contentType = 'longform';
+
+        // Content type toggle
+        toggleBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                toggleBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                contentType = btn.dataset.type;
+                updateCPMFromNiche();
+                calculateEarnings();
+            });
+        });
+
+        // Update CPM based on niche selection
+        function updateCPMFromNiche() {
+            const selected = nicheSelect.options[nicheSelect.selectedIndex];
+            const minCPM = parseFloat(selected.dataset.cpmMin);
+            const maxCPM = parseFloat(selected.dataset.cpmMax);
+            const avgCPM = (minCPM + maxCPM) / 2;
+
+            // Apply geography multiplier
+            const geoSelected = geographySelect.options[geographySelect.selectedIndex];
+            const geoMultiplier = parseFloat(geoSelected.dataset.multiplier);
+
+            // Apply content type adjustment (Shorts earn much less)
+            const typeMultiplier = contentType === 'shorts' ? 0.02 : 1;
+
+            const adjustedCPM = avgCPM * geoMultiplier * typeMultiplier;
+
+            cpmSlider.value = adjustedCPM.toFixed(2);
+            cpmSlider.min = (minCPM * geoMultiplier * typeMultiplier * 0.5).toFixed(2);
+            cpmSlider.max = (maxCPM * geoMultiplier * typeMultiplier * 1.2).toFixed(2);
+            cpmValue.textContent = '$' + adjustedCPM.toFixed(2);
+        }
+
+        // Calculate earnings
+        function calculateEarnings() {
+            const dailyViews = parseInt(dailyViewsInput.value) || 0;
+            const cpm = parseFloat(cpmSlider.value) || 0;
+
+            // Calculate RPM (Revenue Per Mille) - creators get 55% of CPM
+            // Also account for ~55% ad fill rate
+            const creatorShare = contentType === 'shorts' ? 0.45 : 0.55;
+            const fillRate = 0.55;
+            const rpm = cpm * creatorShare * fillRate;
+
+            const dailyEarnings = (dailyViews / 1000) * rpm;
+            const monthlyViews = dailyViews * 30;
+            const monthlyEarnings = dailyEarnings * 30;
+            const yearlyEarnings = monthlyEarnings * 12;
+            const per1kViews = rpm;
+            const per1mViews = rpm * 1000;
+
+            // Gross revenue (before YouTube's cut)
+            const grossMonthly = monthlyEarnings / creatorShare;
+            const youtubeShare = grossMonthly - monthlyEarnings;
+
+            // Update display
+            monthlyEarningsEl.textContent = formatCurrency(monthlyEarnings);
+            monthlyViewsEl.textContent = formatNumber(monthlyViews);
+            dailyEarningsEl.textContent = formatCurrency(dailyEarnings);
+            yearlyEarningsEl.textContent = formatCurrency(yearlyEarnings);
+            perThousandEl.textContent = formatCurrency(per1kViews);
+            millionViewsEl.textContent = formatCurrency(per1mViews);
+            creatorAmountEl.textContent = formatCurrency(monthlyEarnings);
+            youtubeAmountEl.textContent = formatCurrency(youtubeShare);
+
+            // Update split bar
+            const creatorPercent = creatorShare * 100;
+            creatorSplitEl.style.width = creatorPercent + '%';
+            creatorSplitEl.textContent = `You: ${creatorPercent}%`;
+        }
+
+        // Format currency
+        function formatCurrency(amount) {
+            if (amount >= 1000000) {
+                return '$' + (amount / 1000000).toFixed(2) + 'M';
+            } else if (amount >= 1000) {
+                return '$' + (amount / 1000).toFixed(1) + 'K';
+            } else {
+                return '$' + amount.toFixed(2);
+            }
+        }
+
+        // Format number
+        function formatNumber(num) {
+            if (num >= 1000000) {
+                return (num / 1000000).toFixed(1) + 'M';
+            } else if (num >= 1000) {
+                return (num / 1000).toFixed(0) + 'K';
+            } else {
+                return num.toString();
+            }
+        }
+
+        // Event listeners
+        dailyViewsInput.addEventListener('input', calculateEarnings);
+        nicheSelect.addEventListener('change', () => {
+            updateCPMFromNiche();
+            calculateEarnings();
+        });
+        geographySelect.addEventListener('change', () => {
+            updateCPMFromNiche();
+            calculateEarnings();
+        });
+        cpmSlider.addEventListener('input', () => {
+            cpmValue.textContent = '$' + parseFloat(cpmSlider.value).toFixed(2);
+            calculateEarnings();
+        });
+
+        // Initialize
+        updateCPMFromNiche();
+        calculateEarnings();
+    </script>
+</body>
+</html>

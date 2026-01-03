@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free YouTube Creator Tools - Thumbnail Preview, Earnings Calculator & More | ViewsGrowth</title>
+    <meta name="description" content="Free YouTube tools: thumbnail preview, earnings calculator, title analyzer, and channel audit checklist. No login required. Built for creators.">
+    <meta name="keywords" content="youtube tools, free youtube tools, youtube thumbnail tool, youtube earnings calculator, youtube title analyzer">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://viewsgrowth.com/tools/">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Free YouTube Creator Tools - ViewsGrowth">
+    <meta property="og:description" content="Free tools for YouTube creators: thumbnail preview, earnings calculator, title analyzer, and channel audit checklist.">
+    <meta property="og:image" content="https://viewsgrowth.com/images/og-image.jpg">
+    <meta property="og:url" content="https://viewsgrowth.com/tools/">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free YouTube Creator Tools">
+    <meta name="twitter:description" content="Free tools for YouTube creators. No login required.">
+
+    <!-- Schema.org BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://viewsgrowth.com/"
+        }, {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Free Tools",
+            "item": "https://viewsgrowth.com/tools/"
+        }]
+    }
+    </script>
+
+    <!-- Schema.org ItemList for Tools -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "Free YouTube Creator Tools",
+        "description": "Collection of free tools for YouTube content creators",
+        "numberOfItems": 4,
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+                "@type": "WebApplication",
+                "name": "YouTube Thumbnail Preview Tool",
+                "url": "https://viewsgrowth.com/tools/thumbnail-preview.html",
+                "description": "Preview your YouTube thumbnail across all placements before uploading",
+                "applicationCategory": "DesignApplication",
+                "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}
+            }
+        }, {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+                "@type": "WebApplication",
+                "name": "YouTube Earnings Calculator",
+                "url": "https://viewsgrowth.com/tools/earnings-calculator.html",
+                "description": "Estimate YouTube earnings based on views, niche, and geography",
+                "applicationCategory": "FinanceApplication",
+                "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}
+            }
+        }, {
+            "@type": "ListItem",
+            "position": 3,
+            "item": {
+                "@type": "WebApplication",
+                "name": "Video Title Analyzer",
+                "url": "https://viewsgrowth.com/tools/title-analyzer.html",
+                "description": "Get optimization scores and suggestions for your video titles",
+                "applicationCategory": "UtilitiesApplication",
+                "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}
+            }
+        }, {
+            "@type": "ListItem",
+            "position": 4,
+            "item": {
+                "@type": "WebApplication",
+                "name": "YouTube Channel Audit Checklist",
+                "url": "https://viewsgrowth.com/tools/channel-audit.html",
+                "description": "Interactive checklist to audit and optimize your YouTube channel",
+                "applicationCategory": "UtilitiesApplication",
+                "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}
+            }
+        }]
+    }
+    </script>
+
+    <!-- Schema.org FAQPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [{
+            "@type": "Question",
+            "name": "Are these YouTube tools really free?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, all tools on ViewsGrowth are completely free with no login required. They run entirely in your browser - we don't store your images or data."
+            }
+        }, {
+            "@type": "Question",
+            "name": "Do I need to create an account to use these tools?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No account or login is required. All tools work directly in your browser without any sign-up process."
+            }
+        }]
+    }
+    </script>
+
+    <!-- Critical CSS -->
+    <style>
+        body{margin:0;font-family:system-ui,-apple-system,sans-serif;line-height:1.6;color:#212121}
+        .container{max-width:1200px;margin:0 auto;padding:0 20px}
+        h1{font-size:2.5rem;margin:2rem 0 1rem}
+        @media(max-width:768px){h1{font-size:1.8rem}}
+    </style>
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- Additional styles -->
+    <style>
+        .tool-hero {
+            background: linear-gradient(135deg, #0066cc 0%, #004999 100%);
+            color: white;
+            padding: var(--spacing-xl) 0;
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .tool-hero h1 {
+            color: white;
+        }
+
+        .tool-hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--spacing-lg);
+            margin: var(--spacing-xl) 0;
+        }
+
+        .tool-card {
+            background: var(--white);
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            padding: var(--spacing-lg);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .tool-card:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+        }
+
+        .tool-icon {
+            font-size: 48px;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .tool-card h2 {
+            font-size: 1.3rem;
+            margin: 0 0 var(--spacing-sm) 0;
+            color: var(--text-color);
+        }
+
+        .tool-card p {
+            color: #666;
+            margin: 0 0 var(--spacing-md) 0;
+        }
+
+        .tool-badge {
+            display: inline-block;
+            background: #e8f4fd;
+            color: var(--primary-color);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .tool-badge.popular {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .features-list {
+            list-style: none;
+            padding: 0;
+            margin: var(--spacing-md) 0 0 0;
+        }
+
+        .features-list li {
+            padding: 4px 0;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .features-list li::before {
+            content: "✓ ";
+            color: #10b981;
+            font-weight: bold;
+        }
+
+        .use-tool-btn {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            margin-top: var(--spacing-md);
+        }
+
+        .benefit-section {
+            background: var(--bg-light);
+            padding: var(--spacing-xl) 0;
+            margin: var(--spacing-xl) 0;
+        }
+
+        .benefit-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-lg);
+        }
+
+        .benefit-item {
+            text-align: center;
+            padding: var(--spacing-md);
+        }
+
+        .benefit-icon {
+            font-size: 40px;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .benefit-item h3 {
+            margin: 0 0 var(--spacing-sm) 0;
+        }
+
+        .benefit-item p {
+            color: #666;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip to Main Content -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Navigation -->
+    <nav role="navigation" aria-label="Main navigation">
+        <div class="container">
+            <a href="../index.html">Home</a>
+            <a href="../getting-started.html">Getting Started</a>
+            <a href="../tools.html">Tools</a>
+            <a href="../algorithm.html">Algorithm</a>
+            <a href="../production.html">Production</a>
+            <a href="../analytics.html">Analytics</a>
+            <a href="../monetization.html">Monetization</a>
+            <a href="../ai-tools.html">AI Tools</a>
+            <a href="../case-studies.html">Case Studies</a>
+            <a href="../resources.html">Resources</a>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <div class="container">
+            <ol>
+                <li><a href="../index.html">Home</a></li>
+                <li>Free Tools</li>
+            </ol>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="tool-hero">
+        <div class="container">
+            <h1>Free YouTube Creator Tools</h1>
+            <p>Powerful tools to optimize your YouTube channel. No login required. No data stored. 100% free.</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main id="main-content" role="main" class="container">
+
+        <!-- Tools Grid -->
+        <div class="tools-grid">
+            <!-- Thumbnail Preview Tool -->
+            <a href="thumbnail-preview.html" class="tool-card">
+                <div class="tool-icon">🖼️</div>
+                <span class="tool-badge popular">Most Popular</span>
+                <h2>Thumbnail Preview Tool</h2>
+                <p>See exactly how your thumbnail will appear across YouTube before uploading.</p>
+                <ul class="features-list">
+                    <li>Home feed preview</li>
+                    <li>Search results preview</li>
+                    <li>Suggested videos preview</li>
+                    <li>Mobile preview</li>
+                    <li>Dark & light mode</li>
+                </ul>
+                <span class="use-tool-btn">Use Tool</span>
+            </a>
+
+            <!-- Earnings Calculator -->
+            <a href="earnings-calculator.html" class="tool-card">
+                <div class="tool-icon">💰</div>
+                <span class="tool-badge">High Demand</span>
+                <h2>YouTube Earnings Calculator</h2>
+                <p>Estimate how much money you can make based on views, niche, and geography.</p>
+                <ul class="features-list">
+                    <li>CPM by niche</li>
+                    <li>Geographic adjustments</li>
+                    <li>Shorts vs long-form</li>
+                    <li>Revenue breakdown</li>
+                    <li>Monthly projections</li>
+                </ul>
+                <span class="use-tool-btn">Calculate Earnings</span>
+            </a>
+
+            <!-- Title Analyzer -->
+            <a href="title-analyzer.html" class="tool-card">
+                <div class="tool-icon">📝</div>
+                <span class="tool-badge">SEO</span>
+                <h2>Video Title Analyzer</h2>
+                <p>Get an optimization score and actionable suggestions for your video titles.</p>
+                <ul class="features-list">
+                    <li>Character count check</li>
+                    <li>Power word detection</li>
+                    <li>Emotional trigger scoring</li>
+                    <li>Compare variations</li>
+                    <li>Real-time feedback</li>
+                </ul>
+                <span class="use-tool-btn">Analyze Title</span>
+            </a>
+
+            <!-- Channel Audit -->
+            <a href="channel-audit.html" class="tool-card">
+                <div class="tool-icon">✅</div>
+                <span class="tool-badge">Complete</span>
+                <h2>Channel Audit Checklist</h2>
+                <p>Interactive checklist to optimize your channel across branding, SEO, and content.</p>
+                <ul class="features-list">
+                    <li>50+ optimization checks</li>
+                    <li>Progress tracking</li>
+                    <li>Priority recommendations</li>
+                    <li>Saves progress locally</li>
+                    <li>Downloadable report</li>
+                </ul>
+                <span class="use-tool-btn">Start Audit</span>
+            </a>
+        </div>
+
+        <!-- Benefits Section -->
+        <section class="benefit-section">
+            <div class="container">
+                <h2 style="text-align:center;">Why Use Our Free Tools?</h2>
+                <div class="benefit-grid">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">🔒</div>
+                        <h3>100% Private</h3>
+                        <p>All processing happens in your browser. We never store your images or data.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">⚡</div>
+                        <h3>Instant Results</h3>
+                        <p>No waiting for server processing. Get results immediately.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">🆓</div>
+                        <h3>Actually Free</h3>
+                        <p>No hidden fees, no premium tiers, no credit card required. Ever.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">📱</div>
+                        <h3>Works Everywhere</h3>
+                        <p>Use on desktop, tablet, or mobile. No app download needed.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section>
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="card" style="margin-bottom:var(--spacing-md);">
+                <h3>Are these YouTube tools really free?</h3>
+                <p>Yes, all tools on ViewsGrowth are completely free with no login required. They run entirely in your browser - we don't store your images or data. There are no hidden fees or premium tiers.</p>
+            </div>
+
+            <div class="card" style="margin-bottom:var(--spacing-md);">
+                <h3>Do I need to create an account to use these tools?</h3>
+                <p>No account or login is required. All tools work directly in your browser without any sign-up process. Simply open the tool and start using it immediately.</p>
+            </div>
+
+            <div class="card" style="margin-bottom:var(--spacing-md);">
+                <h3>Is my data safe when using these tools?</h3>
+                <p>Absolutely. All processing happens locally in your browser using JavaScript. Your images and data never leave your device. We don't use any external servers or store any user information.</p>
+            </div>
+
+            <div class="card" style="margin-bottom:var(--spacing-md);">
+                <h3>What other tools are you planning to add?</h3>
+                <p>We're constantly working on new tools based on creator feedback. Upcoming tools include a hashtag generator, video description optimizer, and upload scheduler planner. Follow us to stay updated.</p>
+            </div>
+        </section>
+
+        <!-- Related Resources -->
+        <section>
+            <h2>Learn More About YouTube Optimization</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>YouTube Algorithm Guide</h3>
+                    <p>Understand how the algorithm decides which videos to recommend.</p>
+                    <a href="../youtube-algorithm/">Read Guide &rarr;</a>
+                </div>
+                <div class="card">
+                    <h3>Video Optimization Tips</h3>
+                    <p>Complete guide to optimizing your videos for search and discovery.</p>
+                    <a href="../video-optimization/">Optimize Videos &rarr;</a>
+                </div>
+                <div class="card">
+                    <h3>Tool Comparisons</h3>
+                    <p>In-depth reviews of VidIQ, TubeBuddy, and other creator tools.</p>
+                    <a href="../tools-reviews/">Compare Tools &rarr;</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer role="contentinfo">
+        <div class="container">
+            <p>&copy; 2026 ViewsGrowth. Free tools for YouTube creators. <a href="../resources.html">More Resources</a></p>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <a href="#" class="back-to-top" aria-label="Back to top">↑</a>
+</body>
+</html>

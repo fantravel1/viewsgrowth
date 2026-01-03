@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Title Analyzer - Score & Optimize Your Video Titles | ViewsGrowth</title>
+    <meta name="description" content="Free YouTube title analyzer tool. Get an optimization score and actionable suggestions to improve your video titles for more clicks and views.">
+    <meta name="keywords" content="youtube title analyzer, video title generator, youtube title score, optimize youtube title, title checker">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://viewsgrowth.com/tools/title-analyzer.html">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="YouTube Title Analyzer - Score Your Video Titles | ViewsGrowth">
+    <meta property="og:description" content="Get an optimization score and actionable suggestions to improve your YouTube video titles for more clicks.">
+    <meta property="og:image" content="https://viewsgrowth.com/images/og-image.jpg">
+    <meta property="og:url" content="https://viewsgrowth.com/tools/title-analyzer.html">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="YouTube Title Analyzer - Score Your Titles">
+    <meta name="twitter:description" content="Free tool to analyze and optimize your YouTube video titles.">
+
+    <!-- Schema.org BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://viewsgrowth.com/"
+        }, {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Tools",
+            "item": "https://viewsgrowth.com/tools/"
+        }, {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Title Analyzer",
+            "item": "https://viewsgrowth.com/tools/title-analyzer.html"
+        }]
+    }
+    </script>
+
+    <!-- Schema.org WebApplication -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "YouTube Title Analyzer",
+        "description": "Free tool to analyze YouTube video titles and get optimization scores with actionable improvement suggestions.",
+        "url": "https://viewsgrowth.com/tools/title-analyzer.html",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "featureList": [
+            "Character count optimization",
+            "Power word detection",
+            "Emotional trigger scoring",
+            "Number usage analysis",
+            "Compare multiple titles",
+            "Real-time scoring"
+        ]
+    }
+    </script>
+
+    <!-- Schema.org FAQPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [{
+            "@type": "Question",
+            "name": "What is the ideal YouTube title length?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The ideal YouTube title length is 40-60 characters. YouTube truncates titles after about 70 characters on desktop and 50 characters on mobile. Keeping titles between 40-60 characters ensures your full title is visible while providing enough room to include keywords and hooks."
+            }
+        }, {
+            "@type": "Question",
+            "name": "What makes a good YouTube video title?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A good YouTube title includes: a number or statistic, power words that create emotion (ultimate, secret, proven), the main keyword near the beginning, and creates curiosity without being clickbait. Questions and how-to formats also perform well. The best titles promise a clear benefit to the viewer."
+            }
+        }, {
+            "@type": "Question",
+            "name": "Should I use numbers in my YouTube title?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, using numbers in YouTube titles increases click-through rates by 15-25%. Odd numbers like 7, 11, or 13 perform slightly better than even numbers. Specific numbers (e.g., '17 tips' vs 'many tips') add credibility and set clear expectations for viewers."
+            }
+        }]
+    }
+    </script>
+
+    <!-- Critical CSS -->
+    <style>
+        body{margin:0;font-family:system-ui,-apple-system,sans-serif;line-height:1.6;color:#212121}
+        .container{max-width:1200px;margin:0 auto;padding:0 20px}
+        h1{font-size:2.5rem;margin:2rem 0 1rem}
+        @media(max-width:768px){h1{font-size:1.8rem}}
+    </style>
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- Analyzer styles -->
+    <style>
+        .analyzer-container {
+            background: var(--bg-light);
+            border-radius: 12px;
+            padding: var(--spacing-lg);
+            margin: var(--spacing-lg) 0;
+        }
+
+        .title-input-wrapper {
+            position: relative;
+        }
+
+        .title-input {
+            width: 100%;
+            padding: 16px 20px;
+            font-size: 18px;
+            border: 3px solid var(--border-color);
+            border-radius: 8px;
+            transition: border-color 0.2s;
+        }
+
+        .title-input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .char-count {
+            position: absolute;
+            right: 12px;
+            bottom: -24px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .char-count.warning {
+            color: #f59e0b;
+        }
+
+        .char-count.danger {
+            color: #ef4444;
+        }
+
+        .char-count.optimal {
+            color: #10b981;
+        }
+
+        .score-section {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: var(--spacing-xl);
+            margin: var(--spacing-xl) 0;
+        }
+
+        @media (max-width: 768px) {
+            .score-section {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .score-circle {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background: conic-gradient(
+                var(--primary-color) calc(var(--score) * 3.6deg),
+                #e5e7eb calc(var(--score) * 3.6deg)
+            );
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .score-inner {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            background: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .score-number {
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .score-label {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .score-poor { --score-color: #ef4444; }
+        .score-fair { --score-color: #f59e0b; }
+        .score-good { --score-color: #10b981; }
+        .score-excellent { --score-color: #059669; }
+
+        .criteria-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .criteria-item {
+            display: flex;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .criteria-item:last-child {
+            border-bottom: none;
+        }
+
+        .criteria-status {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            font-weight: bold;
+        }
+
+        .criteria-pass {
+            background: #d1fae5;
+            color: #059669;
+        }
+
+        .criteria-warn {
+            background: #fef3c7;
+            color: #d97706;
+        }
+
+        .criteria-fail {
+            background: #fee2e2;
+            color: #dc2626;
+        }
+
+        .criteria-text {
+            flex: 1;
+        }
+
+        .criteria-name {
+            font-weight: 500;
+        }
+
+        .criteria-hint {
+            font-size: 13px;
+            color: #666;
+        }
+
+        .criteria-points {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .suggestions-section {
+            background: var(--white);
+            border-radius: 8px;
+            padding: var(--spacing-lg);
+            margin-top: var(--spacing-lg);
+        }
+
+        .suggestion-item {
+            display: flex;
+            gap: 12px;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .suggestion-item:last-child {
+            border-bottom: none;
+        }
+
+        .suggestion-icon {
+            font-size: 20px;
+        }
+
+        .compare-section {
+            margin-top: var(--spacing-xl);
+        }
+
+        .compare-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-md);
+        }
+
+        .compare-card {
+            background: var(--white);
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            padding: var(--spacing-md);
+        }
+
+        .compare-card input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            margin-bottom: 8px;
+        }
+
+        .compare-score {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px;
+            background: var(--bg-light);
+            border-radius: 4px;
+        }
+
+        .power-words-section {
+            background: #e8f4fd;
+            border-radius: 8px;
+            padding: var(--spacing-lg);
+            margin-top: var(--spacing-lg);
+        }
+
+        .power-words-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 8px;
+            margin-top: var(--spacing-md);
+        }
+
+        .power-word {
+            background: var(--white);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .power-word:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip to Main Content -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Navigation -->
+    <nav role="navigation" aria-label="Main navigation">
+        <div class="container">
+            <a href="../index.html">Home</a>
+            <a href="../getting-started.html">Getting Started</a>
+            <a href="../tools.html">Tools</a>
+            <a href="../algorithm.html">Algorithm</a>
+            <a href="../production.html">Production</a>
+            <a href="../analytics.html">Analytics</a>
+            <a href="../monetization.html">Monetization</a>
+            <a href="../ai-tools.html">AI Tools</a>
+            <a href="../case-studies.html">Case Studies</a>
+            <a href="../resources.html">Resources</a>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <div class="container">
+            <ol>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="index.html">Tools</a></li>
+                <li>Title Analyzer</li>
+            </ol>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="main-content" role="main" class="container">
+        <h1>YouTube Title Analyzer</h1>
+        <p class="lead">Analyze your video title and get an optimization score with actionable suggestions. Compare multiple titles to find the most clickable option.</p>
+
+        <!-- Analyzer Container -->
+        <div class="analyzer-container">
+            <h2>Enter Your Video Title</h2>
+
+            <div class="title-input-wrapper">
+                <input type="text" class="title-input" id="titleInput" placeholder="Type your video title here..." value="How I Gained 100K Subscribers in 90 Days (Step-by-Step)">
+                <span class="char-count" id="charCount">0 characters</span>
+            </div>
+
+            <!-- Score Section -->
+            <div class="score-section">
+                <div>
+                    <div class="score-circle" id="scoreCircle" style="--score: 0">
+                        <div class="score-inner">
+                            <span class="score-number" id="scoreNumber">0</span>
+                            <span class="score-label">/ 100</span>
+                        </div>
+                    </div>
+                    <p style="text-align:center;margin-top:8px;font-weight:500;" id="scoreRating">Analyzing...</p>
+                </div>
+
+                <div>
+                    <h3>Scoring Criteria</h3>
+                    <ul class="criteria-list" id="criteriaList">
+                        <!-- Populated by JS -->
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Suggestions -->
+            <div class="suggestions-section">
+                <h3>Improvement Suggestions</h3>
+                <div id="suggestionsList">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Compare Titles -->
+        <div class="compare-section">
+            <h2>Compare Title Variations</h2>
+            <p>Test multiple versions to find the highest-scoring title.</p>
+
+            <div class="compare-grid">
+                <div class="compare-card">
+                    <input type="text" id="compare1" placeholder="Title variation 1">
+                    <div class="compare-score">
+                        <span>Score:</span>
+                        <strong id="compare1Score">--</strong>
+                    </div>
+                </div>
+                <div class="compare-card">
+                    <input type="text" id="compare2" placeholder="Title variation 2">
+                    <div class="compare-score">
+                        <span>Score:</span>
+                        <strong id="compare2Score">--</strong>
+                    </div>
+                </div>
+                <div class="compare-card">
+                    <input type="text" id="compare3" placeholder="Title variation 3">
+                    <div class="compare-score">
+                        <span>Score:</span>
+                        <strong id="compare3Score">--</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Power Words Section -->
+        <div class="power-words-section">
+            <h3>Power Words to Consider</h3>
+            <p>Click to copy. These words are proven to increase click-through rates.</p>
+
+            <div class="power-words-grid" id="powerWordsGrid">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <section style="margin-top:var(--spacing-xl);">
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="card" style="margin-bottom:var(--spacing-md);">
+                <h3>What is the ideal YouTube title length?</h3>
+                <p>The ideal YouTube title length is 40-60 characters. YouTube truncates titles after about 70 characters on desktop and 50 characters on mobile. Keeping titles between 40-60 characters ensures your full title is visible while providing enough room to include keywords and hooks.</p>
+            </div>
+
+            <div class="card" style="margin-bottom:var(--spacing-md);">
+                <h3>What makes a good YouTube video title?</h3>
+                <p>A good YouTube title includes: a number or statistic, power words that create emotion (ultimate, secret, proven), the main keyword near the beginning, and creates curiosity without being clickbait. Questions and how-to formats also perform well. The best titles promise a clear benefit to the viewer.</p>
+            </div>
+
+            <div class="card" style="margin-bottom:var(--spacing-md);">
+                <h3>Should I use numbers in my YouTube title?</h3>
+                <p>Yes, using numbers in YouTube titles increases click-through rates by 15-25%. Odd numbers like 7, 11, or 13 perform slightly better than even numbers. Specific numbers (e.g., "17 tips" vs "many tips") add credibility and set clear expectations for viewers.</p>
+            </div>
+
+            <div class="card" style="margin-bottom:var(--spacing-md);">
+                <h3>Should I put keywords at the beginning of my title?</h3>
+                <p>Yes, placing your main keyword in the first 30 characters improves both SEO and visibility. YouTube's algorithm pays special attention to the beginning of titles, and viewers scanning search results will see your keyword even if the title is truncated.</p>
+            </div>
+        </section>
+
+        <!-- Related Tools -->
+        <section>
+            <h2>More Free YouTube Tools</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Thumbnail Preview Tool</h3>
+                    <p>See how your thumbnail will look across YouTube before uploading.</p>
+                    <a href="thumbnail-preview.html">Preview Thumbnails &rarr;</a>
+                </div>
+                <div class="card">
+                    <h3>YouTube Earnings Calculator</h3>
+                    <p>Estimate how much money you can make based on views and niche.</p>
+                    <a href="earnings-calculator.html">Calculate Earnings &rarr;</a>
+                </div>
+                <div class="card">
+                    <h3>Channel Audit Checklist</h3>
+                    <p>Interactive checklist to optimize your channel for growth.</p>
+                    <a href="channel-audit.html">Start Audit &rarr;</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <h2>Want to Master YouTube SEO?</h2>
+            <p>Learn the complete video optimization strategy to rank higher in search.</p>
+            <a href="../video-optimization/" class="cta-button">Video SEO Guide &rarr;</a>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer role="contentinfo">
+        <div class="container">
+            <p>&copy; 2026 ViewsGrowth. Free tools for YouTube creators. <a href="../resources.html">More Resources</a></p>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <a href="#" class="back-to-top" aria-label="Back to top">↑</a>
+
+    <!-- JavaScript -->
+    <script>
+        // Power words lists
+        const powerWords = {
+            urgency: ['now', 'today', 'immediately', 'fast', 'quick', 'instant', 'hurry', 'limited'],
+            curiosity: ['secret', 'hidden', 'surprising', 'shocking', 'unexpected', 'strange', 'weird', 'unknown'],
+            value: ['free', 'best', 'ultimate', 'complete', 'essential', 'proven', 'guaranteed', 'exclusive'],
+            emotion: ['amazing', 'incredible', 'insane', 'mind-blowing', 'unbelievable', 'epic', 'crazy', 'awesome'],
+            how: ['how', 'why', 'what', 'when', 'where', 'which', 'tutorial', 'guide'],
+            negative: ['mistake', 'wrong', 'never', 'avoid', 'stop', 'worst', 'fail', 'problem']
+        };
+
+        const allPowerWords = Object.values(powerWords).flat();
+
+        // DOM elements
+        const titleInput = document.getElementById('titleInput');
+        const charCount = document.getElementById('charCount');
+        const scoreCircle = document.getElementById('scoreCircle');
+        const scoreNumber = document.getElementById('scoreNumber');
+        const scoreRating = document.getElementById('scoreRating');
+        const criteriaList = document.getElementById('criteriaList');
+        const suggestionsList = document.getElementById('suggestionsList');
+        const powerWordsGrid = document.getElementById('powerWordsGrid');
+
+        // Comparison inputs
+        const compare1 = document.getElementById('compare1');
+        const compare2 = document.getElementById('compare2');
+        const compare3 = document.getElementById('compare3');
+
+        // Populate power words
+        allPowerWords.slice(0, 24).forEach(word => {
+            const el = document.createElement('span');
+            el.className = 'power-word';
+            el.textContent = word;
+            el.onclick = () => {
+                navigator.clipboard.writeText(word);
+                el.style.background = '#10b981';
+                el.style.color = 'white';
+                setTimeout(() => {
+                    el.style.background = '';
+                    el.style.color = '';
+                }, 500);
+            };
+            powerWordsGrid.appendChild(el);
+        });
+
+        // Analyze title
+        function analyzeTitle(title) {
+            const results = {
+                score: 0,
+                criteria: [],
+                suggestions: []
+            };
+
+            const len = title.length;
+            const words = title.toLowerCase().split(/\s+/);
+            const hasNumber = /\d+/.test(title);
+            const hasQuestion = /\?/.test(title);
+            const hasBrackets = /[\[\(]/.test(title);
+            const hasColon = /:/.test(title);
+            const foundPowerWords = words.filter(w => allPowerWords.includes(w.replace(/[^a-z]/g, '')));
+            const startsWithHow = /^(how|why|what|when|where|which)/i.test(title);
+            const hasCapitalWords = title.split(' ').filter(w => w[0] === w[0]?.toUpperCase() && w.length > 1).length;
+
+            // Criteria 1: Character count (20 points)
+            let charPoints = 0;
+            let charStatus = 'fail';
+            if (len >= 40 && len <= 60) {
+                charPoints = 20;
+                charStatus = 'pass';
+            } else if (len >= 30 && len <= 70) {
+                charPoints = 15;
+                charStatus = 'warn';
+            } else if (len >= 20 && len <= 80) {
+                charPoints = 10;
+                charStatus = 'warn';
+            } else if (len > 0) {
+                charPoints = 5;
+            }
+            results.criteria.push({
+                name: 'Character Count',
+                hint: `${len} characters (optimal: 40-60)`,
+                points: charPoints,
+                maxPoints: 20,
+                status: charStatus
+            });
+
+            // Criteria 2: Contains number (15 points)
+            let numberPoints = hasNumber ? 15 : 0;
+            results.criteria.push({
+                name: 'Contains Number',
+                hint: hasNumber ? 'Numbers increase CTR by 15-25%' : 'Add a number to boost clicks',
+                points: numberPoints,
+                maxPoints: 15,
+                status: hasNumber ? 'pass' : 'fail'
+            });
+
+            // Criteria 3: Power words (20 points)
+            let powerPoints = Math.min(foundPowerWords.length * 7, 20);
+            results.criteria.push({
+                name: 'Power Words',
+                hint: foundPowerWords.length > 0 ? `Found: ${foundPowerWords.join(', ')}` : 'Add emotional trigger words',
+                points: powerPoints,
+                maxPoints: 20,
+                status: foundPowerWords.length >= 2 ? 'pass' : foundPowerWords.length === 1 ? 'warn' : 'fail'
+            });
+
+            // Criteria 4: Brackets/Parentheses (10 points)
+            let bracketPoints = hasBrackets ? 10 : 0;
+            results.criteria.push({
+                name: 'Brackets/Parentheses',
+                hint: hasBrackets ? 'Great for adding context' : 'Brackets can boost CTR by 17%',
+                points: bracketPoints,
+                maxPoints: 10,
+                status: hasBrackets ? 'pass' : 'warn'
+            });
+
+            // Criteria 5: Question or How-to format (15 points)
+            let formatPoints = 0;
+            if (hasQuestion || startsWithHow) {
+                formatPoints = 15;
+            }
+            results.criteria.push({
+                name: 'Question/How-to Format',
+                hint: hasQuestion || startsWithHow ? 'Great format for engagement' : 'Consider a question or how-to',
+                points: formatPoints,
+                maxPoints: 15,
+                status: formatPoints > 0 ? 'pass' : 'warn'
+            });
+
+            // Criteria 6: Title case / Capitalization (10 points)
+            let capPoints = hasCapitalWords >= 3 ? 10 : hasCapitalWords >= 1 ? 5 : 0;
+            results.criteria.push({
+                name: 'Proper Capitalization',
+                hint: 'Title case improves readability',
+                points: capPoints,
+                maxPoints: 10,
+                status: capPoints >= 10 ? 'pass' : capPoints > 0 ? 'warn' : 'fail'
+            });
+
+            // Criteria 7: No all caps (10 points penalty becomes 0 points)
+            let capsPoints = 10;
+            const allCaps = title === title.toUpperCase() && title.length > 10;
+            if (allCaps) {
+                capsPoints = 0;
+                results.suggestions.push({
+                    icon: '⚠️',
+                    text: 'Avoid ALL CAPS - it looks like spam and reduces trust'
+                });
+            }
+            results.criteria.push({
+                name: 'Not All Caps',
+                hint: allCaps ? 'All caps hurts credibility' : 'Good - avoiding spam signals',
+                points: capsPoints,
+                maxPoints: 10,
+                status: allCaps ? 'fail' : 'pass'
+            });
+
+            // Calculate total score
+            results.score = results.criteria.reduce((sum, c) => sum + c.points, 0);
+
+            // Generate suggestions
+            if (len < 40) {
+                results.suggestions.push({
+                    icon: '📏',
+                    text: 'Your title is short. Add more descriptive words or context in brackets.'
+                });
+            }
+            if (len > 60) {
+                results.suggestions.push({
+                    icon: '✂️',
+                    text: 'Title may be truncated on mobile. Consider shortening to 60 characters.'
+                });
+            }
+            if (!hasNumber) {
+                results.suggestions.push({
+                    icon: '🔢',
+                    text: 'Add a specific number (e.g., "7 Tips" or "in 30 Days") to boost CTR.'
+                });
+            }
+            if (foundPowerWords.length === 0) {
+                results.suggestions.push({
+                    icon: '💪',
+                    text: 'Add power words like "ultimate", "secret", "proven", or "free" to create emotion.'
+                });
+            }
+            if (!hasBrackets) {
+                results.suggestions.push({
+                    icon: '[ ]',
+                    text: 'Consider adding context in [brackets] or (parentheses) - they increase CTR.'
+                });
+            }
+            if (results.score >= 80) {
+                results.suggestions.push({
+                    icon: '🎯',
+                    text: 'Great title! Test it against 2-3 variations to find the best performer.'
+                });
+            }
+
+            return results;
+        }
+
+        // Update display
+        function updateDisplay() {
+            const title = titleInput.value;
+            const len = title.length;
+
+            // Update character count
+            charCount.textContent = `${len} characters`;
+            charCount.className = 'char-count';
+            if (len >= 40 && len <= 60) {
+                charCount.classList.add('optimal');
+            } else if (len > 70 || len < 30) {
+                charCount.classList.add('danger');
+            } else {
+                charCount.classList.add('warning');
+            }
+
+            if (title.trim() === '') {
+                scoreNumber.textContent = '0';
+                scoreCircle.style.setProperty('--score', 0);
+                scoreRating.textContent = 'Enter a title';
+                criteriaList.innerHTML = '';
+                suggestionsList.innerHTML = '<p>Enter a title to get suggestions.</p>';
+                return;
+            }
+
+            const results = analyzeTitle(title);
+
+            // Update score circle
+            scoreNumber.textContent = results.score;
+            scoreCircle.style.setProperty('--score', results.score);
+
+            // Update rating
+            if (results.score >= 85) {
+                scoreRating.textContent = 'Excellent!';
+                scoreRating.style.color = '#059669';
+            } else if (results.score >= 70) {
+                scoreRating.textContent = 'Good';
+                scoreRating.style.color = '#10b981';
+            } else if (results.score >= 50) {
+                scoreRating.textContent = 'Fair';
+                scoreRating.style.color = '#f59e0b';
+            } else {
+                scoreRating.textContent = 'Needs Work';
+                scoreRating.style.color = '#ef4444';
+            }
+
+            // Update criteria list
+            criteriaList.innerHTML = results.criteria.map(c => `
+                <li class="criteria-item">
+                    <span class="criteria-status criteria-${c.status}">${c.status === 'pass' ? '✓' : c.status === 'warn' ? '!' : '✗'}</span>
+                    <span class="criteria-text">
+                        <span class="criteria-name">${c.name}</span>
+                        <span class="criteria-hint">${c.hint}</span>
+                    </span>
+                    <span class="criteria-points">+${c.points}</span>
+                </li>
+            `).join('');
+
+            // Update suggestions
+            if (results.suggestions.length > 0) {
+                suggestionsList.innerHTML = results.suggestions.map(s => `
+                    <div class="suggestion-item">
+                        <span class="suggestion-icon">${s.icon}</span>
+                        <span>${s.text}</span>
+                    </div>
+                `).join('');
+            } else {
+                suggestionsList.innerHTML = '<p>Looking good! Your title is well optimized.</p>';
+            }
+        }
+
+        // Update comparison scores
+        function updateComparison(input, scoreEl) {
+            const title = input.value;
+            if (title.trim() === '') {
+                scoreEl.textContent = '--';
+                return;
+            }
+            const results = analyzeTitle(title);
+            scoreEl.textContent = results.score + '/100';
+        }
+
+        // Event listeners
+        titleInput.addEventListener('input', updateDisplay);
+        compare1.addEventListener('input', () => updateComparison(compare1, document.getElementById('compare1Score')));
+        compare2.addEventListener('input', () => updateComparison(compare2, document.getElementById('compare2Score')));
+        compare3.addEventListener('input', () => updateComparison(compare3, document.getElementById('compare3Score')));
+
+        // Initialize
+        updateDisplay();
+    </script>
+</body>
+</html>
