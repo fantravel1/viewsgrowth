@@ -69,16 +69,40 @@
 
     <nav role="navigation" aria-label="Main navigation">
         <div class="container">
-            <a href="../index.html">Home</a>
-            <a href="../getting-started.html">Getting Started</a>
-            <a href="../tools.html">Tools</a>
-            <a href="../algorithm.html">Algorithm</a>
-            <a href="../production.html">Production</a>
-            <a href="../analytics.html">Analytics</a>
-            <a href="../monetization.html">Monetization</a>
-            <a href="../ai-tools.html">AI Tools</a>
-            <a href="../case-studies.html">Case Studies</a>
-            <a href="../resources.html">Resources</a>
+            <a href="../" class="nav-brand">ViewsGrowth</a>
+            <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <div class="nav-overlay"></div>
+        <div class="nav-menu" role="menu">
+            <div class="nav-section">Getting Started</div>
+            <a href="../getting-started.html" role="menuitem">Getting Started Guide</a>
+            <a href="../production.html" role="menuitem">Production Setup</a>
+
+            <div class="nav-section">Free Tools</div>
+            <a href="../tools/" role="menuitem">All Free Tools</a>
+            <a href="../tools/thumbnail-preview.html" role="menuitem">Thumbnail Preview</a>
+            <a href="../tools/earnings-calculator.html" role="menuitem">Earnings Calculator</a>
+            <a href="../tools/title-analyzer.html" role="menuitem">Title Analyzer</a>
+            <a href="../tools/channel-audit.html" role="menuitem">Channel Audit</a>
+
+            <div class="nav-section">Growth Guides</div>
+            <a href="../youtube-algorithm/" role="menuitem">YouTube Algorithm</a>
+            <a href="../viral-videos/" role="menuitem">Viral Videos</a>
+            <a href="../youtube-growth/" role="menuitem">YouTube Growth</a>
+            <a href="../video-optimization/" role="menuitem">Video Optimization</a>
+            <a href="../trending-channels/" role="menuitem">Trending Channels</a>
+
+            <div class="nav-section">Resources</div>
+            <a href="./" role="menuitem" class="active">Tools Reviews</a>
+            <a href="../analytics.html" role="menuitem">Analytics</a>
+            <a href="../monetization.html" role="menuitem">Monetization</a>
+            <a href="../ai-tools.html" role="menuitem">AI Tools</a>
+            <a href="../case-studies.html" role="menuitem">Case Studies</a>
+            <a href="../resources.html" role="menuitem">Resources</a>
         </div>
     </nav>
 
@@ -515,5 +539,33 @@
     </footer>
 
     <a href="#" class="back-to-top" aria-label="Back to top">↑</a>
+
+    <script>
+    (function() {
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        const navOverlay = document.querySelector('.nav-overlay');
+        function toggleMenu() {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            navOverlay.classList.toggle('active');
+            document.body.classList.toggle('menu-open');
+            hamburger.setAttribute('aria-expanded', navMenu.classList.contains('active'));
+        }
+        function closeMenu() {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+            navOverlay.classList.remove('active');
+            document.body.classList.remove('menu-open');
+            hamburger.setAttribute('aria-expanded', 'false');
+        }
+        hamburger.addEventListener('click', toggleMenu);
+        navOverlay.addEventListener('click', closeMenu);
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && navMenu.classList.contains('active')) closeMenu();
+        });
+        navMenu.querySelectorAll('a').forEach(function(link) { link.addEventListener('click', closeMenu); });
+    })();
+    </script>
 </body>
 </html>
