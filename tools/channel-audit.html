@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Channel Audit Checklist - Optimize Your Channel | ViewsGrowth</title>
+    <meta name="description" content="Free interactive YouTube channel audit checklist. Score your channel across branding, SEO, content, and engagement. Saves progress automatically.">
+    <meta name="keywords" content="youtube channel audit, channel checklist, optimize youtube channel, youtube seo checklist, channel review">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://viewsgrowth.com/tools/channel-audit.html">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="YouTube Channel Audit Checklist - ViewsGrowth">
+    <meta property="og:description" content="Interactive checklist to audit and optimize your YouTube channel across branding, SEO, and content organization.">
+    <meta property="og:image" content="https://viewsgrowth.com/images/og-image.jpg">
+    <meta property="og:url" content="https://viewsgrowth.com/tools/channel-audit.html">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="YouTube Channel Audit Checklist">
+    <meta name="twitter:description" content="Interactive checklist to optimize your YouTube channel.">
+
+    <!-- Schema.org BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://viewsgrowth.com/"
+        }, {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Tools",
+            "item": "https://viewsgrowth.com/tools/"
+        }, {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Channel Audit",
+            "item": "https://viewsgrowth.com/tools/channel-audit.html"
+        }]
+    }
+    </script>
+
+    <!-- Schema.org WebApplication -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "YouTube Channel Audit Checklist",
+        "description": "Interactive checklist tool to audit YouTube channels across branding, SEO, content organization, and engagement metrics.",
+        "url": "https://viewsgrowth.com/tools/channel-audit.html",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "featureList": [
+            "50+ optimization checks",
+            "Progress tracking",
+            "Saves locally",
+            "Priority recommendations",
+            "Downloadable report"
+        ]
+    }
+    </script>
+
+    <!-- Schema.org FAQPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [{
+            "@type": "Question",
+            "name": "How do I audit my YouTube channel?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A YouTube channel audit involves reviewing your channel branding (banner, logo, about), SEO elements (keywords, descriptions, tags), content organization (playlists, featured sections), and engagement metrics (comments, community tab). Use this interactive checklist to systematically review each area and identify improvements."
+            }
+        }, {
+            "@type": "Question",
+            "name": "What should I include in my YouTube channel banner?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Your YouTube banner should include: your channel name or logo, a clear value proposition, upload schedule, and social media handles. The safe zone (visible on all devices) is 1546 x 423 pixels in the center. Use high-contrast colors and ensure text is readable at mobile sizes."
+            }
+        }]
+    }
+    </script>
+
+    <!-- Critical CSS -->
+    <style>
+        body{margin:0;font-family:system-ui,-apple-system,sans-serif;line-height:1.6;color:#212121}
+        .container{max-width:1200px;margin:0 auto;padding:0 20px}
+        h1{font-size:2.5rem;margin:2rem 0 1rem}
+        @media(max-width:768px){h1{font-size:1.8rem}}
+    </style>
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- Checklist styles -->
+    <style>
+        .audit-header {
+            background: linear-gradient(135deg, #0066cc 0%, #004999 100%);
+            color: white;
+            padding: var(--spacing-xl) 0;
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .audit-header h1 {
+            color: white;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .progress-bar-container {
+            background: rgba(255,255,255,0.2);
+            border-radius: 8px;
+            height: 16px;
+            margin: var(--spacing-md) 0;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            background: #10b981;
+            height: 100%;
+            transition: width 0.3s ease;
+            border-radius: 8px;
+        }
+
+        .progress-text {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .section-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .section-nav-btn {
+            padding: 10px 16px;
+            border: 2px solid var(--border-color);
+            border-radius: 6px;
+            background: var(--white);
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .section-nav-btn:hover {
+            border-color: var(--primary-color);
+        }
+
+        .section-nav-btn.active {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        .section-nav-btn .count {
+            font-size: 12px;
+            opacity: 0.7;
+            margin-left: 4px;
+        }
+
+        .audit-section {
+            background: var(--bg-light);
+            border-radius: 12px;
+            padding: var(--spacing-lg);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .audit-section h2 {
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section-progress {
+            font-size: 14px;
+            font-weight: normal;
+            color: var(--primary-color);
+        }
+
+        .checklist {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 16px;
+            background: var(--white);
+            border-radius: 8px;
+            margin-bottom: 8px;
+            border: 2px solid var(--border-color);
+            transition: all 0.2s;
+        }
+
+        .checklist-item:hover {
+            border-color: var(--primary-color);
+        }
+
+        .checklist-item.completed {
+            background: #f0fdf4;
+            border-color: #10b981;
+        }
+
+        .checklist-checkbox {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--border-color);
+            border-radius: 6px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: all 0.2s;
+        }
+
+        .checklist-item.completed .checklist-checkbox {
+            background: #10b981;
+            border-color: #10b981;
+            color: white;
+        }
+
+        .checklist-content {
+            flex: 1;
+        }
+
+        .checklist-title {
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .checklist-desc {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .priority-badge {
+            font-size: 11px;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-weight: 600;
+            margin-left: 8px;
+        }
+
+        .priority-high {
+            background: #fee2e2;
+            color: #dc2626;
+        }
+
+        .priority-medium {
+            background: #fef3c7;
+            color: #d97706;
+        }
+
+        .priority-low {
+            background: #e0f2fe;
+            color: #0284c7;
+        }
+
+        .actions-bar {
+            display: flex;
+            gap: 12px;
+            margin-top: var(--spacing-lg);
+            flex-wrap: wrap;
+        }
+
+        .action-btn {
+            padding: 12px 24px;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            background: var(--white);
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .action-btn:hover {
+            border-color: var(--primary-color);
+            background: #f0f7ff;
+        }
+
+        .action-btn.primary {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        .action-btn.primary:hover {
+            background: #0052a3;
+        }
+
+        .action-btn.danger {
+            color: #dc2626;
+            border-color: #dc2626;
+        }
+
+        .action-btn.danger:hover {
+            background: #fee2e2;
+        }
+
+        .score-summary {
+            background: var(--white);
+            border-radius: 12px;
+            padding: var(--spacing-lg);
+            margin-bottom: var(--spacing-lg);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: var(--spacing-md);
+            text-align: center;
+        }
+
+        .score-item {
+            padding: var(--spacing-md);
+        }
+
+        .score-item .value {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .score-item .label {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .saved-indicator {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: #10b981;
+            margin-left: var(--spacing-md);
+        }
+
+        @media (max-width: 768px) {
+            .section-nav {
+                overflow-x: auto;
+                flex-wrap: nowrap;
+                padding-bottom: 8px;
+            }
+
+            .section-nav-btn {
+                white-space: nowrap;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip to Main Content -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Navigation -->
+    <nav role="navigation" aria-label="Main navigation">
+        <div class="container">
+            <a href="../" class="nav-brand">ViewsGrowth</a>
+            <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <div class="nav-overlay"></div>
+        <div class="nav-menu" role="menu">
+            <div class="nav-section">Getting Started</div>
+            <a href="../getting-started.html" role="menuitem">Getting Started Guide</a>
+            <a href="../production.html" role="menuitem">Production Setup</a>
+
+            <div class="nav-section">Free Tools</div>
+            <a href="./" role="menuitem">All Free Tools</a>
+            <a href="thumbnail-preview.html" role="menuitem">Thumbnail Preview</a>
+            <a href="earnings-calculator.html" role="menuitem">Earnings Calculator</a>
+            <a href="title-analyzer.html" role="menuitem">Title Analyzer</a>
+            <a href="channel-audit.html" role="menuitem" class="active">Channel Audit</a>
+
+            <div class="nav-section">Growth Guides</div>
+            <a href="../youtube-algorithm/" role="menuitem">YouTube Algorithm</a>
+            <a href="../viral-videos/" role="menuitem">Viral Videos</a>
+            <a href="../youtube-growth/" role="menuitem">YouTube Growth</a>
+            <a href="../video-optimization/" role="menuitem">Video Optimization</a>
+            <a href="../trending-channels/" role="menuitem">Trending Channels</a>
+
+            <div class="nav-section">Resources</div>
+            <a href="../tools-reviews/" role="menuitem">Tools Reviews</a>
+            <a href="../analytics.html" role="menuitem">Analytics</a>
+            <a href="../monetization.html" role="menuitem">Monetization</a>
+            <a href="../ai-tools.html" role="menuitem">AI Tools</a>
+            <a href="../case-studies.html" role="menuitem">Case Studies</a>
+            <a href="../resources.html" role="menuitem">Resources</a>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <div class="container">
+            <ol>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="index.html">Tools</a></li>
+                <li>Channel Audit</li>
+            </ol>
+        </div>
+    </nav>
+
+    <!-- Header with Progress -->
+    <section class="audit-header">
+        <div class="container">
+            <h1>YouTube Channel Audit Checklist</h1>
+            <p>Systematically optimize your channel across branding, SEO, content, and engagement.</p>
+
+            <div class="progress-bar-container">
+                <div class="progress-bar" id="progressBar" style="width: 0%"></div>
+            </div>
+            <div class="progress-text">
+                <span><span id="completedCount">0</span> of <span id="totalCount">0</span> completed</span>
+                <span><span id="progressPercent">0</span>% complete</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main id="main-content" role="main" class="container">
+
+        <!-- Section Navigation -->
+        <div class="section-nav" id="sectionNav">
+            <!-- Populated by JS -->
+        </div>
+
+        <!-- Score Summary -->
+        <div class="score-summary" id="scoreSummary">
+            <!-- Populated by JS -->
+        </div>
+
+        <!-- Checklist Sections -->
+        <div id="checklistContainer">
+            <!-- Populated by JS -->
+        </div>
+
+        <!-- Actions Bar -->
+        <div class="actions-bar">
+            <button class="action-btn primary" onclick="downloadReport()">Download Report</button>
+            <button class="action-btn" onclick="shareProgress()">Share Progress</button>
+            <button class="action-btn danger" onclick="resetChecklist()">Reset Checklist</button>
+            <span class="saved-indicator" id="savedIndicator" style="display:none;">
+                <span>&#10003;</span> Saved automatically
+            </span>
+        </div>
+
+        <!-- FAQ Section -->
+        <section style="margin-top:var(--spacing-xl);">
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="card" style="margin-bottom:var(--spacing-md);">
+                <h3>How do I audit my YouTube channel?</h3>
+                <p>A YouTube channel audit involves reviewing your channel branding (banner, logo, about), SEO elements (keywords, descriptions, tags), content organization (playlists, featured sections), and engagement metrics (comments, community tab). Use this interactive checklist to systematically review each area and identify improvements.</p>
+            </div>
+
+            <div class="card" style="margin-bottom:var(--spacing-md);">
+                <h3>What should I include in my YouTube channel banner?</h3>
+                <p>Your YouTube banner should include: your channel name or logo, a clear value proposition, upload schedule, and social media handles. The safe zone (visible on all devices) is 1546 x 423 pixels in the center. Use high-contrast colors and ensure text is readable at mobile sizes.</p>
+            </div>
+
+            <div class="card" style="margin-bottom:var(--spacing-md);">
+                <h3>Is my progress saved?</h3>
+                <p>Yes, your progress is automatically saved to your browser's local storage. You can close this page and return later to continue where you left off. Your data never leaves your device.</p>
+            </div>
+        </section>
+
+        <!-- Related Tools -->
+        <section>
+            <h2>More Free YouTube Tools</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Thumbnail Preview Tool</h3>
+                    <p>See how your thumbnail will look across YouTube before uploading.</p>
+                    <a href="thumbnail-preview.html">Preview Thumbnails &rarr;</a>
+                </div>
+                <div class="card">
+                    <h3>YouTube Earnings Calculator</h3>
+                    <p>Estimate how much money you can make based on views and niche.</p>
+                    <a href="earnings-calculator.html">Calculate Earnings &rarr;</a>
+                </div>
+                <div class="card">
+                    <h3>Video Title Analyzer</h3>
+                    <p>Get optimization scores and suggestions for your video titles.</p>
+                    <a href="title-analyzer.html">Analyze Title &rarr;</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer role="contentinfo">
+        <div class="container">
+            <p>&copy; 2026 ViewsGrowth. Free tools for YouTube creators. <a href="../resources.html">More Resources</a></p>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <a href="#" class="back-to-top" aria-label="Back to top">↑</a>
+
+    <!-- Navigation Script -->
+    <script>
+    (function() {
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        const navOverlay = document.querySelector('.nav-overlay');
+        function toggleMenu() {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            navOverlay.classList.toggle('active');
+            document.body.classList.toggle('menu-open');
+            hamburger.setAttribute('aria-expanded', navMenu.classList.contains('active'));
+        }
+        function closeMenu() {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+            navOverlay.classList.remove('active');
+            document.body.classList.remove('menu-open');
+            hamburger.setAttribute('aria-expanded', 'false');
+        }
+        hamburger.addEventListener('click', toggleMenu);
+        navOverlay.addEventListener('click', closeMenu);
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && navMenu.classList.contains('active')) closeMenu();
+        });
+        navMenu.querySelectorAll('a').forEach(function(link) { link.addEventListener('click', closeMenu); });
+    })();
+    </script>
+
+    <!-- JavaScript -->
+    <script>
+        // Checklist data
+        const checklistData = {
+            branding: {
+                title: 'Channel Branding',
+                icon: '🎨',
+                items: [
+                    { id: 'banner', title: 'Professional channel banner', desc: 'High-quality banner (2560x1440px) with clear value proposition and upload schedule', priority: 'high' },
+                    { id: 'avatar', title: 'Recognizable profile picture', desc: 'Clear, high-contrast logo or face that works at small sizes', priority: 'high' },
+                    { id: 'watermark', title: 'Custom branding watermark', desc: 'Subscribe button watermark that appears in corner of videos', priority: 'medium' },
+                    { id: 'handle', title: 'Custom channel handle', desc: 'Memorable @handle that matches your brand', priority: 'medium' },
+                    { id: 'colors', title: 'Consistent color scheme', desc: 'Brand colors used across thumbnails, banner, and graphics', priority: 'medium' },
+                    { id: 'trailer', title: 'Channel trailer for non-subscribers', desc: '30-60 second intro video explaining what your channel offers', priority: 'medium' }
+                ]
+            },
+            about: {
+                title: 'About & Info',
+                icon: '📝',
+                items: [
+                    { id: 'description', title: 'Optimized channel description', desc: 'First 150 characters contain key message, includes relevant keywords', priority: 'high' },
+                    { id: 'links', title: 'Social media links added', desc: 'Links to website, Instagram, Twitter, Discord, etc.', priority: 'medium' },
+                    { id: 'email', title: 'Business email visible', desc: 'Professional email for sponsorship and collaboration inquiries', priority: 'medium' },
+                    { id: 'location', title: 'Location set (if relevant)', desc: 'Helps with local search and audience targeting', priority: 'low' },
+                    { id: 'keywords', title: 'Channel keywords set', desc: 'Relevant keywords added in YouTube Studio > Settings', priority: 'high' }
+                ]
+            },
+            content: {
+                title: 'Content Organization',
+                icon: '📚',
+                items: [
+                    { id: 'playlists', title: 'Videos organized into playlists', desc: 'All videos categorized into relevant playlists', priority: 'high' },
+                    { id: 'playlist-desc', title: 'Playlists have descriptions', desc: 'Each playlist has keyword-rich description', priority: 'medium' },
+                    { id: 'featured', title: 'Featured sections set up', desc: 'Channel page shows curated sections for different content types', priority: 'high' },
+                    { id: 'popular', title: 'Popular videos highlighted', desc: 'Best-performing videos featured prominently', priority: 'medium' },
+                    { id: 'series', title: 'Series playlists created', desc: 'Multi-part content organized as official series', priority: 'low' },
+                    { id: 'shorts-section', title: 'Shorts section organized', desc: 'Short-form content is accessible and organized', priority: 'medium' }
+                ]
+            },
+            seo: {
+                title: 'Video SEO',
+                icon: '🔍',
+                items: [
+                    { id: 'titles', title: 'Optimized video titles', desc: 'Titles include keywords and are under 60 characters', priority: 'high' },
+                    { id: 'descriptions', title: 'Detailed video descriptions', desc: 'First 2 sentences hook viewers, includes timestamps and keywords', priority: 'high' },
+                    { id: 'tags', title: 'Relevant tags on videos', desc: 'Mix of broad and specific tags on each video', priority: 'medium' },
+                    { id: 'thumbnails', title: 'Custom thumbnails on all videos', desc: 'Eye-catching, consistent style, readable text', priority: 'high' },
+                    { id: 'captions', title: 'Captions/subtitles added', desc: 'Accurate captions improve accessibility and SEO', priority: 'medium' },
+                    { id: 'chapters', title: 'Timestamps/chapters added', desc: 'Videos over 10 min have chapter markers', priority: 'medium' },
+                    { id: 'cards', title: 'Info cards added to videos', desc: 'Cards link to related videos and playlists', priority: 'medium' },
+                    { id: 'end-screens', title: 'End screens on all videos', desc: 'Last 20 seconds promote other content', priority: 'high' }
+                ]
+            },
+            engagement: {
+                title: 'Engagement',
+                icon: '💬',
+                items: [
+                    { id: 'community', title: 'Community tab active', desc: 'Regular posts (polls, images, text) to engage audience', priority: 'high' },
+                    { id: 'comments', title: 'Comment moderation set up', desc: 'Blocked words list and held for review settings configured', priority: 'medium' },
+                    { id: 'pinned', title: 'Pinned comments on videos', desc: 'Top comment highlights key info or calls to action', priority: 'medium' },
+                    { id: 'respond', title: 'Responding to comments', desc: 'Regular replies to viewer comments, especially in first hour', priority: 'high' },
+                    { id: 'cta', title: 'Clear calls to action', desc: 'Videos ask viewers to subscribe, comment, and share', priority: 'high' },
+                    { id: 'membership', title: 'Memberships/Super Chat enabled', desc: 'If eligible, monetization features are set up', priority: 'low' }
+                ]
+            },
+            analytics: {
+                title: 'Analytics & Growth',
+                icon: '📊',
+                items: [
+                    { id: 'studio', title: 'YouTube Studio app installed', desc: 'Mobile app for real-time notifications and analytics', priority: 'medium' },
+                    { id: 'metrics', title: 'Key metrics identified', desc: 'Know your avg CTR, retention rate, and subscribers per video', priority: 'high' },
+                    { id: 'audience', title: 'Audience demographics reviewed', desc: 'Understand age, gender, and location of viewers', priority: 'medium' },
+                    { id: 'traffic', title: 'Traffic sources analyzed', desc: 'Know where your views come from (search, suggested, external)', priority: 'medium' },
+                    { id: 'schedule', title: 'Consistent upload schedule', desc: 'Videos published on predictable days/times', priority: 'high' },
+                    { id: 'trends', title: 'Trending topics monitored', desc: 'Track YouTube Trending, Google Trends for opportunities', priority: 'low' }
+                ]
+            }
+        };
+
+        // Storage key
+        const STORAGE_KEY = 'vg_channel_audit';
+
+        // State
+        let checkedItems = {};
+        let activeSection = 'branding';
+
+        // Load saved state
+        function loadState() {
+            try {
+                const saved = localStorage.getItem(STORAGE_KEY);
+                if (saved) {
+                    checkedItems = JSON.parse(saved);
+                }
+            } catch (e) {
+                console.error('Failed to load state:', e);
+            }
+        }
+
+        // Save state
+        function saveState() {
+            try {
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(checkedItems));
+                showSavedIndicator();
+            } catch (e) {
+                console.error('Failed to save state:', e);
+            }
+        }
+
+        // Show saved indicator
+        function showSavedIndicator() {
+            const indicator = document.getElementById('savedIndicator');
+            indicator.style.display = 'inline-flex';
+            setTimeout(() => {
+                indicator.style.display = 'none';
+            }, 2000);
+        }
+
+        // Calculate stats
+        function calculateStats() {
+            let total = 0;
+            let completed = 0;
+            const sectionStats = {};
+
+            Object.keys(checklistData).forEach(section => {
+                const items = checklistData[section].items;
+                const sectionCompleted = items.filter(item => checkedItems[item.id]).length;
+                sectionStats[section] = {
+                    total: items.length,
+                    completed: sectionCompleted
+                };
+                total += items.length;
+                completed += sectionCompleted;
+            });
+
+            return { total, completed, sectionStats };
+        }
+
+        // Update progress display
+        function updateProgress() {
+            const stats = calculateStats();
+            const percent = Math.round((stats.completed / stats.total) * 100);
+
+            document.getElementById('completedCount').textContent = stats.completed;
+            document.getElementById('totalCount').textContent = stats.total;
+            document.getElementById('progressPercent').textContent = percent;
+            document.getElementById('progressBar').style.width = percent + '%';
+
+            // Update section nav counts
+            Object.keys(stats.sectionStats).forEach(section => {
+                const btn = document.querySelector(`[data-section="${section}"] .count`);
+                if (btn) {
+                    btn.textContent = `(${stats.sectionStats[section].completed}/${stats.sectionStats[section].total})`;
+                }
+            });
+
+            // Update score summary
+            renderScoreSummary(stats);
+        }
+
+        // Render section navigation
+        function renderSectionNav() {
+            const container = document.getElementById('sectionNav');
+            const stats = calculateStats();
+
+            container.innerHTML = Object.keys(checklistData).map(section => {
+                const data = checklistData[section];
+                const sectionStats = stats.sectionStats[section];
+                return `
+                    <button class="section-nav-btn ${activeSection === section ? 'active' : ''}"
+                            data-section="${section}"
+                            onclick="switchSection('${section}')">
+                        ${data.icon} ${data.title}
+                        <span class="count">(${sectionStats.completed}/${sectionStats.total})</span>
+                    </button>
+                `;
+            }).join('');
+        }
+
+        // Render score summary
+        function renderScoreSummary(stats) {
+            const container = document.getElementById('scoreSummary');
+
+            const sections = Object.keys(checklistData).map(section => {
+                const data = checklistData[section];
+                const sectionStats = stats.sectionStats[section];
+                const percent = Math.round((sectionStats.completed / sectionStats.total) * 100);
+                return `
+                    <div class="score-item">
+                        <div class="value">${percent}%</div>
+                        <div class="label">${data.title}</div>
+                    </div>
+                `;
+            }).join('');
+
+            const overallPercent = Math.round((stats.completed / stats.total) * 100);
+            container.innerHTML = `
+                <div class="score-item">
+                    <div class="value" style="font-size:40px;">${overallPercent}%</div>
+                    <div class="label">Overall Score</div>
+                </div>
+                ${sections}
+            `;
+        }
+
+        // Render checklist
+        function renderChecklist() {
+            const container = document.getElementById('checklistContainer');
+
+            container.innerHTML = Object.keys(checklistData).map(section => {
+                const data = checklistData[section];
+                const isActive = section === activeSection;
+
+                return `
+                    <div class="audit-section" id="section-${section}" style="${isActive ? '' : 'display:none;'}">
+                        <h2>${data.icon} ${data.title}</h2>
+                        <ul class="checklist">
+                            ${data.items.map(item => `
+                                <li class="checklist-item ${checkedItems[item.id] ? 'completed' : ''}"
+                                    data-id="${item.id}"
+                                    onclick="toggleItem('${item.id}')">
+                                    <div class="checklist-checkbox">
+                                        ${checkedItems[item.id] ? '✓' : ''}
+                                    </div>
+                                    <div class="checklist-content">
+                                        <div class="checklist-title">
+                                            ${item.title}
+                                            <span class="priority-badge priority-${item.priority}">${item.priority}</span>
+                                        </div>
+                                        <div class="checklist-desc">${item.desc}</div>
+                                    </div>
+                                </li>
+                            `).join('')}
+                        </ul>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // Toggle item
+        function toggleItem(id) {
+            checkedItems[id] = !checkedItems[id];
+            saveState();
+
+            // Update UI
+            const item = document.querySelector(`[data-id="${id}"]`);
+            if (item) {
+                item.classList.toggle('completed', checkedItems[id]);
+                item.querySelector('.checklist-checkbox').innerHTML = checkedItems[id] ? '✓' : '';
+            }
+
+            updateProgress();
+            renderSectionNav();
+        }
+
+        // Switch section
+        function switchSection(section) {
+            activeSection = section;
+
+            // Update nav
+            document.querySelectorAll('.section-nav-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.section === section);
+            });
+
+            // Update visibility
+            document.querySelectorAll('.audit-section').forEach(el => {
+                el.style.display = 'none';
+            });
+            document.getElementById(`section-${section}`).style.display = 'block';
+        }
+
+        // Download report
+        function downloadReport() {
+            const stats = calculateStats();
+            const date = new Date().toLocaleDateString();
+
+            let report = `YouTube Channel Audit Report\n`;
+            report += `Generated: ${date}\n`;
+            report += `Overall Score: ${Math.round((stats.completed / stats.total) * 100)}%\n\n`;
+
+            Object.keys(checklistData).forEach(section => {
+                const data = checklistData[section];
+                const sectionStats = stats.sectionStats[section];
+                report += `\n${data.title} (${sectionStats.completed}/${sectionStats.total})\n`;
+                report += '='.repeat(40) + '\n';
+
+                data.items.forEach(item => {
+                    const status = checkedItems[item.id] ? '✓' : '○';
+                    report += `${status} ${item.title}\n`;
+                    if (!checkedItems[item.id]) {
+                        report += `  → ${item.desc}\n`;
+                    }
+                });
+            });
+
+            // Create download
+            const blob = new Blob([report], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `channel-audit-${date.replace(/\//g, '-')}.txt`;
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        // Share progress
+        function shareProgress() {
+            const stats = calculateStats();
+            const percent = Math.round((stats.completed / stats.total) * 100);
+            const text = `I scored ${percent}% on my YouTube channel audit! Check out the free tool: ${window.location.href}`;
+
+            if (navigator.share) {
+                navigator.share({ text, url: window.location.href });
+            } else {
+                navigator.clipboard.writeText(text);
+                alert('Progress copied to clipboard!');
+            }
+        }
+
+        // Reset checklist
+        function resetChecklist() {
+            if (confirm('Are you sure you want to reset all progress? This cannot be undone.')) {
+                checkedItems = {};
+                saveState();
+                renderChecklist();
+                updateProgress();
+                renderSectionNav();
+            }
+        }
+
+        // Initialize
+        loadState();
+        renderSectionNav();
+        renderChecklist();
+        updateProgress();
+    </script>
+</body>
+</html>

@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free YouTube Thumbnail Preview Tool - Test Before You Upload | ViewsGrowth</title>
+    <meta name="description" content="Preview your YouTube thumbnail across all placements: home feed, search results, suggested videos, and mobile. Free tool to test thumbnails before publishing.">
+    <meta name="keywords" content="youtube thumbnail preview, thumbnail tester, youtube thumbnail checker, thumbnail preview tool, test youtube thumbnail">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://viewsgrowth.com/tools/thumbnail-preview.html">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Free YouTube Thumbnail Preview Tool - ViewsGrowth">
+    <meta property="og:description" content="See exactly how your thumbnail will look across YouTube before uploading. Test home feed, search, suggested videos, and mobile views.">
+    <meta property="og:image" content="https://viewsgrowth.com/images/og-image.jpg">
+    <meta property="og:url" content="https://viewsgrowth.com/tools/thumbnail-preview.html">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free YouTube Thumbnail Preview Tool">
+    <meta name="twitter:description" content="Preview your YouTube thumbnail across all placements before uploading.">
+
+    <!-- Schema.org BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://viewsgrowth.com/"
+        }, {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Tools",
+            "item": "https://viewsgrowth.com/tools/"
+        }, {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Thumbnail Preview",
+            "item": "https://viewsgrowth.com/tools/thumbnail-preview.html"
+        }]
+    }
+    </script>
+
+    <!-- Schema.org WebApplication -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "YouTube Thumbnail Preview Tool",
+        "description": "Free tool to preview YouTube thumbnails across all placements including home feed, search results, suggested videos, and mobile before uploading.",
+        "url": "https://viewsgrowth.com/tools/thumbnail-preview.html",
+        "applicationCategory": "DesignApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "featureList": [
+            "Home feed preview",
+            "Search results preview",
+            "Suggested videos preview",
+            "Mobile preview",
+            "Dark and light mode",
+            "Side-by-side comparison",
+            "Export preview images"
+        ]
+    }
+    </script>
+
+    <!-- Schema.org FAQPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [{
+            "@type": "Question",
+            "name": "What is the ideal YouTube thumbnail size?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The ideal YouTube thumbnail size is 1280 x 720 pixels with a 16:9 aspect ratio. The minimum width is 640 pixels. YouTube recommends using JPG, GIF, or PNG formats under 2MB."
+            }
+        }, {
+            "@type": "Question",
+            "name": "How do I preview my YouTube thumbnail before uploading?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Use this free thumbnail preview tool to upload your thumbnail image and see exactly how it will appear across YouTube's interface including home feed, search results, suggested videos sidebar, and mobile devices - all before you publish your video."
+            }
+        }, {
+            "@type": "Question",
+            "name": "Why does my thumbnail look different on YouTube?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "YouTube displays thumbnails at different sizes depending on placement. Home feed thumbnails are larger, while suggested videos show smaller versions. This preview tool shows you all variations so you can ensure your thumbnail is readable at every size."
+            }
+        }]
+    }
+    </script>
+
+    <!-- Critical CSS -->
+    <style>
+        body{margin:0;font-family:system-ui,-apple-system,sans-serif;line-height:1.6;color:#212121}
+        .container{max-width:1200px;margin:0 auto;padding:0 20px}
+        h1{font-size:2.5rem;margin:2rem 0 1rem}
+        @media(max-width:768px){h1{font-size:1.8rem}}
+    </style>
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- Tool-specific styles -->
+    <style>
+        .tool-container {
+            background: var(--bg-light);
+            border-radius: 12px;
+            padding: var(--spacing-lg);
+            margin: var(--spacing-lg) 0;
+        }
+
+        .upload-area {
+            border: 3px dashed var(--border-color);
+            border-radius: 8px;
+            padding: var(--spacing-xl);
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: var(--white);
+        }
+
+        .upload-area:hover, .upload-area.dragover {
+            border-color: var(--primary-color);
+            background: #f0f7ff;
+        }
+
+        .upload-area input[type="file"] {
+            display: none;
+        }
+
+        .upload-icon {
+            font-size: 48px;
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .title-input {
+            width: 100%;
+            padding: 12px 16px;
+            font-size: 16px;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            margin: var(--spacing-md) 0;
+        }
+
+        .title-input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .channel-input {
+            width: 100%;
+            padding: 12px 16px;
+            font-size: 14px;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .view-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: var(--spacing-lg) 0;
+        }
+
+        .view-tab {
+            padding: 10px 20px;
+            border: 2px solid var(--border-color);
+            border-radius: 6px;
+            background: var(--white);
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .view-tab:hover {
+            border-color: var(--primary-color);
+        }
+
+        .view-tab.active {
+            background: var(--primary-color);
+            color: var(--white);
+            border-color: var(--primary-color);
+        }
+
+        .theme-toggle {
+            display: flex;
+            gap: 8px;
+            margin: var(--spacing-md) 0;
+        }
+
+        .theme-btn {
+            padding: 8px 16px;
+            border: 2px solid var(--border-color);
+            border-radius: 6px;
+            background: var(--white);
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        .theme-btn.active {
+            background: #212121;
+            color: var(--white);
+            border-color: #212121;
+        }
+
+        .preview-container {
+            margin: var(--spacing-lg) 0;
+            padding: var(--spacing-lg);
+            border-radius: 8px;
+            min-height: 300px;
+        }
+
+        .preview-light {
+            background: #f9f9f9;
+        }
+
+        .preview-dark {
+            background: #0f0f0f;
+        }
+
+        /* YouTube-style thumbnail cards */
+        .yt-card {
+            display: inline-block;
+            max-width: 100%;
+        }
+
+        .yt-thumbnail {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #ccc;
+        }
+
+        .yt-thumbnail img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .yt-duration {
+            position: absolute;
+            bottom: 8px;
+            right: 8px;
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .yt-meta {
+            display: flex;
+            gap: 12px;
+            padding: 12px 0;
+        }
+
+        .yt-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: #ccc;
+            flex-shrink: 0;
+        }
+
+        .yt-info {
+            flex: 1;
+        }
+
+        .yt-title {
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 1.4;
+            margin: 0 0 4px 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .preview-light .yt-title {
+            color: #0f0f0f;
+        }
+
+        .preview-dark .yt-title {
+            color: #f1f1f1;
+        }
+
+        .yt-channel {
+            font-size: 12px;
+            color: #606060;
+            margin: 0;
+        }
+
+        .preview-dark .yt-channel {
+            color: #aaa;
+        }
+
+        .yt-stats {
+            font-size: 12px;
+            color: #606060;
+            margin: 0;
+        }
+
+        .preview-dark .yt-stats {
+            color: #aaa;
+        }
+
+        /* Different preview sizes */
+        .preview-home .yt-card {
+            width: 360px;
+        }
+
+        .preview-search {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+        }
+
+        .preview-search .yt-thumbnail {
+            width: 360px;
+            flex-shrink: 0;
+        }
+
+        .preview-search .yt-meta {
+            flex-direction: column;
+            padding: 0;
+        }
+
+        .preview-search .yt-avatar {
+            display: none;
+        }
+
+        .preview-search .yt-title {
+            font-size: 18px;
+            -webkit-line-clamp: 2;
+        }
+
+        .preview-suggested .yt-card {
+            display: flex;
+            gap: 8px;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .preview-suggested .yt-thumbnail {
+            width: 168px;
+            flex-shrink: 0;
+        }
+
+        .preview-suggested .yt-meta {
+            padding: 0;
+            flex-direction: column;
+        }
+
+        .preview-suggested .yt-avatar {
+            display: none;
+        }
+
+        .preview-suggested .yt-title {
+            font-size: 14px;
+            -webkit-line-clamp: 2;
+        }
+
+        .preview-mobile .yt-card {
+            width: 100%;
+            max-width: 375px;
+        }
+
+        .preview-mobile .yt-thumbnail {
+            border-radius: 0;
+        }
+
+        /* Export button */
+        .export-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: var(--primary-color);
+            color: var(--white);
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .export-btn:hover {
+            background: #0052a3;
+        }
+
+        .export-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+
+        /* Comparison mode */
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+        }
+
+        .comparison-slot {
+            background: var(--white);
+            border: 2px dashed var(--border-color);
+            border-radius: 8px;
+            padding: var(--spacing-md);
+            text-align: center;
+            min-height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .comparison-slot.has-image {
+            border-style: solid;
+        }
+
+        /* Tips section */
+        .tips-box {
+            background: #e8f4fd;
+            border-left: 4px solid var(--primary-color);
+            padding: var(--spacing-md) var(--spacing-lg);
+            margin: var(--spacing-lg) 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .tips-box h3 {
+            margin-top: 0;
+            color: var(--primary-color);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .preview-search {
+                flex-direction: column;
+            }
+
+            .preview-search .yt-thumbnail {
+                width: 100%;
+            }
+
+            .preview-suggested .yt-card {
+                max-width: 100%;
+            }
+
+            .view-tabs {
+                overflow-x: auto;
+                flex-wrap: nowrap;
+                padding-bottom: 8px;
+            }
+
+            .view-tab {
+                white-space: nowrap;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip to Main Content -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Navigation -->
+    <nav role="navigation" aria-label="Main navigation">
+        <div class="container">
+            <a href="../" class="nav-brand">ViewsGrowth</a>
+            <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <div class="nav-overlay"></div>
+        <div class="nav-menu" role="menu">
+            <div class="nav-section">Getting Started</div>
+            <a href="../getting-started.html" role="menuitem">Getting Started Guide</a>
+            <a href="../production.html" role="menuitem">Production Setup</a>
+
+            <div class="nav-section">Free Tools</div>
+            <a href="./" role="menuitem">All Free Tools</a>
+            <a href="thumbnail-preview.html" role="menuitem" class="active">Thumbnail Preview</a>
+            <a href="earnings-calculator.html" role="menuitem">Earnings Calculator</a>
+            <a href="title-analyzer.html" role="menuitem">Title Analyzer</a>
+            <a href="channel-audit.html" role="menuitem">Channel Audit</a>
+
+            <div class="nav-section">Growth Guides</div>
+            <a href="../youtube-algorithm/" role="menuitem">YouTube Algorithm</a>
+            <a href="../viral-videos/" role="menuitem">Viral Videos</a>
+            <a href="../youtube-growth/" role="menuitem">YouTube Growth</a>
+            <a href="../video-optimization/" role="menuitem">Video Optimization</a>
+            <a href="../trending-channels/" role="menuitem">Trending Channels</a>
+
+            <div class="nav-section">Resources</div>
+            <a href="../tools-reviews/" role="menuitem">Tools Reviews</a>
+            <a href="../analytics.html" role="menuitem">Analytics</a>
+            <a href="../monetization.html" role="menuitem">Monetization</a>
+            <a href="../ai-tools.html" role="menuitem">AI Tools</a>
+            <a href="../case-studies.html" role="menuitem">Case Studies</a>
+            <a href="../resources.html" role="menuitem">Resources</a>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <div class="container">
+            <ol>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="index.html">Tools</a></li>
+                <li>Thumbnail Preview</li>
+            </ol>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="main-content" role="main" class="container">
+        <h1>Free YouTube Thumbnail Preview Tool</h1>
+        <p class="lead">See exactly how your thumbnail will appear across YouTube before uploading. Preview home feed, search results, suggested videos, and mobile placements in both light and dark modes.</p>
+
+        <!-- Tool Container -->
+        <div class="tool-container">
+            <h2>Upload Your Thumbnail</h2>
+
+            <!-- Upload Area -->
+            <div class="upload-area" id="uploadArea">
+                <div class="upload-icon">+</div>
+                <p><strong>Click to upload</strong> or drag and drop</p>
+                <p style="color:#666;font-size:14px;">Recommended: 1280 x 720 pixels (16:9 ratio)</p>
+                <input type="file" id="thumbnailInput" accept="image/*">
+            </div>
+
+            <!-- Title Input -->
+            <input type="text" class="title-input" id="videoTitle" placeholder="Enter your video title here..." value="How to Get 10X More Views on YouTube in 2026">
+
+            <!-- Channel Name Input -->
+            <input type="text" class="channel-input" id="channelName" placeholder="Your channel name" value="ViewsGrowth">
+
+            <!-- View Tabs -->
+            <div class="view-tabs">
+                <button class="view-tab active" data-view="home">Home Feed</button>
+                <button class="view-tab" data-view="search">Search Results</button>
+                <button class="view-tab" data-view="suggested">Suggested Videos</button>
+                <button class="view-tab" data-view="mobile">Mobile</button>
+                <button class="view-tab" data-view="compare">Compare</button>
+            </div>
+
+            <!-- Theme Toggle -->
+            <div class="theme-toggle">
+                <button class="theme-btn active" data-theme="light">Light Mode</button>
+                <button class="theme-btn" data-theme="dark">Dark Mode</button>
+            </div>
+
+            <!-- Preview Container -->
+            <div class="preview-container preview-light" id="previewContainer">
+                <div id="previewContent">
+                    <p style="text-align:center;color:#666;">Upload a thumbnail to see the preview</p>
+                </div>
+            </div>
+
+            <!-- Export Button -->
+            <button class="export-btn" id="exportBtn" disabled>
+                <span>Download Preview</span>
+            </button>
+        </div>
+
+        <!-- Thumbnail Tips -->
+        <div class="tips-box">
+            <h3>Thumbnail Best Practices</h3>
+            <ul>
+                <li><strong>Size:</strong> 1280 x 720 pixels minimum (16:9 aspect ratio)</li>
+                <li><strong>File size:</strong> Under 2MB (JPG, PNG, or GIF)</li>
+                <li><strong>Text:</strong> Keep it large and readable at small sizes</li>
+                <li><strong>Faces:</strong> Expressive faces increase CTR by up to 38%</li>
+                <li><strong>Contrast:</strong> High contrast stands out in the feed</li>
+                <li><strong>Consistency:</strong> Use brand colors for recognition</li>
+            </ul>
+        </div>
+
+        <!-- FAQ Section -->
+        <section>
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="card" style="margin-bottom:var(--spacing-md);">
+                <h3>What is the ideal YouTube thumbnail size?</h3>
+                <p>The ideal YouTube thumbnail size is 1280 x 720 pixels with a 16:9 aspect ratio. The minimum width is 640 pixels. YouTube recommends using JPG, GIF, or PNG formats under 2MB. This resolution ensures your thumbnail looks sharp across all devices and placements.</p>
+            </div>
+
+            <div class="card" style="margin-bottom:var(--spacing-md);">
+                <h3>How do I preview my YouTube thumbnail before uploading?</h3>
+                <p>Use this free thumbnail preview tool to upload your thumbnail image and see exactly how it will appear across YouTube's interface including home feed, search results, suggested videos sidebar, and mobile devices - all before you publish your video. Simply drag and drop your image or click to upload.</p>
+            </div>
+
+            <div class="card" style="margin-bottom:var(--spacing-md);">
+                <h3>Why does my thumbnail look different on YouTube?</h3>
+                <p>YouTube displays thumbnails at different sizes depending on placement. Home feed thumbnails are larger (around 360px wide), while suggested videos show smaller versions (168px wide). Thumbnails also appear differently in dark mode versus light mode. This preview tool shows you all variations so you can ensure your thumbnail is readable at every size.</p>
+            </div>
+
+            <div class="card" style="margin-bottom:var(--spacing-md);">
+                <h3>What makes a good YouTube thumbnail?</h3>
+                <p>Effective YouTube thumbnails share these characteristics: high contrast colors that stand out in the feed, large readable text (3-4 words maximum), expressive human faces when relevant, consistent branding elements, and a clear focal point. The best thumbnails tell viewers exactly what to expect while creating curiosity.</p>
+            </div>
+        </section>
+
+        <!-- Related Tools -->
+        <section>
+            <h2>More Free YouTube Tools</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>YouTube Earnings Calculator</h3>
+                    <p>Estimate how much money you can make based on views, niche, and geography.</p>
+                    <a href="earnings-calculator.html">Use Calculator &rarr;</a>
+                </div>
+                <div class="card">
+                    <h3>Video Title Analyzer</h3>
+                    <p>Get a score and optimization suggestions for your video titles.</p>
+                    <a href="title-analyzer.html">Analyze Title &rarr;</a>
+                </div>
+                <div class="card">
+                    <h3>Channel Audit Checklist</h3>
+                    <p>Interactive checklist to optimize your channel for growth.</p>
+                    <a href="channel-audit.html">Start Audit &rarr;</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <h2>Ready to Optimize Your Thumbnails?</h2>
+            <p>Learn the psychology behind high-CTR thumbnails and how the algorithm rewards them.</p>
+            <a href="../youtube-algorithm/ctr-benchmarks.html" class="cta-button">CTR Benchmarks Guide &rarr;</a>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer role="contentinfo">
+        <div class="container">
+            <p>&copy; 2026 ViewsGrowth. Free tools for YouTube creators. <a href="../resources.html">More Resources</a></p>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <a href="#" class="back-to-top" aria-label="Back to top">↑</a>
+
+    <!-- Navigation Script -->
+    <script>
+    (function() {
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        const navOverlay = document.querySelector('.nav-overlay');
+        function toggleMenu() {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            navOverlay.classList.toggle('active');
+            document.body.classList.toggle('menu-open');
+            hamburger.setAttribute('aria-expanded', navMenu.classList.contains('active'));
+        }
+        function closeMenu() {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+            navOverlay.classList.remove('active');
+            document.body.classList.remove('menu-open');
+            hamburger.setAttribute('aria-expanded', 'false');
+        }
+        hamburger.addEventListener('click', toggleMenu);
+        navOverlay.addEventListener('click', closeMenu);
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && navMenu.classList.contains('active')) closeMenu();
+        });
+        navMenu.querySelectorAll('a').forEach(function(link) { link.addEventListener('click', closeMenu); });
+    })();
+    </script>
+
+    <!-- JavaScript for Tool Functionality -->
+    <script>
+        // DOM Elements
+        const uploadArea = document.getElementById('uploadArea');
+        const thumbnailInput = document.getElementById('thumbnailInput');
+        const videoTitle = document.getElementById('videoTitle');
+        const channelName = document.getElementById('channelName');
+        const previewContainer = document.getElementById('previewContainer');
+        const previewContent = document.getElementById('previewContent');
+        const exportBtn = document.getElementById('exportBtn');
+        const viewTabs = document.querySelectorAll('.view-tab');
+        const themeBtns = document.querySelectorAll('.theme-btn');
+
+        let currentImage = null;
+        let currentView = 'home';
+        let currentTheme = 'light';
+
+        // Upload handling
+        uploadArea.addEventListener('click', () => thumbnailInput.click());
+
+        uploadArea.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadArea.classList.add('dragover');
+        });
+
+        uploadArea.addEventListener('dragleave', () => {
+            uploadArea.classList.remove('dragover');
+        });
+
+        uploadArea.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadArea.classList.remove('dragover');
+            const file = e.dataTransfer.files[0];
+            if (file && file.type.startsWith('image/')) {
+                handleImage(file);
+            }
+        });
+
+        thumbnailInput.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (file) {
+                handleImage(file);
+            }
+        });
+
+        function handleImage(file) {
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                currentImage = e.target.result;
+                updatePreview();
+                exportBtn.disabled = false;
+            };
+            reader.readAsDataURL(file);
+        }
+
+        // View tabs
+        viewTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                viewTabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                currentView = tab.dataset.view;
+                updatePreview();
+            });
+        });
+
+        // Theme toggle
+        themeBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                themeBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                currentTheme = btn.dataset.theme;
+                previewContainer.className = `preview-container preview-${currentTheme}`;
+                updatePreview();
+            });
+        });
+
+        // Update on title/channel change
+        videoTitle.addEventListener('input', updatePreview);
+        channelName.addEventListener('input', updatePreview);
+
+        function updatePreview() {
+            if (!currentImage) {
+                previewContent.innerHTML = '<p style="text-align:center;color:#666;">Upload a thumbnail to see the preview</p>';
+                return;
+            }
+
+            const title = videoTitle.value || 'Your Video Title';
+            const channel = channelName.value || 'Your Channel';
+            const views = '123K views';
+            const time = '2 days ago';
+
+            let html = '';
+
+            if (currentView === 'home') {
+                html = `
+                    <div class="preview-home">
+                        <div class="yt-card">
+                            <div class="yt-thumbnail">
+                                <img src="${currentImage}" alt="Thumbnail preview">
+                                <span class="yt-duration">12:34</span>
+                            </div>
+                            <div class="yt-meta">
+                                <div class="yt-avatar"></div>
+                                <div class="yt-info">
+                                    <p class="yt-title">${title}</p>
+                                    <p class="yt-channel">${channel}</p>
+                                    <p class="yt-stats">${views} • ${time}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            } else if (currentView === 'search') {
+                html = `
+                    <div class="preview-search">
+                        <div class="yt-thumbnail">
+                            <img src="${currentImage}" alt="Thumbnail preview">
+                            <span class="yt-duration">12:34</span>
+                        </div>
+                        <div class="yt-meta">
+                            <div class="yt-info">
+                                <p class="yt-title">${title}</p>
+                                <p class="yt-stats">${views} • ${time}</p>
+                                <p class="yt-channel">${channel}</p>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            } else if (currentView === 'suggested') {
+                html = `
+                    <div class="preview-suggested">
+                        <div class="yt-card">
+                            <div class="yt-thumbnail">
+                                <img src="${currentImage}" alt="Thumbnail preview">
+                                <span class="yt-duration">12:34</span>
+                            </div>
+                            <div class="yt-meta">
+                                <div class="yt-info">
+                                    <p class="yt-title">${title}</p>
+                                    <p class="yt-channel">${channel}</p>
+                                    <p class="yt-stats">${views}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            } else if (currentView === 'mobile') {
+                html = `
+                    <div class="preview-mobile">
+                        <div class="yt-card">
+                            <div class="yt-thumbnail">
+                                <img src="${currentImage}" alt="Thumbnail preview">
+                                <span class="yt-duration">12:34</span>
+                            </div>
+                            <div class="yt-meta">
+                                <div class="yt-avatar"></div>
+                                <div class="yt-info">
+                                    <p class="yt-title">${title}</p>
+                                    <p class="yt-channel">${channel} • ${views} • ${time}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            } else if (currentView === 'compare') {
+                html = `
+                    <div class="comparison-grid">
+                        <div>
+                            <h4 style="margin:0 0 8px;color:${currentTheme === 'dark' ? '#fff' : '#000'}">Home Feed</h4>
+                            <div class="preview-home">
+                                <div class="yt-card">
+                                    <div class="yt-thumbnail">
+                                        <img src="${currentImage}" alt="Thumbnail preview">
+                                        <span class="yt-duration">12:34</span>
+                                    </div>
+                                    <div class="yt-meta">
+                                        <div class="yt-avatar"></div>
+                                        <div class="yt-info">
+                                            <p class="yt-title">${title}</p>
+                                            <p class="yt-channel">${channel}</p>
+                                            <p class="yt-stats">${views}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 style="margin:0 0 8px;color:${currentTheme === 'dark' ? '#fff' : '#000'}">Suggested</h4>
+                            <div class="preview-suggested">
+                                <div class="yt-card">
+                                    <div class="yt-thumbnail">
+                                        <img src="${currentImage}" alt="Thumbnail preview">
+                                        <span class="yt-duration">12:34</span>
+                                    </div>
+                                    <div class="yt-meta">
+                                        <div class="yt-info">
+                                            <p class="yt-title">${title}</p>
+                                            <p class="yt-channel">${channel}</p>
+                                            <p class="yt-stats">${views}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+
+            previewContent.innerHTML = html;
+        }
+
+        // Export functionality
+        exportBtn.addEventListener('click', () => {
+            if (!currentImage) return;
+
+            // Create a canvas to capture the preview
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            const previewEl = previewContent.querySelector('.yt-card') || previewContent.querySelector('.preview-search');
+
+            // Simple download of the original image with title overlay
+            const link = document.createElement('a');
+            link.download = 'thumbnail-preview.png';
+            link.href = currentImage;
+            link.click();
+        });
+
+        // Initialize
+        updatePreview();
+    </script>
+</body>
+</html>
