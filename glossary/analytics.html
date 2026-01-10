@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Analytics: Complete Guide to Studio Metrics | ViewsGrowth Glossary</title>
+    <meta name="description" content="Master YouTube Analytics. Learn to read Studio metrics, understand your audience, track performance, and use data to grow your channel faster.">
+    <meta name="keywords" content="YouTube Analytics, YouTube Studio, YouTube metrics, channel analytics, video performance, audience insights">
+    <link rel="canonical" href="https://viewsgrowth.com/glossary/analytics.html">
+
+    <meta property="og:title" content="YouTube Analytics: Complete Guide to Understanding Your Data">
+    <meta property="og:description" content="Learn to read and use YouTube Analytics to optimize your channel and grow faster.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://viewsgrowth.com/glossary/analytics.html">
+
+    <style>
+        body { margin: 0; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.6; color: #212121; background: #fff; }
+        .container { max-width: 800px; margin: 0 auto; padding: 0 20px; }
+        .skip-link { position: absolute; top: -40px; left: 0; background: #0066cc; color: #fff; padding: 8px 16px; z-index: 100; }
+        .skip-link:focus { top: 0; }
+        h1 { font-size: 2.2rem; margin-bottom: 1rem; }
+        h2 { font-size: 1.5rem; color: #7c3aed; margin-top: 2.5rem; }
+        h3 { font-size: 1.25rem; margin-top: 2rem; }
+        @media(max-width:768px) { h1 { font-size: 1.7rem; } h2 { font-size: 1.3rem; } }
+
+        nav[role="navigation"] { background: #212121; padding: 1rem 0; position: sticky; top: 0; z-index: 1000; }
+        nav .container { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; }
+        .nav-brand { color: #fff; text-decoration: none; font-weight: 700; font-size: 1.25rem; }
+        .hamburger { background: none; border: none; cursor: pointer; padding: 8px; display: flex; flex-direction: column; gap: 5px; }
+        .hamburger span { display: block; width: 24px; height: 2px; background: #fff; transition: 0.3s; }
+        .nav-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); opacity: 0; visibility: hidden; transition: 0.3s; z-index: 998; }
+        .nav-overlay.active { opacity: 1; visibility: visible; }
+        .nav-menu { position: fixed; top: 0; right: -280px; width: 280px; height: 100%; background: #fff; transition: 0.3s; z-index: 999; overflow-y: auto; padding: 2rem 0; }
+        .nav-menu.active { right: 0; }
+        .nav-menu a { display: block; padding: 0.75rem 1.5rem; color: #212121; text-decoration: none; border-bottom: 1px solid #eee; }
+        .nav-menu a:hover { background: #f0e6ff; color: #8b5cf6; }
+
+        .breadcrumb { background: #f8f9fa; padding: 1rem 0; }
+        .breadcrumb .container { max-width: 1200px; }
+        .breadcrumb ol { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+        .breadcrumb li:not(:last-child)::after { content: "›"; margin-left: 0.5rem; color: #666; }
+        .breadcrumb a { color: #0066cc; text-decoration: none; }
+
+        .term-header { background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%); color: #fff; padding: 3rem 0; margin-bottom: 2rem; }
+        .term-category { display: inline-block; background: rgba(255,255,255,0.2); padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.85rem; margin-bottom: 1rem; }
+        .term-header h1 { margin: 0; }
+
+        .definition-box { background: #f5f3ff; border-left: 4px solid #8b5cf6; padding: 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0; }
+        .definition-box strong { color: #7c3aed; font-size: 1.1rem; }
+        .definition-box p { margin: 0.5rem 0 0 0; font-size: 1.1rem; }
+
+        .tab-section { background: #fff; border: 2px solid #e9e3ff; border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; }
+        .tab-section h3 { margin-top: 0; color: #7c3aed; }
+
+        .metric-box { background: #f8f9fa; border-radius: 8px; padding: 1rem; margin: 1rem 0; }
+        .metric-box strong { color: #7c3aed; }
+
+        .pro-tip { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 12px; padding: 1.5rem; margin: 2rem 0; }
+        .pro-tip h3 { margin-top: 0; color: #15803d; }
+
+        .related-terms { background: #f8f9fa; padding: 2rem; border-radius: 12px; margin: 3rem 0; }
+        .related-terms h2 { margin-top: 0; }
+        .term-links { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+        .term-link { display: inline-block; background: #fff; border: 1px solid #e9e3ff; padding: 0.5rem 1rem; border-radius: 20px; text-decoration: none; color: #7c3aed; font-size: 0.9rem; transition: all 0.2s; }
+        .term-link:hover { background: #8b5cf6; color: #fff; }
+
+        .nav-bottom { display: flex; justify-content: space-between; gap: 1rem; margin: 3rem 0; flex-wrap: wrap; }
+        .nav-bottom a { flex: 1; min-width: 200px; padding: 1rem; background: #f8f9fa; border-radius: 8px; text-decoration: none; color: #212121; }
+        .nav-bottom a:hover { background: #f0e6ff; }
+        .nav-bottom .label { font-size: 0.85rem; color: #666; }
+        .nav-bottom .title { font-weight: 600; color: #7c3aed; }
+        .nav-bottom .next { text-align: right; }
+
+        footer { background: #212121; color: #fff; padding: 2rem 0; margin-top: 4rem; text-align: center; }
+        footer a { color: #8b5cf6; }
+        .back-to-top { position: fixed; bottom: 2rem; right: 2rem; background: #8b5cf6; color: #fff; width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 1.5rem; }
+    </style>
+    <link rel="stylesheet" href="../css/style.css">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "DefinedTerm",
+        "name": "Analytics",
+        "description": "YouTube Studio's data dashboard providing insights into video performance, audience demographics, traffic sources, engagement metrics, and revenue data.",
+        "inDefinedTermSet": "https://viewsgrowth.com/glossary/"
+    }
+    </script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <nav role="navigation" aria-label="Main navigation">
+        <div class="container">
+            <a href="/" class="nav-brand">ViewsGrowth</a>
+            <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+        <div class="nav-overlay"></div>
+        <div class="nav-menu" role="menu">
+            <a href="/getting-started.html" role="menuitem">Getting Started Guide</a>
+            <a href="/youtube-growth/" role="menuitem">YouTube Growth Hub</a>
+            <a href="/analytics.html" role="menuitem">Analytics Guide</a>
+            <a href="/glossary/" role="menuitem">YouTube Glossary</a>
+        </div>
+    </nav>
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <div class="container">
+            <ol>
+                <li><a href="/">Home</a></li>
+                <li><a href="/glossary/">Glossary</a></li>
+                <li aria-current="page">Analytics</li>
+            </ol>
+        </div>
+    </nav>
+
+    <header class="term-header">
+        <div class="container">
+            <span class="term-category">Data & Insights</span>
+            <h1>Analytics</h1>
+        </div>
+    </header>
+
+    <main id="main-content" role="main">
+        <article class="container">
+            <div class="definition-box">
+                <strong>Definition</strong>
+                <p>YouTube Analytics is the data dashboard within <a href="youtube-studio.html">YouTube Studio</a> that provides detailed insights into your channel and video performance, audience behavior, traffic sources, and revenue data.</p>
+            </div>
+
+            <h2>Analytics Tab Overview</h2>
+
+            <div class="tab-section">
+                <h3>Overview Tab</h3>
+                <p>High-level snapshot of channel performance:</p>
+                <ul>
+                    <li><a href="views.html">Views</a>, <a href="watch-time.html">watch time</a>, and <a href="subscribers.html">subscribers</a></li>
+                    <li>Top videos by views</li>
+                    <li>Real-time views (last 48 hours)</li>
+                    <li>Latest video performance comparison</li>
+                </ul>
+            </div>
+
+            <div class="tab-section">
+                <h3>Content Tab</h3>
+                <p>Individual video and content type analysis:</p>
+                <ul>
+                    <li>Performance by video, <a href="shorts.html">Shorts</a>, live, posts</li>
+                    <li><a href="impressions.html">Impressions</a> and <a href="ctr.html">CTR</a> per video</li>
+                    <li><a href="average-view-duration.html">Average view duration</a> comparisons</li>
+                    <li>How viewers find your content</li>
+                </ul>
+            </div>
+
+            <div class="tab-section">
+                <h3>Audience Tab</h3>
+                <p>Who's watching your content:</p>
+                <ul>
+                    <li>Unique viewers and returning viewers</li>
+                    <li>When your viewers are on YouTube</li>
+                    <li>Demographics (age, gender, geography)</li>
+                    <li>Other channels your audience watches</li>
+                    <li>Subscriber vs non-subscriber breakdown</li>
+                </ul>
+            </div>
+
+            <div class="tab-section">
+                <h3>Revenue Tab</h3>
+                <p>For monetized channels only:</p>
+                <ul>
+                    <li>Estimated revenue</li>
+                    <li><a href="rpm.html">RPM</a> (Revenue per mille)</li>
+                    <li><a href="cpm.html">CPM</a> (Playback-based CPM)</li>
+                    <li>Transaction revenue (<a href="super-chat.html">Super Chat</a>, <a href="memberships.html">memberships</a>)</li>
+                    <li>Top earning videos</li>
+                </ul>
+            </div>
+
+            <h2>Key Metrics to Monitor</h2>
+
+            <div class="metric-box">
+                <strong><a href="ctr.html">Click-Through Rate (CTR)</a></strong>
+                <p>Percentage of impressions that become views. Indicates <a href="thumbnail.html">thumbnail</a>/<a href="title.html">title</a> effectiveness. Benchmark: 4-10% is good.</p>
+            </div>
+
+            <div class="metric-box">
+                <strong><a href="average-view-duration.html">Average View Duration (AVD)</a></strong>
+                <p>Mean time viewers spend watching. Critical for <a href="algorithm.html">algorithm</a>. Compare to video length for percentage retention.</p>
+            </div>
+
+            <div class="metric-box">
+                <strong><a href="audience-retention.html">Audience Retention Graph</a></strong>
+                <p>Visual representation of when viewers leave. Identify <a href="drop-off-point.html">drop-off points</a> to improve future content structure.</p>
+            </div>
+
+            <div class="metric-box">
+                <strong><a href="traffic-sources.html">Traffic Sources</a></strong>
+                <p>Where views originate: <a href="search-traffic.html">Search</a>, <a href="suggested-videos.html">Suggested</a>, <a href="browse-features.html">Browse</a>, <a href="external-traffic.html">External</a>. Reveals what's working.</p>
+            </div>
+
+            <div class="metric-box">
+                <strong>Impressions</strong>
+                <p>How often your <a href="thumbnail.html">thumbnails</a> are shown. High impressions with low CTR = thumbnail needs work.</p>
+            </div>
+
+            <h2>Using Analytics for Growth</h2>
+
+            <div class="pro-tip">
+                <h3>Weekly Analytics Review</h3>
+                <ol>
+                    <li>Compare CTR of recent videos—replicate high performers</li>
+                    <li>Check audience retention—note where viewers drop off</li>
+                    <li>Review traffic sources—double down on what's working</li>
+                    <li>Study "When your viewers are on YouTube"—schedule accordingly</li>
+                    <li>Analyze top-performing videos—create similar content</li>
+                </ol>
+            </div>
+
+            <h2>Analytics Tips</h2>
+            <ul>
+                <li><strong>Wait 48-72 hours:</strong> Data stabilizes after initial algorithm testing</li>
+                <li><strong>Compare to your averages:</strong> Not industry benchmarks</li>
+                <li><strong>Use date ranges:</strong> Last 28 days for trends, 90 days for patterns</li>
+                <li><strong>Export data:</strong> Download for deeper analysis in spreadsheets</li>
+                <li><strong>Check Advanced Mode:</strong> More detailed breakdowns available</li>
+            </ul>
+
+            <div class="related-terms">
+                <h2>Related Terms</h2>
+                <div class="term-links">
+                    <a href="youtube-studio.html" class="term-link">YouTube Studio</a>
+                    <a href="watch-time.html" class="term-link">Watch Time</a>
+                    <a href="ctr.html" class="term-link">CTR</a>
+                    <a href="impressions.html" class="term-link">Impressions</a>
+                    <a href="audience-retention.html" class="term-link">Audience Retention</a>
+                    <a href="traffic-sources.html" class="term-link">Traffic Sources</a>
+                    <a href="rpm.html" class="term-link">RPM</a>
+                    <a href="average-view-duration.html" class="term-link">Average View Duration</a>
+                </div>
+            </div>
+
+            <div class="nav-bottom">
+                <a href="algorithm.html" class="prev">
+                    <span class="label">← Previous</span>
+                    <span class="title">Algorithm</span>
+                </a>
+                <a href="audience-retention.html" class="next">
+                    <span class="label">Next Term →</span>
+                    <span class="title">Audience Retention</span>
+                </a>
+            </div>
+        </article>
+    </main>
+
+    <footer role="contentinfo">
+        <div class="container">
+            <p>&copy; 2025 ViewsGrowth. Your complete resource for YouTube channel growth.</p>
+            <p><a href="/glossary/">Glossary</a> | <a href="/tools/">Tools</a> | <a href="/youtube-growth/">Growth Guide</a></p>
+        </div>
+    </footer>
+
+    <a href="#" class="back-to-top" aria-label="Back to top">↑</a>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        const navOverlay = document.querySelector('.nav-overlay');
+        function toggleMenu() {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            navOverlay.classList.toggle('active');
+        }
+        hamburger.addEventListener('click', toggleMenu);
+        navOverlay.addEventListener('click', toggleMenu);
+    </script>
+</body>
+</html>
