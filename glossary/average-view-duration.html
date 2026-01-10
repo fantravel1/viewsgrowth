@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Average View Duration (AVD): Key YouTube Metric Explained | ViewsGrowth Glossary</title>
+    <meta name="description" content="Learn about Average View Duration on YouTube - how it's calculated, why it matters for the algorithm, and strategies to improve your AVD for better rankings.">
+    <meta name="keywords" content="average view duration, AVD YouTube, video retention, YouTube metrics, watch time average">
+    <link rel="canonical" href="https://viewsgrowth.com/glossary/average-view-duration.html">
+    <meta property="og:title" content="Average View Duration: Essential YouTube Metric Guide">
+    <meta property="og:description" content="Master Average View Duration to improve your YouTube algorithm performance.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://viewsgrowth.com/glossary/average-view-duration.html">
+    <style>
+        body { margin: 0; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.6; color: #212121; background: #fff; }
+        .container { max-width: 800px; margin: 0 auto; padding: 0 20px; }
+        h1 { font-size: 2.2rem; margin-bottom: 1rem; }
+        h2 { font-size: 1.5rem; color: #7c3aed; margin-top: 2.5rem; }
+        h3 { font-size: 1.25rem; margin-top: 2rem; }
+        @media(max-width:768px) { h1 { font-size: 1.7rem; } h2 { font-size: 1.3rem; } }
+        nav[role="navigation"] { background: #212121; padding: 1rem 0; position: sticky; top: 0; z-index: 1000; }
+        nav .container { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; }
+        .nav-brand { color: #fff; text-decoration: none; font-weight: 700; font-size: 1.25rem; }
+        .hamburger { background: none; border: none; cursor: pointer; padding: 8px; display: flex; flex-direction: column; gap: 5px; }
+        .hamburger span { display: block; width: 24px; height: 2px; background: #fff; transition: 0.3s; }
+        .nav-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); opacity: 0; visibility: hidden; transition: 0.3s; z-index: 998; }
+        .nav-overlay.active { opacity: 1; visibility: visible; }
+        .nav-menu { position: fixed; top: 0; right: -280px; width: 280px; height: 100%; background: #fff; transition: 0.3s; z-index: 999; overflow-y: auto; padding: 2rem 0; }
+        .nav-menu.active { right: 0; }
+        .nav-menu a { display: block; padding: 0.75rem 1.5rem; color: #212121; text-decoration: none; border-bottom: 1px solid #eee; }
+        .nav-menu a:hover { background: #f0e6ff; color: #8b5cf6; }
+        .breadcrumb { background: #f8f9fa; padding: 1rem 0; }
+        .breadcrumb .container { max-width: 1200px; }
+        .breadcrumb ol { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+        .breadcrumb li:not(:last-child)::after { content: "›"; margin-left: 0.5rem; color: #666; }
+        .breadcrumb a { color: #0066cc; text-decoration: none; }
+        .term-header { background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%); color: #fff; padding: 3rem 0; margin-bottom: 2rem; }
+        .term-category { display: inline-block; background: rgba(255,255,255,0.2); padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.85rem; margin-bottom: 1rem; }
+        .term-header h1 { margin: 0; }
+        .definition-box { background: #f5f3ff; border-left: 4px solid #8b5cf6; padding: 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0; }
+        .definition-box strong { color: #7c3aed; font-size: 1.1rem; }
+        .definition-box p { margin: 0.5rem 0 0 0; font-size: 1.1rem; }
+        .formula-box { background: #1e1b4b; color: #fff; padding: 1.5rem; border-radius: 12px; margin: 2rem 0; text-align: center; }
+        .formula { font-size: 1.25rem; font-family: monospace; margin: 1rem 0; }
+        .tip-box { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 12px; padding: 1.5rem; margin: 2rem 0; }
+        .tip-box h3 { margin-top: 0; color: #15803d; }
+        .related-terms { background: #f8f9fa; padding: 2rem; border-radius: 12px; margin: 3rem 0; }
+        .related-terms h2 { margin-top: 0; }
+        .term-links { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+        .term-link { display: inline-block; background: #fff; border: 1px solid #e9e3ff; padding: 0.5rem 1rem; border-radius: 20px; text-decoration: none; color: #7c3aed; font-size: 0.9rem; transition: all 0.2s; }
+        .term-link:hover { background: #8b5cf6; color: #fff; }
+        .nav-bottom { display: flex; justify-content: space-between; gap: 1rem; margin: 3rem 0; flex-wrap: wrap; }
+        .nav-bottom a { flex: 1; min-width: 200px; padding: 1rem; background: #f8f9fa; border-radius: 8px; text-decoration: none; color: #212121; }
+        .nav-bottom .label { font-size: 0.85rem; color: #666; }
+        .nav-bottom .title { font-weight: 600; color: #7c3aed; }
+        footer { background: #212121; color: #fff; padding: 2rem 0; margin-top: 4rem; text-align: center; }
+        footer a { color: #8b5cf6; }
+    </style>
+    <link rel="stylesheet" href="../css/style.css">
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "DefinedTerm", "name": "Average View Duration", "description": "The mean time viewers spend watching a video, calculated by dividing total watch time by total views.", "inDefinedTermSet": "https://viewsgrowth.com/glossary/"}
+    </script>
+</head>
+<body>
+    <nav role="navigation" aria-label="Main navigation">
+        <div class="container">
+            <a href="/" class="nav-brand">ViewsGrowth</a>
+            <button class="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+        </div>
+        <div class="nav-overlay"></div>
+        <div class="nav-menu" role="menu">
+            <a href="/glossary/" role="menuitem">← Back to Glossary</a>
+            <a href="/youtube-growth/" role="menuitem">YouTube Growth Hub</a>
+            <a href="/analytics.html" role="menuitem">Analytics Guide</a>
+        </div>
+    </nav>
+    <nav class="breadcrumb"><div class="container"><ol><li><a href="/">Home</a></li><li><a href="/glossary/">Glossary</a></li><li>Average View Duration</li></ol></div></nav>
+    <header class="term-header"><div class="container"><span class="term-category">Core Metric</span><h1>Average View Duration (AVD)</h1></div></header>
+    <main id="main-content" role="main">
+        <article class="container">
+            <div class="definition-box">
+                <strong>Definition</strong>
+                <p>Average View Duration is the mean time viewers spend watching a video. It's calculated by dividing total <a href="watch-time.html">watch time</a> by total <a href="views.html">views</a>, indicating how engaging your content is on average.</p>
+            </div>
+            <div class="formula-box">
+                <h3>How AVD Is Calculated</h3>
+                <div class="formula">AVD = Total Watch Time ÷ Total Views</div>
+                <p>Example: 10,000 minutes ÷ 2,000 views = 5 minutes AVD</p>
+            </div>
+            <h2>Why AVD Matters</h2>
+            <ul>
+                <li><strong>Algorithm Signal:</strong> Higher AVD tells the <a href="algorithm.html">algorithm</a> your content satisfies viewers</li>
+                <li><strong>Quality Indicator:</strong> Shows whether viewers find your content worth watching</li>
+                <li><strong>Comparison Metric:</strong> Compare across videos to identify what works</li>
+                <li><strong>Monetization Impact:</strong> Longer AVD means more <a href="mid-roll-ads.html">mid-roll ad</a> opportunities</li>
+            </ul>
+            <h2>AVD vs. Retention Percentage</h2>
+            <p>A 10-minute video with 5-minute AVD has 50% <a href="retention.html">retention</a>. A 3-minute video with 2-minute AVD has 67% retention but lower absolute AVD. The algorithm considers both, but total watch time generated matters most.</p>
+            <h2>How to Improve AVD</h2>
+            <div class="tip-box">
+                <h3>Proven Strategies</h3>
+                <ul>
+                    <li>Strong <a href="hook.html">hook</a> in first 30 seconds</li>
+                    <li>Use <a href="pattern-interrupt.html">pattern interrupts</a> every 60-90 seconds</li>
+                    <li>Add <a href="chapters.html">chapters</a> for navigation</li>
+                    <li>Tease upcoming content ("Later I'll show you...")</li>
+                    <li>Cut ruthlessly—remove anything that doesn't add value</li>
+                    <li>Match video length to topic depth</li>
+                </ul>
+            </div>
+            <h2>Good AVD Benchmarks</h2>
+            <ul>
+                <li><strong>50%+ of video length:</strong> Excellent</li>
+                <li><strong>40-50%:</strong> Good</li>
+                <li><strong>30-40%:</strong> Average</li>
+                <li><strong>Below 30%:</strong> Needs improvement</li>
+            </ul>
+            <p>Compare to YOUR channel averages, not industry benchmarks. Improvement over time is what matters.</p>
+            <div class="related-terms">
+                <h2>Related Terms</h2>
+                <div class="term-links">
+                    <a href="watch-time.html" class="term-link">Watch Time</a>
+                    <a href="audience-retention.html" class="term-link">Audience Retention</a>
+                    <a href="retention.html" class="term-link">Retention</a>
+                    <a href="hook.html" class="term-link">Hook</a>
+                    <a href="analytics.html" class="term-link">Analytics</a>
+                    <a href="algorithm.html" class="term-link">Algorithm</a>
+                    <a href="drop-off-point.html" class="term-link">Drop-Off Point</a>
+                </div>
+            </div>
+            <div class="nav-bottom">
+                <a href="audience-retention.html"><span class="label">← Previous</span><span class="title">Audience Retention</span></a>
+                <a href="browse-features.html" style="text-align:right"><span class="label">Next →</span><span class="title">Browse Features</span></a>
+            </div>
+        </article>
+    </main>
+    <footer><div class="container"><p>© 2025 ViewsGrowth. <a href="/glossary/">Glossary</a> | <a href="/youtube-growth/">Growth Guide</a></p></div></footer>
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        const navOverlay = document.querySelector('.nav-overlay');
+        hamburger.addEventListener('click', () => { hamburger.classList.toggle('active'); navMenu.classList.toggle('active'); navOverlay.classList.toggle('active'); });
+        navOverlay.addEventListener('click', () => { hamburger.classList.remove('active'); navMenu.classList.remove('active'); navOverlay.classList.remove('active'); });
+    </script>
+</body>
+</html>
