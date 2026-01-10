@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CTR (Click-Through Rate) on YouTube: Complete Guide | ViewsGrowth Glossary</title>
+    <meta name="description" content="Learn what CTR means on YouTube, what's a good click-through rate, and proven strategies to improve your thumbnail and title performance.">
+    <meta name="keywords" content="YouTube CTR, click-through rate YouTube, good CTR YouTube, improve CTR, thumbnail CTR, YouTube impressions CTR">
+    <link rel="canonical" href="https://viewsgrowth.com/glossary/ctr.html">
+
+    <meta property="og:title" content="YouTube CTR Explained: What's a Good Click-Through Rate?">
+    <meta property="og:description" content="Master YouTube CTR optimization. Learn benchmarks, improvement strategies, and how CTR affects your video performance.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://viewsgrowth.com/glossary/ctr.html">
+
+    <style>
+        body { margin: 0; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.6; color: #212121; background: #fff; }
+        .container { max-width: 800px; margin: 0 auto; padding: 0 20px; }
+        .skip-link { position: absolute; top: -40px; left: 0; background: #0066cc; color: #fff; padding: 8px 16px; z-index: 100; }
+        .skip-link:focus { top: 0; }
+        h1 { font-size: 2.2rem; margin-bottom: 1rem; }
+        h2 { font-size: 1.5rem; color: #7c3aed; margin-top: 2.5rem; }
+        h3 { font-size: 1.25rem; margin-top: 2rem; }
+        @media(max-width:768px) { h1 { font-size: 1.7rem; } h2 { font-size: 1.3rem; } }
+
+        nav[role="navigation"] { background: #212121; padding: 1rem 0; position: sticky; top: 0; z-index: 1000; }
+        nav .container { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; }
+        .nav-brand { color: #fff; text-decoration: none; font-weight: 700; font-size: 1.25rem; }
+        .hamburger { background: none; border: none; cursor: pointer; padding: 8px; display: flex; flex-direction: column; gap: 5px; }
+        .hamburger span { display: block; width: 24px; height: 2px; background: #fff; transition: 0.3s; }
+        .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
+        .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+        .nav-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); opacity: 0; visibility: hidden; transition: 0.3s; z-index: 998; }
+        .nav-overlay.active { opacity: 1; visibility: visible; }
+        .nav-menu { position: fixed; top: 0; right: -280px; width: 280px; height: 100%; background: #fff; transition: 0.3s; z-index: 999; overflow-y: auto; padding: 2rem 0; }
+        .nav-menu.active { right: 0; }
+        .nav-menu a { display: block; padding: 0.75rem 1.5rem; color: #212121; text-decoration: none; border-bottom: 1px solid #eee; }
+        .nav-menu a:hover { background: #f0e6ff; color: #8b5cf6; }
+        .nav-section { padding: 0.75rem 1.5rem; font-weight: 600; color: #666; font-size: 0.85rem; text-transform: uppercase; background: #f8f9fa; }
+
+        .breadcrumb { background: #f8f9fa; padding: 1rem 0; }
+        .breadcrumb .container { max-width: 1200px; }
+        .breadcrumb ol { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+        .breadcrumb li:not(:last-child)::after { content: "›"; margin-left: 0.5rem; color: #666; }
+        .breadcrumb a { color: #0066cc; text-decoration: none; }
+
+        .term-header { background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%); color: #fff; padding: 3rem 0; margin-bottom: 2rem; }
+        .term-category { display: inline-block; background: rgba(255,255,255,0.2); padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.85rem; margin-bottom: 1rem; }
+        .term-header h1 { margin: 0; }
+
+        .definition-box { background: #f5f3ff; border-left: 4px solid #8b5cf6; padding: 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0; }
+        .definition-box strong { color: #7c3aed; font-size: 1.1rem; }
+        .definition-box p { margin: 0.5rem 0 0 0; font-size: 1.1rem; }
+
+        .formula-box { background: #1e1b4b; color: #fff; padding: 2rem; border-radius: 12px; margin: 2rem 0; text-align: center; }
+        .formula { font-size: 1.5rem; font-family: monospace; margin: 1rem 0; color: #a5b4fc; }
+
+        .benchmark-table { width: 100%; border-collapse: collapse; margin: 2rem 0; }
+        .benchmark-table th, .benchmark-table td { padding: 1rem; text-align: left; border-bottom: 1px solid #e9e3ff; }
+        .benchmark-table th { background: #f5f3ff; color: #7c3aed; }
+        .benchmark-table tr:hover { background: #faf9ff; }
+        .rating-poor { color: #dc2626; }
+        .rating-average { color: #d97706; }
+        .rating-good { color: #16a34a; }
+        .rating-excellent { color: #7c3aed; }
+
+        .key-points { background: #fff; border: 1px solid #e9e3ff; border-radius: 12px; padding: 1.5rem; margin: 2rem 0; }
+        .key-points h3 { margin-top: 0; color: #7c3aed; }
+        .key-points ul { margin: 0; padding-left: 1.5rem; }
+        .key-points li { margin: 0.5rem 0; }
+
+        .tip-box { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 12px; padding: 1.5rem; margin: 2rem 0; }
+        .tip-box h3 { margin-top: 0; color: #15803d; }
+
+        .related-terms { background: #f8f9fa; padding: 2rem; border-radius: 12px; margin: 3rem 0; }
+        .related-terms h2 { margin-top: 0; }
+        .term-links { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+        .term-link { display: inline-block; background: #fff; border: 1px solid #e9e3ff; padding: 0.5rem 1rem; border-radius: 20px; text-decoration: none; color: #7c3aed; font-size: 0.9rem; transition: all 0.2s; }
+        .term-link:hover { background: #8b5cf6; color: #fff; }
+
+        .cta-box { background: linear-gradient(135deg, #8b5cf6, #7c3aed); color: #fff; padding: 2rem; border-radius: 12px; margin: 3rem 0; text-align: center; }
+        .cta-box h3 { margin-top: 0; }
+        .cta-box a { display: inline-block; background: #fff; color: #7c3aed; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600; margin-top: 1rem; }
+
+        .nav-bottom { display: flex; justify-content: space-between; gap: 1rem; margin: 3rem 0; flex-wrap: wrap; }
+        .nav-bottom a { flex: 1; min-width: 200px; padding: 1rem; background: #f8f9fa; border-radius: 8px; text-decoration: none; color: #212121; }
+        .nav-bottom a:hover { background: #f0e6ff; }
+        .nav-bottom .label { font-size: 0.85rem; color: #666; }
+        .nav-bottom .title { font-weight: 600; color: #7c3aed; }
+        .nav-bottom .next { text-align: right; }
+
+        footer { background: #212121; color: #fff; padding: 2rem 0; margin-top: 4rem; text-align: center; }
+        footer a { color: #8b5cf6; }
+        .back-to-top { position: fixed; bottom: 2rem; right: 2rem; background: #8b5cf6; color: #fff; width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 1.5rem; }
+    </style>
+    <link rel="stylesheet" href="../css/style.css">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "DefinedTerm",
+        "name": "CTR (Click-Through Rate)",
+        "description": "The percentage of impressions that result in video views on YouTube. Calculated by dividing clicks by impressions and multiplying by 100.",
+        "inDefinedTermSet": "https://viewsgrowth.com/glossary/"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is a good CTR on YouTube?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A good YouTube CTR ranges from 4-10%, though this varies by niche and audience size. New channels typically see higher CTRs (8-12%) due to loyal subscribers, while larger channels often have lower CTRs (2-5%) because they reach broader audiences. Half of all YouTube videos have a CTR between 2-10%."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I improve my YouTube CTR?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Improve YouTube CTR by: 1) Creating high-contrast thumbnails with faces and emotions, 2) Writing curiosity-driven titles without clickbait, 3) A/B testing different thumbnail styles, 4) Ensuring title-thumbnail synergy tells a complete story, and 5) Analyzing your best-performing videos to replicate successful patterns."
+                }
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <nav role="navigation" aria-label="Main navigation">
+        <div class="container">
+            <a href="/" class="nav-brand">ViewsGrowth</a>
+            <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+        <div class="nav-overlay"></div>
+        <div class="nav-menu" role="menu">
+            <div class="nav-section">Getting Started</div>
+            <a href="/getting-started.html" role="menuitem">Getting Started Guide</a>
+            <a href="/algorithm.html" role="menuitem">Algorithm Explained</a>
+            <div class="nav-section">Free Tools</div>
+            <a href="/tools/thumbnail-preview.html" role="menuitem">Thumbnail Preview</a>
+            <a href="/tools/title-analyzer.html" role="menuitem">Title Analyzer</a>
+            <a href="/tools/" role="menuitem">All Tools</a>
+            <div class="nav-section">Growth Guides</div>
+            <a href="/youtube-growth/" role="menuitem">YouTube Growth Hub</a>
+            <a href="/video-optimization/" role="menuitem">Video Optimization</a>
+            <div class="nav-section">Resources</div>
+            <a href="/glossary/" role="menuitem">YouTube Glossary</a>
+        </div>
+    </nav>
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <div class="container">
+            <ol>
+                <li><a href="/">Home</a></li>
+                <li><a href="/glossary/">Glossary</a></li>
+                <li aria-current="page">CTR (Click-Through Rate)</li>
+            </ol>
+        </div>
+    </nav>
+
+    <header class="term-header">
+        <div class="container">
+            <span class="term-category">Analytics Metric</span>
+            <h1>CTR (Click-Through Rate)</h1>
+        </div>
+    </header>
+
+    <main id="main-content" role="main">
+        <article class="container">
+            <div class="definition-box">
+                <strong>Definition</strong>
+                <p>Click-Through Rate (CTR) is the percentage of people who click on your video after seeing the <a href="thumbnail.html">thumbnail</a>. It measures how effectively your thumbnail and title attract viewers from <a href="impressions.html">impressions</a>.</p>
+            </div>
+
+            <div class="formula-box">
+                <strong>CTR Formula</strong>
+                <div class="formula">CTR = (Clicks ÷ Impressions) × 100</div>
+                <p>Example: 500 clicks from 10,000 impressions = 5% CTR</p>
+            </div>
+
+            <h2>What's a Good CTR on YouTube?</h2>
+            <p>YouTube has stated that half of all videos have a CTR between 2% and 10%. However, "good" CTR varies significantly based on factors like channel size, content type, and traffic source.</p>
+
+            <table class="benchmark-table">
+                <thead>
+                    <tr>
+                        <th>CTR Range</th>
+                        <th>Rating</th>
+                        <th>What It Means</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>0-2%</td>
+                        <td class="rating-poor">Below Average</td>
+                        <td>Thumbnail/title needs significant improvement</td>
+                    </tr>
+                    <tr>
+                        <td>2-4%</td>
+                        <td class="rating-average">Average</td>
+                        <td>Typical for broad-reach videos on large channels</td>
+                    </tr>
+                    <tr>
+                        <td>4-10%</td>
+                        <td class="rating-good">Good</td>
+                        <td>Strong thumbnail/title performance</td>
+                    </tr>
+                    <tr>
+                        <td>10%+</td>
+                        <td class="rating-excellent">Excellent</td>
+                        <td>Exceptional; common for loyal subscriber bases</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>Why CTR Matters for the Algorithm</h2>
+            <p>The <a href="algorithm.html">YouTube algorithm</a> uses CTR as a key signal for video quality:</p>
+
+            <div class="key-points">
+                <h3>CTR's Role in Video Distribution</h3>
+                <ul>
+                    <li><strong>Initial Testing:</strong> YouTube shows your video to a sample audience and measures CTR</li>
+                    <li><strong>Expansion Decision:</strong> High CTR + high <a href="watch-time.html">watch time</a> triggers broader distribution</li>
+                    <li><strong>Feedback Loop:</strong> More impressions → more data → refined audience targeting</li>
+                    <li><strong>A/B Testing:</strong> YouTube may test different thumbnails automatically</li>
+                </ul>
+            </div>
+
+            <h2>How to Improve Your CTR</h2>
+
+            <h3>1. Thumbnail Optimization</h3>
+            <ul>
+                <li><strong>Use faces with emotions</strong> — Expressions convey the video's emotional promise</li>
+                <li><strong>High contrast colors</strong> — Stand out against YouTube's white background</li>
+                <li><strong>Minimal text</strong> — 3-4 words maximum, large and readable on mobile</li>
+                <li><strong>Consistency</strong> — Develop a recognizable brand style</li>
+                <li><strong>Rule of thirds</strong> — Position key elements at intersection points</li>
+            </ul>
+
+            <h3>2. Title Optimization</h3>
+            <ul>
+                <li><strong>Front-load keywords</strong> — First 60 characters appear in search</li>
+                <li><strong>Create curiosity gaps</strong> — Hint at value without giving everything away</li>
+                <li><strong>Use power words</strong> — "Secret," "Ultimate," "Proven," "Easy"</li>
+                <li><strong>Include numbers</strong> — "7 Ways," "In 5 Minutes," "$10,000"</li>
+                <li><strong>Match search intent</strong> — Answer what viewers are looking for</li>
+            </ul>
+
+            <h3>3. Title-Thumbnail Synergy</h3>
+            <p>Your thumbnail and <a href="title.html">title</a> should work together, not repeat each other:</p>
+
+            <div class="tip-box">
+                <h3>The 1-2 Punch Strategy</h3>
+                <p><strong>Thumbnail:</strong> Visual hook showing the outcome or emotion</p>
+                <p><strong>Title:</strong> Context and promise that completes the story</p>
+                <p>Together they answer: "What will I see?" and "Why should I care?"</p>
+            </div>
+
+            <h2>CTR by Traffic Source</h2>
+            <p>Different <a href="traffic-sources.html">traffic sources</a> have different CTR benchmarks:</p>
+            <ul>
+                <li><strong><a href="browse-features.html">Browse Features</a> (Homepage):</strong> 2-8% — Competing with all content types</li>
+                <li><strong><a href="suggested-videos.html">Suggested Videos</a>:</strong> 3-12% — Viewers already interested in topic</li>
+                <li><strong><a href="search-traffic.html">YouTube Search</a>:</strong> 5-15% — High-intent viewers seeking solutions</li>
+                <li><strong><a href="external-traffic.html">External</a>:</strong> 10-30% — Pre-sold audiences from social media</li>
+            </ul>
+
+            <h2>CTR Mistakes to Avoid</h2>
+            <ul>
+                <li><strong>Clickbait:</strong> High CTR but low <a href="retention.html">retention</a> hurts your channel long-term</li>
+                <li><strong>Thumbnail-video mismatch:</strong> Sets wrong expectations, causes drop-offs</li>
+                <li><strong>Copying others exactly:</strong> Blend in rather than stand out</li>
+                <li><strong>Ignoring mobile:</strong> 70%+ of views are on mobile devices</li>
+                <li><strong>Not testing:</strong> Use <a href="a-b-testing.html">A/B testing</a> to find what works</li>
+            </ul>
+
+            <div class="related-terms">
+                <h2>Related Terms</h2>
+                <div class="term-links">
+                    <a href="impressions.html" class="term-link">Impressions</a>
+                    <a href="thumbnail.html" class="term-link">Thumbnail</a>
+                    <a href="title.html" class="term-link">Title</a>
+                    <a href="watch-time.html" class="term-link">Watch Time</a>
+                    <a href="algorithm.html" class="term-link">Algorithm</a>
+                    <a href="analytics.html" class="term-link">Analytics</a>
+                    <a href="a-b-testing.html" class="term-link">A/B Testing</a>
+                    <a href="average-view-duration.html" class="term-link">Average View Duration</a>
+                    <a href="browse-features.html" class="term-link">Browse Features</a>
+                </div>
+            </div>
+
+            <div class="cta-box">
+                <h3>Test Your Thumbnails</h3>
+                <p>See how your thumbnails look in YouTube's actual interface before publishing.</p>
+                <a href="/tools/thumbnail-preview.html">Try Thumbnail Preview Tool →</a>
+            </div>
+
+            <div class="nav-bottom">
+                <a href="cpm.html" class="prev">
+                    <span class="label">← Previous</span>
+                    <span class="title">CPM</span>
+                </a>
+                <a href="channel-keywords.html" class="next">
+                    <span class="label">Next Term →</span>
+                    <span class="title">Channel Keywords</span>
+                </a>
+            </div>
+        </article>
+    </main>
+
+    <footer role="contentinfo">
+        <div class="container">
+            <p>&copy; 2025 ViewsGrowth. Your complete resource for YouTube channel growth.</p>
+            <p><a href="/glossary/">Glossary</a> | <a href="/tools/">Tools</a> | <a href="/youtube-growth/">Growth Guide</a></p>
+        </div>
+    </footer>
+
+    <a href="#" class="back-to-top" aria-label="Back to top">↑</a>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        const navOverlay = document.querySelector('.nav-overlay');
+        function toggleMenu() {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            navOverlay.classList.toggle('active');
+        }
+        hamburger.addEventListener('click', toggleMenu);
+        navOverlay.addEventListener('click', toggleMenu);
+    </script>
+</body>
+</html>

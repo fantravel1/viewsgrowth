@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube SEO: Complete Search Optimization Guide | ViewsGrowth Glossary</title>
+    <meta name="description" content="Master YouTube SEO to rank higher in search results. Learn keyword research, optimization techniques, and strategies for maximum video discoverability.">
+    <meta name="keywords" content="YouTube SEO, video SEO, YouTube search optimization, YouTube keywords, rank on YouTube, YouTube ranking factors">
+    <link rel="canonical" href="https://viewsgrowth.com/glossary/seo.html">
+
+    <meta property="og:title" content="YouTube SEO: Complete Search Optimization Guide">
+    <meta property="og:description" content="Rank higher on YouTube and Google with proven SEO strategies for video content.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://viewsgrowth.com/glossary/seo.html">
+
+    <style>
+        body { margin: 0; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.6; color: #212121; background: #fff; }
+        .container { max-width: 800px; margin: 0 auto; padding: 0 20px; }
+        .skip-link { position: absolute; top: -40px; left: 0; background: #0066cc; color: #fff; padding: 8px 16px; z-index: 100; }
+        .skip-link:focus { top: 0; }
+        h1 { font-size: 2.2rem; margin-bottom: 1rem; }
+        h2 { font-size: 1.5rem; color: #7c3aed; margin-top: 2.5rem; }
+        h3 { font-size: 1.25rem; margin-top: 2rem; }
+        @media(max-width:768px) { h1 { font-size: 1.7rem; } h2 { font-size: 1.3rem; } }
+
+        nav[role="navigation"] { background: #212121; padding: 1rem 0; position: sticky; top: 0; z-index: 1000; }
+        nav .container { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; }
+        .nav-brand { color: #fff; text-decoration: none; font-weight: 700; font-size: 1.25rem; }
+        .hamburger { background: none; border: none; cursor: pointer; padding: 8px; display: flex; flex-direction: column; gap: 5px; }
+        .hamburger span { display: block; width: 24px; height: 2px; background: #fff; transition: 0.3s; }
+        .nav-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); opacity: 0; visibility: hidden; transition: 0.3s; z-index: 998; }
+        .nav-overlay.active { opacity: 1; visibility: visible; }
+        .nav-menu { position: fixed; top: 0; right: -280px; width: 280px; height: 100%; background: #fff; transition: 0.3s; z-index: 999; overflow-y: auto; padding: 2rem 0; }
+        .nav-menu.active { right: 0; }
+        .nav-menu a { display: block; padding: 0.75rem 1.5rem; color: #212121; text-decoration: none; border-bottom: 1px solid #eee; }
+        .nav-menu a:hover { background: #f0e6ff; color: #8b5cf6; }
+        .nav-section { padding: 0.75rem 1.5rem; font-weight: 600; color: #666; font-size: 0.85rem; text-transform: uppercase; background: #f8f9fa; }
+
+        .breadcrumb { background: #f8f9fa; padding: 1rem 0; }
+        .breadcrumb .container { max-width: 1200px; }
+        .breadcrumb ol { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+        .breadcrumb li:not(:last-child)::after { content: "›"; margin-left: 0.5rem; color: #666; }
+        .breadcrumb a { color: #0066cc; text-decoration: none; }
+
+        .term-header { background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%); color: #fff; padding: 3rem 0; margin-bottom: 2rem; }
+        .term-category { display: inline-block; background: rgba(255,255,255,0.2); padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.85rem; margin-bottom: 1rem; }
+        .term-header h1 { margin: 0; }
+
+        .definition-box { background: #f5f3ff; border-left: 4px solid #8b5cf6; padding: 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0; }
+        .definition-box strong { color: #7c3aed; font-size: 1.1rem; }
+        .definition-box p { margin: 0.5rem 0 0 0; font-size: 1.1rem; }
+
+        .seo-element { background: #fff; border: 2px solid #e9e3ff; border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; }
+        .seo-element h3 { margin-top: 0; color: #7c3aed; }
+        .seo-element .importance { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin-bottom: 0.75rem; }
+        .importance-high { background: #dcfce7; color: #15803d; }
+        .importance-medium { background: #fef3c7; color: #b45309; }
+        .importance-low { background: #f3f4f6; color: #6b7280; }
+
+        .checklist { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 12px; padding: 1.5rem; margin: 2rem 0; }
+        .checklist h3 { margin-top: 0; color: #15803d; }
+        .checklist ul { list-style: none; padding: 0; margin: 0; }
+        .checklist li { padding: 0.5rem 0; padding-left: 1.75rem; position: relative; }
+        .checklist li::before { content: "✓"; position: absolute; left: 0; color: #15803d; font-weight: bold; }
+
+        .step-box { background: #fff; border: 1px solid #e9e3ff; border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; }
+        .step-box h3 { margin-top: 0; display: flex; align-items: center; gap: 0.75rem; }
+        .step-number { background: #8b5cf6; color: #fff; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600; }
+
+        .related-terms { background: #f8f9fa; padding: 2rem; border-radius: 12px; margin: 3rem 0; }
+        .related-terms h2 { margin-top: 0; }
+        .term-links { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+        .term-link { display: inline-block; background: #fff; border: 1px solid #e9e3ff; padding: 0.5rem 1rem; border-radius: 20px; text-decoration: none; color: #7c3aed; font-size: 0.9rem; transition: all 0.2s; }
+        .term-link:hover { background: #8b5cf6; color: #fff; }
+
+        .cta-box { background: linear-gradient(135deg, #8b5cf6, #7c3aed); color: #fff; padding: 2rem; border-radius: 12px; margin: 3rem 0; text-align: center; }
+        .cta-box h3 { margin-top: 0; }
+        .cta-box a { display: inline-block; background: #fff; color: #7c3aed; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600; margin-top: 1rem; }
+
+        .nav-bottom { display: flex; justify-content: space-between; gap: 1rem; margin: 3rem 0; flex-wrap: wrap; }
+        .nav-bottom a { flex: 1; min-width: 200px; padding: 1rem; background: #f8f9fa; border-radius: 8px; text-decoration: none; color: #212121; }
+        .nav-bottom a:hover { background: #f0e6ff; }
+        .nav-bottom .label { font-size: 0.85rem; color: #666; }
+        .nav-bottom .title { font-weight: 600; color: #7c3aed; }
+        .nav-bottom .next { text-align: right; }
+
+        footer { background: #212121; color: #fff; padding: 2rem 0; margin-top: 4rem; text-align: center; }
+        footer a { color: #8b5cf6; }
+        .back-to-top { position: fixed; bottom: 2rem; right: 2rem; background: #8b5cf6; color: #fff; width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 1.5rem; }
+    </style>
+    <link rel="stylesheet" href="../css/style.css">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "DefinedTerm",
+        "name": "SEO (Search Engine Optimization)",
+        "description": "The practice of optimizing video content to rank higher in YouTube and Google search results through keyword research, metadata optimization, and engagement strategies.",
+        "inDefinedTermSet": "https://viewsgrowth.com/glossary/"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "How to Optimize YouTube Videos for SEO",
+        "step": [
+            {"@type": "HowToStep", "name": "Research Keywords", "text": "Use YouTube search suggestions, Google Trends, and competitor analysis to find target keywords with search volume."},
+            {"@type": "HowToStep", "name": "Optimize Title", "text": "Include primary keyword near the beginning of your title while keeping it compelling and click-worthy."},
+            {"@type": "HowToStep", "name": "Write Description", "text": "Create a detailed description with keywords naturally integrated in the first 150 characters and throughout."},
+            {"@type": "HowToStep", "name": "Add Tags", "text": "Include relevant tags starting with your exact target keyword, then variations and related terms."},
+            {"@type": "HowToStep", "name": "Create Chapters", "text": "Add timestamps with descriptive titles to create chapters that appear in search results."}
+        ]
+    }
+    </script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <nav role="navigation" aria-label="Main navigation">
+        <div class="container">
+            <a href="/" class="nav-brand">ViewsGrowth</a>
+            <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+        <div class="nav-overlay"></div>
+        <div class="nav-menu" role="menu">
+            <div class="nav-section">Getting Started</div>
+            <a href="/getting-started.html" role="menuitem">Getting Started Guide</a>
+            <div class="nav-section">Free Tools</div>
+            <a href="/tools/title-analyzer.html" role="menuitem">Title Analyzer</a>
+            <a href="/tools/" role="menuitem">All Tools</a>
+            <div class="nav-section">Growth Guides</div>
+            <a href="/youtube-growth/" role="menuitem">YouTube Growth Hub</a>
+            <a href="/video-optimization/" role="menuitem">Video Optimization</a>
+            <div class="nav-section">Resources</div>
+            <a href="/glossary/" role="menuitem">YouTube Glossary</a>
+        </div>
+    </nav>
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <div class="container">
+            <ol>
+                <li><a href="/">Home</a></li>
+                <li><a href="/glossary/">Glossary</a></li>
+                <li aria-current="page">SEO</li>
+            </ol>
+        </div>
+    </nav>
+
+    <header class="term-header">
+        <div class="container">
+            <span class="term-category">Discovery Strategy</span>
+            <h1>SEO (Search Engine Optimization)</h1>
+        </div>
+    </header>
+
+    <main id="main-content" role="main">
+        <article class="container">
+            <div class="definition-box">
+                <strong>Definition</strong>
+                <p>YouTube SEO is the practice of optimizing video content to rank higher in YouTube and Google search results. It involves <a href="keywords.html">keyword</a> research, <a href="metadata.html">metadata</a> optimization, and creating content that satisfies viewer intent.</p>
+            </div>
+
+            <h2>Why YouTube SEO Matters</h2>
+            <p>YouTube is the world's second-largest search engine. <a href="search-traffic.html">Search traffic</a> represents high-intent viewers actively seeking solutions your content provides. Unlike <a href="suggested-videos.html">suggested videos</a> that depend on algorithmic favor, search rankings are more predictable and sustainable.</p>
+
+            <p>Additionally, YouTube videos can rank in Google search results, providing dual visibility. Optimized videos often appear in:</p>
+            <ul>
+                <li>Google's main search results</li>
+                <li>Google Video tab</li>
+                <li>Featured snippets with video carousels</li>
+                <li><a href="key-moments.html">Key Moments</a> (timestamp links in Google)</li>
+            </ul>
+
+            <h2>YouTube SEO Elements</h2>
+
+            <div class="seo-element">
+                <span class="importance importance-high">High Impact</span>
+                <h3>Title</h3>
+                <p>The <a href="title.html">title</a> is the most important text SEO element. YouTube confirms it heavily weights keywords in titles for search ranking.</p>
+                <ul>
+                    <li>Include primary keyword near the beginning</li>
+                    <li>Keep under 60 characters for full display</li>
+                    <li>Balance SEO with <a href="ctr.html">CTR</a> appeal</li>
+                    <li>Avoid keyword stuffing</li>
+                </ul>
+            </div>
+
+            <div class="seo-element">
+                <span class="importance importance-high">High Impact</span>
+                <h3>Description</h3>
+                <p>The <a href="description.html">description</a> provides context for YouTube's understanding of your video content.</p>
+                <ul>
+                    <li>First 150 characters appear in search—front-load keywords</li>
+                    <li>Write 200+ words of natural, keyword-rich content</li>
+                    <li>Include timestamps for <a href="chapters.html">chapters</a></li>
+                    <li>Add links to related content on your channel</li>
+                </ul>
+            </div>
+
+            <div class="seo-element">
+                <span class="importance importance-medium">Medium Impact</span>
+                <h3>Tags</h3>
+                <p><a href="tags.html">Tags</a> help YouTube understand your video's context and handle common misspellings.</p>
+                <ul>
+                    <li>Start with exact target keyword</li>
+                    <li>Add variations and related terms</li>
+                    <li>Include 5-15 relevant tags</li>
+                    <li>Don't use misleading or unrelated tags</li>
+                </ul>
+            </div>
+
+            <div class="seo-element">
+                <span class="importance importance-medium">Medium Impact</span>
+                <h3>Captions/Transcripts</h3>
+                <p>YouTube auto-generates captions and uses them to understand video content. Custom captions improve accuracy.</p>
+                <ul>
+                    <li>Upload SRT files for accuracy</li>
+                    <li>Natural keyword usage in speech helps SEO</li>
+                    <li>Supports accessibility and international viewers</li>
+                </ul>
+            </div>
+
+            <div class="seo-element">
+                <span class="importance importance-low">Lower Impact</span>
+                <h3>Channel Keywords</h3>
+                <p><a href="channel-keywords.html">Channel keywords</a> in settings help YouTube understand your channel's overall <a href="niche.html">niche</a>.</p>
+            </div>
+
+            <h2>Keyword Research Process</h2>
+
+            <div class="step-box">
+                <h3><span class="step-number">1</span> YouTube Autocomplete</h3>
+                <p>Type your topic in YouTube search and note suggestions. These are actual terms people search for. Add letters after your keyword to discover more variations.</p>
+            </div>
+
+            <div class="step-box">
+                <h3><span class="step-number">2</span> Google Trends</h3>
+                <p>Compare keyword popularity over time using <a href="google-trends.html">Google Trends</a>. Filter to "YouTube Search" for video-specific data. Identify seasonal trends and rising topics.</p>
+            </div>
+
+            <div class="step-box">
+                <h3><span class="step-number">3</span> Competitor Analysis</h3>
+                <p>Study top-ranking videos for your target keywords. Analyze their titles, descriptions, and tags to understand what works.</p>
+            </div>
+
+            <div class="step-box">
+                <h3><span class="step-number">4</span> Target Long-Tail Keywords</h3>
+                <p>New channels should focus on <a href="long-tail-keywords.html">long-tail keywords</a> (3-5 word phrases) with lower competition. "How to edit YouTube videos on iPhone" is easier to rank for than "video editing."</p>
+            </div>
+
+            <div class="checklist">
+                <h3>YouTube SEO Checklist</h3>
+                <ul>
+                    <li>Researched target keyword with search volume</li>
+                    <li>Keyword in title (preferably at beginning)</li>
+                    <li>Keyword in first 150 characters of description</li>
+                    <li>200+ word description with related terms</li>
+                    <li>Timestamps added for chapters</li>
+                    <li>Relevant tags added (5-15)</li>
+                    <li>Custom thumbnail uploaded</li>
+                    <li>End screens and cards configured</li>
+                    <li>Video added to relevant playlist</li>
+                    <li>Pinned comment with keyword and CTA</li>
+                </ul>
+            </div>
+
+            <h2>SEO vs. Algorithm Optimization</h2>
+            <p>SEO focuses on search visibility, but most YouTube traffic comes from <a href="browse-features.html">browse features</a> and <a href="suggested-videos.html">suggested videos</a>. A complete strategy optimizes for both:</p>
+
+            <ul>
+                <li><strong>SEO:</strong> Keywords, metadata, search intent</li>
+                <li><strong><a href="algorithm.html">Algorithm</a>:</strong> <a href="watch-time.html">Watch time</a>, <a href="ctr.html">CTR</a>, engagement, <a href="session-time.html">session time</a></li>
+            </ul>
+
+            <p>The best approach: Create content that satisfies search intent (SEO) while maximizing engagement signals (algorithm). A video that ranks but has poor retention won't stay ranked.</p>
+
+            <div class="related-terms">
+                <h2>Related Terms</h2>
+                <div class="term-links">
+                    <a href="keywords.html" class="term-link">Keywords</a>
+                    <a href="long-tail-keywords.html" class="term-link">Long-Tail Keywords</a>
+                    <a href="title.html" class="term-link">Title</a>
+                    <a href="description.html" class="term-link">Description</a>
+                    <a href="tags.html" class="term-link">Tags</a>
+                    <a href="metadata.html" class="term-link">Metadata</a>
+                    <a href="chapters.html" class="term-link">Chapters</a>
+                    <a href="search-traffic.html" class="term-link">Search Traffic</a>
+                    <a href="youtube-search.html" class="term-link">YouTube Search</a>
+                    <a href="video-seo.html" class="term-link">Video SEO</a>
+                </div>
+            </div>
+
+            <div class="cta-box">
+                <h3>Analyze Your Titles</h3>
+                <p>Check if your video titles are optimized for SEO and clicks.</p>
+                <a href="/tools/title-analyzer.html">Try Title Analyzer →</a>
+            </div>
+
+            <div class="nav-bottom">
+                <a href="search-traffic.html" class="prev">
+                    <span class="label">← Previous</span>
+                    <span class="title">Search Traffic</span>
+                </a>
+                <a href="session-time.html" class="next">
+                    <span class="label">Next Term →</span>
+                    <span class="title">Session Time</span>
+                </a>
+            </div>
+        </article>
+    </main>
+
+    <footer role="contentinfo">
+        <div class="container">
+            <p>&copy; 2025 ViewsGrowth. Your complete resource for YouTube channel growth.</p>
+            <p><a href="/glossary/">Glossary</a> | <a href="/tools/">Tools</a> | <a href="/youtube-growth/">Growth Guide</a></p>
+        </div>
+    </footer>
+
+    <a href="#" class="back-to-top" aria-label="Back to top">↑</a>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        const navOverlay = document.querySelector('.nav-overlay');
+        function toggleMenu() {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            navOverlay.classList.toggle('active');
+        }
+        hamburger.addEventListener('click', toggleMenu);
+        navOverlay.addEventListener('click', toggleMenu);
+    </script>
+</body>
+</html>

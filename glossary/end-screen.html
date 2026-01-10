@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube End Screens: Boost Views with Interactive Outros | ViewsGrowth Glossary</title>
+    <meta name="description" content="Learn how to create effective YouTube end screens that drive more views, subscribers, and watch time. Complete guide with best practices and optimization tips.">
+    <meta name="keywords" content="YouTube end screen, end screen template, YouTube outro, end screen elements, YouTube cards, increase watch time">
+    <link rel="canonical" href="https://viewsgrowth.com/glossary/end-screen.html">
+
+    <meta property="og:title" content="YouTube End Screens: The Complete Optimization Guide">
+    <meta property="og:description" content="Master YouTube end screens to increase views, subscribers, and session time with interactive elements in your video outros.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://viewsgrowth.com/glossary/end-screen.html">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <style>
+        body { margin: 0; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.6; color: #212121; background: #fff; }
+        .container { max-width: 800px; margin: 0 auto; padding: 0 20px; }
+        .skip-link { position: absolute; top: -40px; left: 0; background: #0066cc; color: #fff; padding: 8px 16px; z-index: 100; }
+        .skip-link:focus { top: 0; }
+        h1 { font-size: 2.2rem; margin-bottom: 1rem; color: #212121; }
+        h2 { font-size: 1.5rem; color: #7c3aed; margin-top: 2.5rem; }
+        h3 { font-size: 1.25rem; color: #212121; margin-top: 2rem; }
+        p { margin: 1rem 0; }
+        @media(max-width:768px) { h1 { font-size: 1.7rem; } h2 { font-size: 1.3rem; } }
+
+        nav[role="navigation"] { background: #212121; padding: 1rem 0; position: sticky; top: 0; z-index: 1000; }
+        nav .container { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; }
+        .nav-brand { color: #fff; text-decoration: none; font-weight: 700; font-size: 1.25rem; }
+        .hamburger { background: none; border: none; cursor: pointer; padding: 8px; display: flex; flex-direction: column; gap: 5px; }
+        .hamburger span { display: block; width: 24px; height: 2px; background: #fff; transition: 0.3s; }
+        .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
+        .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+        .nav-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); opacity: 0; visibility: hidden; transition: 0.3s; z-index: 998; }
+        .nav-overlay.active { opacity: 1; visibility: visible; }
+        .nav-menu { position: fixed; top: 0; right: -280px; width: 280px; height: 100%; background: #fff; transition: 0.3s; z-index: 999; overflow-y: auto; padding: 2rem 0; }
+        .nav-menu.active { right: 0; }
+        .nav-menu a { display: block; padding: 0.75rem 1.5rem; color: #212121; text-decoration: none; border-bottom: 1px solid #eee; }
+        .nav-menu a:hover { background: #f0e6ff; color: #8b5cf6; }
+        .nav-section { padding: 0.75rem 1.5rem; font-weight: 600; color: #666; font-size: 0.85rem; text-transform: uppercase; background: #f8f9fa; }
+
+        .breadcrumb { background: #f8f9fa; padding: 1rem 0; }
+        .breadcrumb .container { max-width: 1200px; }
+        .breadcrumb ol { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+        .breadcrumb li:not(:last-child)::after { content: ">"; margin-left: 0.5rem; color: #666; }
+        .breadcrumb a { color: #0066cc; text-decoration: none; }
+
+        .term-header { background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%); color: #fff; padding: 3rem 0; margin-bottom: 2rem; }
+        .term-category { display: inline-block; background: rgba(255,255,255,0.2); padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.85rem; margin-bottom: 1rem; }
+        .term-header h1 { margin: 0; }
+
+        .definition-box { background: #f5f3ff; border-left: 4px solid #8b5cf6; padding: 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0; }
+        .definition-box strong { color: #7c3aed; font-size: 1.1rem; }
+        .definition-box p { margin: 0.5rem 0 0 0; font-size: 1.1rem; }
+
+        .key-points { background: #fff; border: 1px solid #e9e3ff; border-radius: 12px; padding: 1.5rem; margin: 2rem 0; }
+        .key-points h3 { margin-top: 0; color: #7c3aed; }
+        .key-points ul { margin: 0; padding-left: 1.5rem; }
+        .key-points li { margin: 0.5rem 0; }
+
+        .element-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 2rem 0; }
+        .element-card { background: #fff; border: 2px solid #e9e3ff; border-radius: 12px; padding: 1.25rem; }
+        .element-card h4 { margin: 0 0 0.5rem 0; color: #7c3aed; }
+        .element-card p { margin: 0; font-size: 0.9rem; color: #666; }
+
+        .tip-box { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 12px; padding: 1.5rem; margin: 2rem 0; }
+        .tip-box h3 { margin-top: 0; color: #15803d; }
+
+        .warning-box { background: #fef3c7; border: 1px solid #fcd34d; border-radius: 12px; padding: 1.5rem; margin: 2rem 0; }
+        .warning-box h3 { margin-top: 0; color: #b45309; }
+
+        .example-box { background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 12px; padding: 1.5rem; margin: 2rem 0; }
+        .example-box h3 { margin-top: 0; color: #1d4ed8; }
+
+        .highlight-box { background: linear-gradient(135deg, #f5f3ff, #ede9fe); border: 2px solid #8b5cf6; padding: 1.5rem; border-radius: 12px; margin: 2rem 0; }
+        .highlight-box h3 { margin-top: 0; color: #7c3aed; }
+
+        .related-terms { background: #f8f9fa; padding: 2rem; border-radius: 12px; margin: 3rem 0; }
+        .related-terms h2 { margin-top: 0; }
+        .term-links { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+        .term-link { display: inline-block; background: #fff; border: 1px solid #e9e3ff; padding: 0.5rem 1rem; border-radius: 20px; text-decoration: none; color: #7c3aed; font-size: 0.9rem; transition: all 0.2s; }
+        .term-link:hover { background: #8b5cf6; color: #fff; border-color: #8b5cf6; }
+
+        .cta-box { background: linear-gradient(135deg, #8b5cf6, #7c3aed); color: #fff; padding: 2rem; border-radius: 12px; margin: 3rem 0; text-align: center; }
+        .cta-box h3 { margin-top: 0; }
+        .cta-box a { display: inline-block; background: #fff; color: #7c3aed; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600; margin-top: 1rem; }
+
+        .nav-bottom { display: flex; justify-content: space-between; gap: 1rem; margin: 3rem 0; flex-wrap: wrap; }
+        .nav-bottom a { flex: 1; min-width: 200px; padding: 1rem; background: #f8f9fa; border-radius: 8px; text-decoration: none; color: #212121; }
+        .nav-bottom a:hover { background: #f0e6ff; }
+        .nav-bottom .label { font-size: 0.85rem; color: #666; }
+        .nav-bottom .title { font-weight: 600; color: #7c3aed; }
+        .nav-bottom .next { text-align: right; }
+
+        footer { background: #212121; color: #fff; padding: 2rem 0; margin-top: 4rem; text-align: center; }
+        footer a { color: #8b5cf6; }
+        .back-to-top { position: fixed; bottom: 2rem; right: 2rem; background: #8b5cf6; color: #fff; width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 1.5rem; box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3); }
+    </style>
+    <link rel="stylesheet" href="../css/style.css">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "DefinedTerm",
+        "name": "End Screen",
+        "description": "Interactive elements that appear during the last 5-20 seconds of a YouTube video, allowing creators to promote other videos, playlists, channels, or encourage subscriptions.",
+        "inDefinedTermSet": "https://viewsgrowth.com/glossary/"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://viewsgrowth.com/"},
+            {"@type": "ListItem", "position": 2, "name": "Glossary", "item": "https://viewsgrowth.com/glossary/"},
+            {"@type": "ListItem", "position": 3, "name": "End Screen", "item": "https://viewsgrowth.com/glossary/end-screen.html"}
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How long can YouTube end screens be?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "YouTube end screens can appear during the last 5-20 seconds of a video. Your video must be at least 25 seconds long to add end screens. The elements appear as clickable overlays on top of your video content, so plan your outro to accommodate them without blocking important visuals."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What elements can you add to YouTube end screens?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "You can add up to 4 elements to a YouTube end screen: 1) Video or playlist (specific video, latest upload, or best for viewer), 2) Subscribe button (circular channel icon), 3) Channel promotion (link to another channel), and 4) External link (only for YouTube Partner Program members). Elements appear as clickable circles or rectangles."
+                }
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <nav role="navigation" aria-label="Main navigation">
+        <div class="container">
+            <a href="/" class="nav-brand">ViewsGrowth</a>
+            <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+        <div class="nav-overlay"></div>
+        <div class="nav-menu" role="menu">
+            <div class="nav-section">Getting Started</div>
+            <a href="/getting-started.html" role="menuitem">Getting Started Guide</a>
+            <a href="/algorithm.html" role="menuitem">Algorithm Explained</a>
+            <div class="nav-section">Free Tools</div>
+            <a href="/tools/thumbnail-preview.html" role="menuitem">Thumbnail Preview</a>
+            <a href="/tools/earnings-calculator.html" role="menuitem">Earnings Calculator</a>
+            <a href="/tools/title-analyzer.html" role="menuitem">Title Analyzer</a>
+            <a href="/tools/" role="menuitem">All Tools</a>
+            <div class="nav-section">Growth Guides</div>
+            <a href="/youtube-growth/" role="menuitem">YouTube Growth Hub</a>
+            <a href="/youtube-algorithm/" role="menuitem">Algorithm Deep Dive</a>
+            <a href="/viral-videos/" role="menuitem">Viral Video Strategies</a>
+            <div class="nav-section">Resources</div>
+            <a href="/glossary/" role="menuitem">YouTube Glossary</a>
+            <a href="/analytics.html" role="menuitem">Analytics Guide</a>
+            <a href="/monetization.html" role="menuitem">Monetization</a>
+        </div>
+    </nav>
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <div class="container">
+            <ol>
+                <li><a href="/">Home</a></li>
+                <li><a href="/glossary/">Glossary</a></li>
+                <li aria-current="page">End Screen</li>
+            </ol>
+        </div>
+    </nav>
+
+    <header class="term-header">
+        <div class="container">
+            <span class="term-category">Video Feature</span>
+            <h1>End Screen</h1>
+        </div>
+    </header>
+
+    <main id="main-content" role="main">
+        <article class="container">
+            <div class="definition-box">
+                <strong>Definition</strong>
+                <p>End screens are interactive elements that appear during the last 5-20 seconds of a YouTube video. They allow creators to promote other videos, playlists, channels, and encourage <a href="subscribers.html">subscriptions</a>, helping to extend viewer sessions and improve <a href="watch-time.html">watch time</a> across the channel.</p>
+            </div>
+
+            <h2>Why End Screens Matter</h2>
+            <p>End screens are one of the most effective tools for increasing channel performance. When viewers reach the end of your video, they're engaged and primed for more content.</p>
+
+            <div class="key-points">
+                <h3>End Screen Benefits</h3>
+                <ul>
+                    <li><strong>Increase session time:</strong> Keep viewers watching more of your content</li>
+                    <li><strong>Boost watch time:</strong> More views across videos means more accumulated minutes</li>
+                    <li><strong>Drive subscriptions:</strong> Convert engaged viewers into <a href="subscribers.html">subscribers</a></li>
+                    <li><strong>Improve <a href="discovery.html">discovery</a>:</strong> Extended sessions signal quality to the <a href="algorithm.html">algorithm</a></li>
+                    <li><strong>Promote playlists:</strong> Encourage binge-watching behavior</li>
+                    <li><strong>Cross-promote channels:</strong> Support collaborator channels</li>
+                </ul>
+            </div>
+
+            <h2>End Screen Elements</h2>
+            <p>You can add up to 4 elements to each end screen. Choose based on your goals:</p>
+
+            <div class="element-grid">
+                <div class="element-card">
+                    <h4>Video Element</h4>
+                    <p>Link to a specific video, your latest upload, or let YouTube choose the "best for viewer"</p>
+                </div>
+                <div class="element-card">
+                    <h4>Playlist Element</h4>
+                    <p>Link to a playlist to encourage sequential watching and extended sessions</p>
+                </div>
+                <div class="element-card">
+                    <h4>Subscribe Button</h4>
+                    <p>Circular channel icon that prompts viewers to subscribe</p>
+                </div>
+                <div class="element-card">
+                    <h4>Channel Element</h4>
+                    <p>Promote another channel (great for collaborations or second channels)</p>
+                </div>
+                <div class="element-card">
+                    <h4>External Link</h4>
+                    <p>Link to external websites (requires YouTube Partner Program membership)</p>
+                </div>
+            </div>
+
+            <h2>Video Element Options</h2>
+            <p>When adding a video element, you have three choices:</p>
+
+            <h3>1. Best for Viewer (Recommended)</h3>
+            <p>YouTube's algorithm selects which of your videos to show based on each viewer's interests and watch history. This typically has the highest click-through rate because it's personalized.</p>
+
+            <h3>2. Specific Video</h3>
+            <p>Choose a specific video to promote. Best for:</p>
+            <ul>
+                <li>Part 2 of a series</li>
+                <li>A related deep-dive video</li>
+                <li>Your best-performing video</li>
+                <li>A video that converts viewers to subscribers</li>
+            </ul>
+
+            <h3>3. Most Recent Upload</h3>
+            <p>Automatically shows your latest video. Good for channels with regular uploads where recency matters.</p>
+
+            <div class="highlight-box">
+                <h3>End Screen Requirements</h3>
+                <ul>
+                    <li>Video must be at least 25 seconds long</li>
+                    <li>End screens last 5-20 seconds</li>
+                    <li>Maximum of 4 elements per end screen</li>
+                    <li>Elements cannot overlap with ads in the last 20 seconds</li>
+                    <li>Not available for videos set as "made for kids"</li>
+                    <li>Not available for 360/VR videos</li>
+                </ul>
+            </div>
+
+            <h2>End Screen Best Practices</h2>
+
+            <div class="tip-box">
+                <h3>Design Your Outro for End Screens</h3>
+                <ul>
+                    <li><strong>Plan your layout:</strong> Create dedicated space for end screen elements</li>
+                    <li><strong>Use template backgrounds:</strong> Design an outro with placeholder areas</li>
+                    <li><strong>Keep it simple:</strong> Don't clutter the screen with text under element areas</li>
+                    <li><strong>Consistent placement:</strong> Put elements in the same spot across videos</li>
+                    <li><strong>Leave breathing room:</strong> Don't place elements too close to edges</li>
+                </ul>
+            </div>
+
+            <h3>Verbal Call-to-Action</h3>
+            <p>End screens work best when combined with verbal prompts:</p>
+            <ul>
+                <li>"Watch this next video where I show you..."</li>
+                <li>"Click here for Part 2..."</li>
+                <li>"If you found this helpful, subscribe for more..."</li>
+                <li>"Check out this playlist to master [topic]..."</li>
+            </ul>
+
+            <h3>Strategic Element Placement</h3>
+            <ul>
+                <li><strong>Two videos:</strong> Most common layout; give viewers options</li>
+                <li><strong>Video + Subscribe:</strong> Balance growth with engagement</li>
+                <li><strong>Video + Playlist:</strong> Great for tutorial or series content</li>
+                <li><strong>Single video:</strong> For focused promotion of specific content</li>
+            </ul>
+
+            <div class="example-box">
+                <h3>Effective End Screen Combinations</h3>
+                <ul>
+                    <li><strong>Tutorial videos:</strong> "Best for viewer" + playlist of tutorials + subscribe</li>
+                    <li><strong>Series content:</strong> Next episode (specific) + subscribe + channel trailer</li>
+                    <li><strong>Entertainment:</strong> "Best for viewer" + "Most recent" + subscribe</li>
+                    <li><strong>Educational:</strong> Related deep-dive (specific) + topic playlist</li>
+                </ul>
+            </div>
+
+            <h2>Measuring End Screen Performance</h2>
+            <p>Track end screen effectiveness in YouTube Studio under <a href="analytics.html">Analytics</a> > Engagement > End screen:</p>
+
+            <h3>Key Metrics</h3>
+            <ul>
+                <li><strong>End screen element shown:</strong> How many viewers see your end screen</li>
+                <li><strong>End screen element clicks:</strong> How many viewers click elements</li>
+                <li><strong>End screen element CTR:</strong> Click rate (clicks/impressions)</li>
+                <li><strong>Clicks per element:</strong> Performance of each specific element</li>
+            </ul>
+
+            <h3>Optimization Based on Data</h3>
+            <ul>
+                <li>Low impressions? Viewers may be leaving before the end screen appears</li>
+                <li>Low CTR? Try different element combinations or verbal CTAs</li>
+                <li>One element underperforming? Replace or reposition it</li>
+                <li>Compare performance across videos to find winning formats</li>
+            </ul>
+
+            <div class="warning-box">
+                <h3>End Screen Mistakes to Avoid</h3>
+                <ul>
+                    <li><strong>Covering important content:</strong> Don't place elements over key visuals</li>
+                    <li><strong>No verbal CTA:</strong> Viewers need prompting to click</li>
+                    <li><strong>Ending too abruptly:</strong> Give viewers time to see and click elements</li>
+                    <li><strong>Wrong video choice:</strong> Promoting irrelevant content reduces clicks</li>
+                    <li><strong>Forgetting to add them:</strong> End screens must be added manually to each video</li>
+                    <li><strong>Too many elements:</strong> Can overwhelm viewers; sometimes less is more</li>
+                </ul>
+            </div>
+
+            <h2>End Screens vs. Cards</h2>
+            <p>Both are interactive elements but serve different purposes:</p>
+            <ul>
+                <li><strong>End Screens:</strong> Last 5-20 seconds, multiple elements, best for driving next action</li>
+                <li><strong>Cards:</strong> Appear anytime during video, single element pop-up, best for contextual links</li>
+            </ul>
+            <p>Use both strategically: cards during the video for relevant references, end screens for the final call-to-action.</p>
+
+            <h2>Creating an End Screen Template</h2>
+            <p>Save time by creating a reusable outro:</p>
+            <ul>
+                <li>Design a 15-20 second outro animation or static background</li>
+                <li>Include placeholder areas for 2-4 end screen elements</li>
+                <li>Add your channel branding</li>
+                <li>Include background music that fits your brand</li>
+                <li>Use this template at the end of every video</li>
+            </ul>
+
+            <div class="related-terms">
+                <h2>Related Terms</h2>
+                <div class="term-links">
+                    <a href="watch-time.html" class="term-link">Watch Time</a>
+                    <a href="subscribers.html" class="term-link">Subscribers</a>
+                    <a href="algorithm.html" class="term-link">Algorithm</a>
+                    <a href="discovery.html" class="term-link">Discovery</a>
+                    <a href="ctr.html" class="term-link">CTR</a>
+                    <a href="analytics.html" class="term-link">Analytics</a>
+                    <a href="hook.html" class="term-link">Hook</a>
+                    <a href="engagement-rate.html" class="term-link">Engagement Rate</a>
+                    <a href="impressions.html" class="term-link">Impressions</a>
+                </div>
+            </div>
+
+            <div class="cta-box">
+                <h3>Optimize Your Video Performance</h3>
+                <p>Learn more strategies to increase watch time and subscriber growth.</p>
+                <a href="/youtube-growth/">Read Growth Guide</a>
+            </div>
+
+            <div class="nav-bottom">
+                <a href="evergreen-content.html" class="prev">
+                    <span class="label">Previous Term</span>
+                    <span class="title">Evergreen Content</span>
+                </a>
+                <a href="hook.html" class="next">
+                    <span class="label">Next Term</span>
+                    <span class="title">Hook</span>
+                </a>
+            </div>
+        </article>
+    </main>
+
+    <footer role="contentinfo">
+        <div class="container">
+            <p>&copy; 2025 ViewsGrowth. Your complete resource for YouTube channel growth.</p>
+            <p><a href="/glossary/">Glossary</a> | <a href="/tools/">Tools</a> | <a href="/youtube-growth/">Growth Guide</a></p>
+        </div>
+    </footer>
+
+    <a href="#" class="back-to-top" aria-label="Back to top">↑</a>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        const navOverlay = document.querySelector('.nav-overlay');
+        function toggleMenu() {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            navOverlay.classList.toggle('active');
+        }
+        hamburger.addEventListener('click', toggleMenu);
+        navOverlay.addEventListener('click', toggleMenu);
+    </script>
+</body>
+</html>

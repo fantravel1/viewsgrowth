@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Discovery: How Viewers Find Your Content | ViewsGrowth Glossary</title>
+    <meta name="description" content="Understand how YouTube discovery works - from search and suggested videos to browse features. Learn to optimize your content for maximum discoverability.">
+    <meta name="keywords" content="YouTube discovery, how to get discovered on YouTube, YouTube discoverability, YouTube traffic sources, video discovery">
+    <link rel="canonical" href="https://viewsgrowth.com/glossary/discovery.html">
+
+    <meta property="og:title" content="YouTube Discovery: How Viewers Find Your Content">
+    <meta property="og:description" content="Master YouTube discovery mechanisms. Learn how search, suggested videos, and browse features drive views to your channel.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://viewsgrowth.com/glossary/discovery.html">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <style>
+        body { margin: 0; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.6; color: #212121; background: #fff; }
+        .container { max-width: 800px; margin: 0 auto; padding: 0 20px; }
+        .skip-link { position: absolute; top: -40px; left: 0; background: #0066cc; color: #fff; padding: 8px 16px; z-index: 100; }
+        .skip-link:focus { top: 0; }
+        h1 { font-size: 2.2rem; margin-bottom: 1rem; color: #212121; }
+        h2 { font-size: 1.5rem; color: #7c3aed; margin-top: 2.5rem; }
+        h3 { font-size: 1.25rem; color: #212121; margin-top: 2rem; }
+        p { margin: 1rem 0; }
+        @media(max-width:768px) { h1 { font-size: 1.7rem; } h2 { font-size: 1.3rem; } }
+
+        nav[role="navigation"] { background: #212121; padding: 1rem 0; position: sticky; top: 0; z-index: 1000; }
+        nav .container { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; }
+        .nav-brand { color: #fff; text-decoration: none; font-weight: 700; font-size: 1.25rem; }
+        .hamburger { background: none; border: none; cursor: pointer; padding: 8px; display: flex; flex-direction: column; gap: 5px; }
+        .hamburger span { display: block; width: 24px; height: 2px; background: #fff; transition: 0.3s; }
+        .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
+        .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+        .nav-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); opacity: 0; visibility: hidden; transition: 0.3s; z-index: 998; }
+        .nav-overlay.active { opacity: 1; visibility: visible; }
+        .nav-menu { position: fixed; top: 0; right: -280px; width: 280px; height: 100%; background: #fff; transition: 0.3s; z-index: 999; overflow-y: auto; padding: 2rem 0; }
+        .nav-menu.active { right: 0; }
+        .nav-menu a { display: block; padding: 0.75rem 1.5rem; color: #212121; text-decoration: none; border-bottom: 1px solid #eee; }
+        .nav-menu a:hover { background: #f0e6ff; color: #8b5cf6; }
+        .nav-section { padding: 0.75rem 1.5rem; font-weight: 600; color: #666; font-size: 0.85rem; text-transform: uppercase; background: #f8f9fa; }
+
+        .breadcrumb { background: #f8f9fa; padding: 1rem 0; }
+        .breadcrumb .container { max-width: 1200px; }
+        .breadcrumb ol { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+        .breadcrumb li:not(:last-child)::after { content: ">"; margin-left: 0.5rem; color: #666; }
+        .breadcrumb a { color: #0066cc; text-decoration: none; }
+
+        .term-header { background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%); color: #fff; padding: 3rem 0; margin-bottom: 2rem; }
+        .term-category { display: inline-block; background: rgba(255,255,255,0.2); padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.85rem; margin-bottom: 1rem; }
+        .term-header h1 { margin: 0; }
+
+        .definition-box { background: #f5f3ff; border-left: 4px solid #8b5cf6; padding: 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0; }
+        .definition-box strong { color: #7c3aed; font-size: 1.1rem; }
+        .definition-box p { margin: 0.5rem 0 0 0; font-size: 1.1rem; }
+
+        .key-points { background: #fff; border: 1px solid #e9e3ff; border-radius: 12px; padding: 1.5rem; margin: 2rem 0; }
+        .key-points h3 { margin-top: 0; color: #7c3aed; }
+        .key-points ul { margin: 0; padding-left: 1.5rem; }
+        .key-points li { margin: 0.5rem 0; }
+
+        .discovery-card { background: #fff; border: 2px solid #e9e3ff; border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; }
+        .discovery-card h3 { margin-top: 0; color: #7c3aed; display: flex; align-items: center; gap: 0.5rem; }
+        .discovery-card .percentage { background: #8b5cf6; color: #fff; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.85rem; }
+
+        .tip-box { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 12px; padding: 1.5rem; margin: 2rem 0; }
+        .tip-box h3 { margin-top: 0; color: #15803d; }
+
+        .warning-box { background: #fef3c7; border: 1px solid #fcd34d; border-radius: 12px; padding: 1.5rem; margin: 2rem 0; }
+        .warning-box h3 { margin-top: 0; color: #b45309; }
+
+        .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin: 2rem 0; }
+        .stat-card { background: linear-gradient(135deg, #f5f3ff, #ede9fe); padding: 1.5rem; border-radius: 12px; text-align: center; }
+        .stat-card .number { font-size: 2rem; font-weight: 700; color: #7c3aed; }
+        .stat-card .label { font-size: 0.9rem; color: #666; }
+
+        .related-terms { background: #f8f9fa; padding: 2rem; border-radius: 12px; margin: 3rem 0; }
+        .related-terms h2 { margin-top: 0; }
+        .term-links { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+        .term-link { display: inline-block; background: #fff; border: 1px solid #e9e3ff; padding: 0.5rem 1rem; border-radius: 20px; text-decoration: none; color: #7c3aed; font-size: 0.9rem; transition: all 0.2s; }
+        .term-link:hover { background: #8b5cf6; color: #fff; border-color: #8b5cf6; }
+
+        .cta-box { background: linear-gradient(135deg, #8b5cf6, #7c3aed); color: #fff; padding: 2rem; border-radius: 12px; margin: 3rem 0; text-align: center; }
+        .cta-box h3 { margin-top: 0; }
+        .cta-box a { display: inline-block; background: #fff; color: #7c3aed; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600; margin-top: 1rem; }
+
+        .nav-bottom { display: flex; justify-content: space-between; gap: 1rem; margin: 3rem 0; flex-wrap: wrap; }
+        .nav-bottom a { flex: 1; min-width: 200px; padding: 1rem; background: #f8f9fa; border-radius: 8px; text-decoration: none; color: #212121; }
+        .nav-bottom a:hover { background: #f0e6ff; }
+        .nav-bottom .label { font-size: 0.85rem; color: #666; }
+        .nav-bottom .title { font-weight: 600; color: #7c3aed; }
+        .nav-bottom .next { text-align: right; }
+
+        footer { background: #212121; color: #fff; padding: 2rem 0; margin-top: 4rem; text-align: center; }
+        footer a { color: #8b5cf6; }
+        .back-to-top { position: fixed; bottom: 2rem; right: 2rem; background: #8b5cf6; color: #fff; width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 1.5rem; box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3); }
+    </style>
+    <link rel="stylesheet" href="../css/style.css">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "DefinedTerm",
+        "name": "YouTube Discovery",
+        "description": "The various mechanisms and surfaces through which viewers find and encounter videos on YouTube, including search, suggested videos, browse features, and external sources.",
+        "inDefinedTermSet": "https://viewsgrowth.com/glossary/"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://viewsgrowth.com/"},
+            {"@type": "ListItem", "position": 2, "name": "Glossary", "item": "https://viewsgrowth.com/glossary/"},
+            {"@type": "ListItem", "position": 3, "name": "Discovery", "item": "https://viewsgrowth.com/glossary/discovery.html"}
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What are the main ways viewers discover videos on YouTube?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The main YouTube discovery sources are: Browse Features (homepage and subscription feed) accounting for 30-50% of views, Suggested Videos (sidebar and end-of-video recommendations) at 30-40%, YouTube Search at 15-25%, and External Sources (Google, social media, embedded videos) at 5-15%. The exact mix varies by channel and content type."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I improve my video's discoverability on YouTube?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Improve YouTube discoverability by: 1) Optimizing titles, descriptions, and tags with relevant keywords for search, 2) Creating compelling thumbnails with high CTR for better browse and suggested performance, 3) Maximizing watch time and engagement to signal quality to the algorithm, 4) Building consistent upload schedules for subscription traffic, and 5) Promoting videos externally to drive initial velocity."
+                }
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <nav role="navigation" aria-label="Main navigation">
+        <div class="container">
+            <a href="/" class="nav-brand">ViewsGrowth</a>
+            <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+        <div class="nav-overlay"></div>
+        <div class="nav-menu" role="menu">
+            <div class="nav-section">Getting Started</div>
+            <a href="/getting-started.html" role="menuitem">Getting Started Guide</a>
+            <a href="/algorithm.html" role="menuitem">Algorithm Explained</a>
+            <div class="nav-section">Free Tools</div>
+            <a href="/tools/thumbnail-preview.html" role="menuitem">Thumbnail Preview</a>
+            <a href="/tools/earnings-calculator.html" role="menuitem">Earnings Calculator</a>
+            <a href="/tools/title-analyzer.html" role="menuitem">Title Analyzer</a>
+            <a href="/tools/" role="menuitem">All Tools</a>
+            <div class="nav-section">Growth Guides</div>
+            <a href="/youtube-growth/" role="menuitem">YouTube Growth Hub</a>
+            <a href="/youtube-algorithm/" role="menuitem">Algorithm Deep Dive</a>
+            <a href="/viral-videos/" role="menuitem">Viral Video Strategies</a>
+            <div class="nav-section">Resources</div>
+            <a href="/glossary/" role="menuitem">YouTube Glossary</a>
+            <a href="/analytics.html" role="menuitem">Analytics Guide</a>
+            <a href="/monetization.html" role="menuitem">Monetization</a>
+        </div>
+    </nav>
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <div class="container">
+            <ol>
+                <li><a href="/">Home</a></li>
+                <li><a href="/glossary/">Glossary</a></li>
+                <li aria-current="page">Discovery</li>
+            </ol>
+        </div>
+    </nav>
+
+    <header class="term-header">
+        <div class="container">
+            <span class="term-category">Growth Concept</span>
+            <h1>Discovery</h1>
+        </div>
+    </header>
+
+    <main id="main-content" role="main">
+        <article class="container">
+            <div class="definition-box">
+                <strong>Definition</strong>
+                <p>Discovery refers to the various ways viewers find and encounter videos on YouTube. It encompasses all traffic sources including search results, suggested videos, the homepage (browse features), subscription feeds, and external sources like Google search and social media.</p>
+            </div>
+
+            <h2>Why Discovery Matters</h2>
+            <p>Understanding YouTube discovery is essential because the platform serves over 1 billion hours of video daily. Without proper optimization for discovery, even great content can remain invisible. The <a href="algorithm.html">algorithm</a> acts as a matchmaker between videos and viewers, and your job is to send the right signals.</p>
+
+            <div class="stat-grid">
+                <div class="stat-card">
+                    <div class="number">1B+</div>
+                    <div class="label">Hours Watched Daily</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">500</div>
+                    <div class="label">Hours Uploaded/Min</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">70%</div>
+                    <div class="label">Views from Recommendations</div>
+                </div>
+            </div>
+
+            <h2>The Five Discovery Surfaces</h2>
+            <p>YouTube has multiple surfaces where your content can be discovered, each with different optimization strategies:</p>
+
+            <div class="discovery-card">
+                <h3>1. Browse Features (Homepage) <span class="percentage">30-50% of views</span></h3>
+                <p>The YouTube homepage is personalized for each viewer based on their watch history, subscriptions, and interests. Videos appear here when:</p>
+                <ul>
+                    <li>The viewer has shown interest in similar content</li>
+                    <li>The video has strong early performance metrics (<a href="ctr.html">CTR</a>, <a href="watch-time.html">watch time</a>)</li>
+                    <li>The channel has consistent upload history</li>
+                    <li>The <a href="thumbnail.html">thumbnail</a> and title attract clicks</li>
+                </ul>
+                <p><strong>Optimization focus:</strong> High CTR thumbnails, compelling titles, consistent uploads, viewer satisfaction</p>
+            </div>
+
+            <div class="discovery-card">
+                <h3>2. Suggested Videos <span class="percentage">30-40% of views</span></h3>
+                <p>Videos recommended in the sidebar and after a video ends. The algorithm suggests videos based on:</p>
+                <ul>
+                    <li>Topical relevance to the current video</li>
+                    <li>Videos commonly watched together</li>
+                    <li>Viewer's watch history and preferences</li>
+                    <li>Videos that extend session time</li>
+                </ul>
+                <p><strong>Optimization focus:</strong> Create content clusters in your <a href="niche.html">niche</a>, use <a href="end-screen.html">end screens</a>, build playlists, maintain topic consistency</p>
+            </div>
+
+            <div class="discovery-card">
+                <h3>3. YouTube Search <span class="percentage">15-25% of views</span></h3>
+                <p>Viewers actively searching for specific content. Search ranking depends on:</p>
+                <ul>
+                    <li>Keyword relevance in title, <a href="description.html">description</a>, and tags</li>
+                    <li>Watch time and engagement for search queries</li>
+                    <li>Channel authority in the topic</li>
+                    <li>Video freshness for time-sensitive queries</li>
+                </ul>
+                <p><strong>Optimization focus:</strong> <a href="seo.html">SEO</a>, keyword research, answer search intent, optimize for long-tail keywords</p>
+            </div>
+
+            <div class="discovery-card">
+                <h3>4. Subscription Feed <span class="percentage">10-20% of views</span></h3>
+                <p>Content shown to your <a href="subscribers.html">subscribers</a>. This traffic is more reliable but requires:</p>
+                <ul>
+                    <li>Consistent upload schedule</li>
+                    <li>Notification bell activations</li>
+                    <li>Content that matches subscriber expectations</li>
+                    <li>Strong channel branding</li>
+                </ul>
+                <p><strong>Optimization focus:</strong> Build loyal subscriber base, maintain content consistency, encourage notification bells</p>
+            </div>
+
+            <div class="discovery-card">
+                <h3>5. External Sources <span class="percentage">5-15% of views</span></h3>
+                <p>Traffic from outside YouTube including Google search, social media, and embedded videos:</p>
+                <ul>
+                    <li>Google search (videos in search results)</li>
+                    <li>Social media shares (Twitter, Facebook, Reddit)</li>
+                    <li>Embedded videos on websites</li>
+                    <li>Direct links and email</li>
+                </ul>
+                <p><strong>Optimization focus:</strong> Google SEO, social promotion, embed-friendly content, shareable moments</p>
+            </div>
+
+            <h2>The Discovery Flywheel</h2>
+            <p>YouTube discovery creates a positive feedback loop when optimized correctly:</p>
+
+            <div class="key-points">
+                <h3>How the Flywheel Works</h3>
+                <ul>
+                    <li><strong>Step 1:</strong> Your video gets <a href="impressions.html">impressions</a> (thumbnail shown to potential viewers)</li>
+                    <li><strong>Step 2:</strong> A percentage click through (measured by CTR)</li>
+                    <li><strong>Step 3:</strong> Viewers watch (measured by watch time and retention)</li>
+                    <li><strong>Step 4:</strong> Strong performance signals trigger more impressions</li>
+                    <li><strong>Step 5:</strong> More impressions lead to more views and data</li>
+                    <li><strong>Step 6:</strong> Algorithm refines audience targeting based on who engages most</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h3>Discovery Optimization Strategy</h3>
+                <p>Rather than trying to optimize for all discovery sources equally, identify where your content naturally performs best:</p>
+                <ul>
+                    <li><strong>How-to content:</strong> Focus on search optimization</li>
+                    <li><strong>Entertainment/reaction:</strong> Focus on browse and suggested</li>
+                    <li><strong>News/trending:</strong> Focus on browse and external</li>
+                    <li><strong>Series content:</strong> Focus on suggested and subscription</li>
+                </ul>
+                <p>Check your <a href="analytics.html">Analytics</a> to see which sources drive your most engaged viewers.</p>
+            </div>
+
+            <h2>Shorts Discovery</h2>
+            <p>YouTube <a href="shorts.html">Shorts</a> have a separate discovery system through the Shorts shelf and dedicated Shorts feed:</p>
+            <ul>
+                <li>Shorts appear on the homepage, search, and dedicated Shorts tab</li>
+                <li>The algorithm heavily weights completion rate and re-watches</li>
+                <li>Vertical videos under 60 seconds are eligible</li>
+                <li>Shorts can drive subscribers who then discover long-form content</li>
+            </ul>
+
+            <div class="warning-box">
+                <h3>Discovery Killers to Avoid</h3>
+                <ul>
+                    <li><strong>Clickbait mismatches:</strong> High CTR but low watch time signals bad content</li>
+                    <li><strong>Inconsistent topics:</strong> Confuses the algorithm about your audience</li>
+                    <li><strong>Long upload gaps:</strong> Reduces homepage visibility for your channel</li>
+                    <li><strong>Ignoring analytics:</strong> Not understanding what drives your specific traffic</li>
+                    <li><strong>Poor thumbnails:</strong> Low CTR means fewer impressions overall</li>
+                </ul>
+            </div>
+
+            <h2>Measuring Discovery in Analytics</h2>
+            <p>Track discovery performance in YouTube Studio under Analytics > Reach:</p>
+            <ul>
+                <li><strong>Traffic sources:</strong> See which surfaces drive views</li>
+                <li><strong>Impressions:</strong> How often your thumbnails are shown</li>
+                <li><strong>CTR:</strong> Percentage of impressions that become views</li>
+                <li><strong>Search terms:</strong> What queries lead viewers to your content</li>
+            </ul>
+
+            <div class="related-terms">
+                <h2>Related Terms</h2>
+                <div class="term-links">
+                    <a href="algorithm.html" class="term-link">Algorithm</a>
+                    <a href="impressions.html" class="term-link">Impressions</a>
+                    <a href="ctr.html" class="term-link">CTR</a>
+                    <a href="watch-time.html" class="term-link">Watch Time</a>
+                    <a href="seo.html" class="term-link">SEO</a>
+                    <a href="thumbnail.html" class="term-link">Thumbnail</a>
+                    <a href="subscribers.html" class="term-link">Subscribers</a>
+                    <a href="analytics.html" class="term-link">Analytics</a>
+                    <a href="shorts.html" class="term-link">Shorts</a>
+                    <a href="description.html" class="term-link">Description</a>
+                </div>
+            </div>
+
+            <div class="cta-box">
+                <h3>Master the YouTube Algorithm</h3>
+                <p>Understand exactly how YouTube recommends videos and optimize your content strategy.</p>
+                <a href="/youtube-algorithm/">Read Algorithm Deep Dive</a>
+            </div>
+
+            <div class="nav-bottom">
+                <a href="description.html" class="prev">
+                    <span class="label">Previous Term</span>
+                    <span class="title">Description</span>
+                </a>
+                <a href="engagement-rate.html" class="next">
+                    <span class="label">Next Term</span>
+                    <span class="title">Engagement Rate</span>
+                </a>
+            </div>
+        </article>
+    </main>
+
+    <footer role="contentinfo">
+        <div class="container">
+            <p>&copy; 2025 ViewsGrowth. Your complete resource for YouTube channel growth.</p>
+            <p><a href="/glossary/">Glossary</a> | <a href="/tools/">Tools</a> | <a href="/youtube-growth/">Growth Guide</a></p>
+        </div>
+    </footer>
+
+    <a href="#" class="back-to-top" aria-label="Back to top">↑</a>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        const navOverlay = document.querySelector('.nav-overlay');
+        function toggleMenu() {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            navOverlay.classList.toggle('active');
+        }
+        hamburger.addEventListener('click', toggleMenu);
+        navOverlay.addEventListener('click', toggleMenu);
+    </script>
+</body>
+</html>

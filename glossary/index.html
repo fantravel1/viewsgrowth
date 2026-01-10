@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Marketing Glossary: 75+ Terms Explained | ViewsGrowth</title>
+    <meta name="description" content="Complete YouTube marketing glossary with 75+ terms. Learn definitions for algorithm, CTR, watch time, monetization, SEO, and all essential YouTube growth terminology.">
+    <meta name="keywords" content="YouTube glossary, YouTube marketing terms, YouTube terminology, YouTube algorithm terms, video marketing glossary, YouTube SEO terms, creator economy terms">
+    <link rel="canonical" href="https://viewsgrowth.com/glossary/">
+
+    <meta property="og:title" content="YouTube Marketing Glossary: 75+ Essential Terms Explained">
+    <meta property="og:description" content="Master YouTube marketing with our comprehensive glossary. 75+ terms covering algorithm, analytics, monetization, SEO, and growth strategies.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://viewsgrowth.com/glossary/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="YouTube Marketing Glossary | ViewsGrowth">
+    <meta name="twitter:description" content="75+ YouTube marketing terms explained. From algorithm basics to advanced monetization concepts.">
+
+    <style>
+        body { margin: 0; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.6; color: #212121; background: #fff; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .skip-link { position: absolute; top: -40px; left: 0; background: #0066cc; color: #fff; padding: 8px 16px; z-index: 100; }
+        .skip-link:focus { top: 0; }
+        h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+        h2 { font-size: 1.75rem; color: #212121; border-bottom: 3px solid #8b5cf6; padding-bottom: 0.5rem; margin-top: 3rem; }
+        @media(max-width:768px) { h1 { font-size: 1.8rem; } h2 { font-size: 1.4rem; } }
+
+        nav[role="navigation"] { background: #212121; padding: 1rem 0; position: sticky; top: 0; z-index: 1000; }
+        nav .container { display: flex; justify-content: space-between; align-items: center; }
+        .nav-brand { color: #fff; text-decoration: none; font-weight: 700; font-size: 1.25rem; }
+        .hamburger { background: none; border: none; cursor: pointer; padding: 8px; display: flex; flex-direction: column; gap: 5px; }
+        .hamburger span { display: block; width: 24px; height: 2px; background: #fff; transition: 0.3s; }
+        .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
+        .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+        .nav-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); opacity: 0; visibility: hidden; transition: 0.3s; z-index: 998; }
+        .nav-overlay.active { opacity: 1; visibility: visible; }
+        .nav-menu { position: fixed; top: 0; right: -280px; width: 280px; height: 100%; background: #fff; transition: 0.3s; z-index: 999; overflow-y: auto; padding: 2rem 0; }
+        .nav-menu.active { right: 0; }
+        .nav-menu a { display: block; padding: 0.75rem 1.5rem; color: #212121; text-decoration: none; border-bottom: 1px solid #eee; }
+        .nav-menu a:hover, .nav-menu a.active { background: #f0e6ff; color: #8b5cf6; }
+        .nav-section { padding: 0.75rem 1.5rem; font-weight: 600; color: #666; font-size: 0.85rem; text-transform: uppercase; background: #f8f9fa; }
+        @media(min-width:769px) { .nav-menu { width: 320px; right: -320px; } }
+
+        .breadcrumb { background: #f8f9fa; padding: 1rem 0; }
+        .breadcrumb ol { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+        .breadcrumb li:not(:last-child)::after { content: "›"; margin-left: 0.5rem; color: #666; }
+        .breadcrumb a { color: #0066cc; text-decoration: none; }
+        .breadcrumb a:hover { text-decoration: underline; }
+
+        .glossary-header { background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%); color: #fff; padding: 4rem 0 3rem; margin-bottom: 2rem; }
+        .glossary-header h1 { margin: 0 0 1rem 0; }
+        .glossary-header p { font-size: 1.25rem; opacity: 0.95; margin: 0; max-width: 700px; }
+
+        .lead-answer { background: #f5f3ff; border-left: 4px solid #8b5cf6; padding: 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0; font-size: 1.1rem; }
+        .lead-answer strong { color: #7c3aed; }
+
+        .alpha-nav { display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; padding: 1.5rem; background: #f8f9fa; border-radius: 12px; margin: 2rem 0; position: sticky; top: 60px; z-index: 100; }
+        .alpha-nav a { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #fff; color: #8b5cf6; text-decoration: none; font-weight: 600; border-radius: 8px; border: 2px solid #e9e3ff; transition: all 0.2s; }
+        .alpha-nav a:hover, .alpha-nav a.active { background: #8b5cf6; color: #fff; border-color: #8b5cf6; }
+        .alpha-nav a.disabled { color: #ccc; pointer-events: none; border-color: #eee; }
+        @media(max-width:600px) { .alpha-nav a { width: 32px; height: 32px; font-size: 0.9rem; } }
+
+        .stats-bar { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; padding: 1.5rem; background: #fff; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin: 2rem 0; }
+        .stat-item { text-align: center; padding: 1rem; }
+        .stat-number { font-size: 2rem; font-weight: 700; color: #8b5cf6; }
+        .stat-label { font-size: 0.9rem; color: #666; }
+
+        .toc { background: #f8f9fa; padding: 1.5rem 2rem; border-radius: 12px; margin: 2rem 0; }
+        .toc h2 { margin-top: 0; border: none; font-size: 1.25rem; }
+        .toc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 0.5rem 2rem; }
+        .toc a { color: #8b5cf6; text-decoration: none; padding: 0.25rem 0; display: block; }
+        .toc a:hover { text-decoration: underline; }
+
+        .letter-section { scroll-margin-top: 120px; }
+        .letter-heading { display: flex; align-items: center; gap: 1rem; margin: 3rem 0 1.5rem; }
+        .letter-badge { display: inline-flex; align-items: center; justify-content: center; width: 50px; height: 50px; background: linear-gradient(135deg, #8b5cf6, #7c3aed); color: #fff; font-size: 1.5rem; font-weight: 700; border-radius: 12px; }
+        .letter-heading h2 { margin: 0; border: none; padding: 0; }
+
+        .term-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; }
+        .term-card { background: #fff; border: 1px solid #e9e3ff; border-radius: 12px; padding: 1.5rem; transition: all 0.3s; text-decoration: none; color: inherit; display: block; }
+        .term-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(139, 92, 246, 0.15); border-color: #8b5cf6; }
+        .term-card h3 { margin: 0 0 0.75rem 0; color: #8b5cf6; font-size: 1.1rem; }
+        .term-card p { margin: 0; color: #555; font-size: 0.95rem; line-height: 1.5; }
+        .term-card .read-more { display: inline-block; margin-top: 1rem; color: #7c3aed; font-weight: 500; font-size: 0.9rem; }
+
+        .cluster-links { background: #f5f3ff; padding: 2rem; border-radius: 12px; margin: 3rem 0; }
+        .cluster-links h2 { margin-top: 0; color: #7c3aed; border-color: #8b5cf6; }
+        .cluster-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; }
+        .cluster-card { background: #fff; padding: 1.25rem; border-radius: 8px; text-decoration: none; color: inherit; border: 1px solid #e9e3ff; transition: all 0.2s; }
+        .cluster-card:hover { border-color: #8b5cf6; transform: translateY(-2px); }
+        .cluster-card h4 { margin: 0 0 0.5rem 0; color: #8b5cf6; }
+        .cluster-card p { margin: 0; font-size: 0.9rem; color: #666; }
+
+        footer { background: #212121; color: #fff; padding: 2rem 0; margin-top: 4rem; text-align: center; }
+        footer a { color: #8b5cf6; }
+
+        .back-to-top { position: fixed; bottom: 2rem; right: 2rem; background: #8b5cf6; color: #fff; width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 1.5rem; box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3); opacity: 0; visibility: hidden; transition: all 0.3s; }
+        .back-to-top.visible { opacity: 1; visibility: visible; }
+        .back-to-top:hover { transform: translateY(-4px); }
+    </style>
+    <link rel="stylesheet" href="../css/style.css">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://viewsgrowth.com/"},
+            {"@type": "ListItem", "position": 2, "name": "YouTube Marketing Glossary", "item": "https://viewsgrowth.com/glossary/"}
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "DefinedTermSet",
+        "name": "YouTube Marketing Glossary",
+        "description": "Comprehensive glossary of 75+ YouTube marketing, algorithm, and growth terms",
+        "url": "https://viewsgrowth.com/glossary/",
+        "hasDefinedTerm": [
+            {"@type": "DefinedTerm", "name": "Algorithm", "description": "YouTube's recommendation system that determines which videos to show viewers"},
+            {"@type": "DefinedTerm", "name": "Analytics", "description": "YouTube Studio data and metrics that help creators understand video performance"},
+            {"@type": "DefinedTerm", "name": "Average View Duration", "description": "The average amount of time viewers spend watching a video"},
+            {"@type": "DefinedTerm", "name": "CTR", "description": "Click-Through Rate - percentage of impressions that result in video views"},
+            {"@type": "DefinedTerm", "name": "Watch Time", "description": "Total accumulated minutes viewers have spent watching your content"},
+            {"@type": "DefinedTerm", "name": "Monetization", "description": "Methods of earning revenue from YouTube content"},
+            {"@type": "DefinedTerm", "name": "SEO", "description": "Search Engine Optimization for improving video discoverability"},
+            {"@type": "DefinedTerm", "name": "Thumbnail", "description": "Preview image that represents a video in search results and recommendations"}
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is a YouTube marketing glossary?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A YouTube marketing glossary is a comprehensive collection of terms, definitions, and concepts related to growing a YouTube channel, understanding the algorithm, optimizing videos for search, and monetizing content. It helps creators understand industry terminology and apply best practices."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What are the most important YouTube metrics to understand?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The most important YouTube metrics include Watch Time (total viewing minutes), CTR (Click-Through Rate), Average View Duration, Impressions, Subscriber Growth Rate, and Engagement Rate (likes, comments, shares). These metrics directly influence how the algorithm recommends your content."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How does the YouTube algorithm work?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The YouTube algorithm uses machine learning to match videos with viewers based on their interests and behavior. Key factors include watch time, CTR, engagement, session time, and viewer satisfaction signals. The algorithm optimizes for keeping viewers on the platform longer."
+                }
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <nav role="navigation" aria-label="Main navigation">
+        <div class="container">
+            <a href="/" class="nav-brand">ViewsGrowth</a>
+            <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <div class="nav-overlay"></div>
+        <div class="nav-menu" role="menu">
+            <div class="nav-section">Getting Started</div>
+            <a href="/getting-started.html" role="menuitem">Getting Started Guide</a>
+            <a href="/algorithm.html" role="menuitem">Algorithm Explained</a>
+            <div class="nav-section">Free Tools</div>
+            <a href="/tools/thumbnail-preview.html" role="menuitem">Thumbnail Preview</a>
+            <a href="/tools/earnings-calculator.html" role="menuitem">Earnings Calculator</a>
+            <a href="/tools/title-analyzer.html" role="menuitem">Title Analyzer</a>
+            <a href="/tools/channel-audit.html" role="menuitem">Channel Audit</a>
+            <a href="/tools/" role="menuitem">All Tools</a>
+            <div class="nav-section">Growth Guides</div>
+            <a href="/youtube-growth/" role="menuitem">YouTube Growth Hub</a>
+            <a href="/youtube-algorithm/" role="menuitem">Algorithm Deep Dive</a>
+            <a href="/viral-videos/" role="menuitem">Viral Video Strategies</a>
+            <a href="/video-optimization/" role="menuitem">Video Optimization</a>
+            <a href="/trending-channels/" role="menuitem">Trending Channels</a>
+            <div class="nav-section">Resources</div>
+            <a href="/glossary/" role="menuitem" class="active">YouTube Glossary</a>
+            <a href="/analytics.html" role="menuitem">Analytics Guide</a>
+            <a href="/monetization.html" role="menuitem">Monetization</a>
+            <a href="/tools-reviews/" role="menuitem">Tool Reviews</a>
+            <a href="/production/" role="menuitem">Production Tips</a>
+        </div>
+    </nav>
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <div class="container">
+            <ol>
+                <li><a href="/">Home</a></li>
+                <li aria-current="page">YouTube Marketing Glossary</li>
+            </ol>
+        </div>
+    </nav>
+
+    <header class="glossary-header">
+        <div class="container">
+            <h1>YouTube Marketing Glossary</h1>
+            <p>Master 75+ essential terms for YouTube growth, algorithm optimization, video SEO, and channel monetization. Your complete reference guide to YouTube marketing terminology.</p>
+        </div>
+    </header>
+
+    <main id="main-content" role="main">
+        <div class="container">
+            <div class="lead-answer">
+                <strong>What is this glossary?</strong> A comprehensive dictionary of YouTube marketing terms covering everything from algorithm basics to advanced monetization concepts. Each term includes a definition, practical examples, and links to related topics for deeper learning.
+            </div>
+
+            <div class="stats-bar">
+                <div class="stat-item">
+                    <div class="stat-number">75+</div>
+                    <div class="stat-label">Terms Defined</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">8</div>
+                    <div class="stat-label">Categories</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Free Access</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">2025</div>
+                    <div class="stat-label">Updated</div>
+                </div>
+            </div>
+
+            <nav class="alpha-nav" aria-label="Alphabetical navigation">
+                <a href="#letter-a">A</a>
+                <a href="#letter-b">B</a>
+                <a href="#letter-c">C</a>
+                <a href="#letter-d">D</a>
+                <a href="#letter-e">E</a>
+                <a href="#letter-f">F</a>
+                <a href="#letter-g">G</a>
+                <a href="#letter-h">H</a>
+                <a href="#letter-i">I</a>
+                <a href="#letter-j" class="disabled">J</a>
+                <a href="#letter-k">K</a>
+                <a href="#letter-l">L</a>
+                <a href="#letter-m">M</a>
+                <a href="#letter-n">N</a>
+                <a href="#letter-o">O</a>
+                <a href="#letter-p">P</a>
+                <a href="#letter-q" class="disabled">Q</a>
+                <a href="#letter-r">R</a>
+                <a href="#letter-s">S</a>
+                <a href="#letter-t">T</a>
+                <a href="#letter-u">U</a>
+                <a href="#letter-v">V</a>
+                <a href="#letter-w">W</a>
+                <a href="#letter-x" class="disabled">X</a>
+                <a href="#letter-y">Y</a>
+                <a href="#letter-z" class="disabled">Z</a>
+            </nav>
+
+            <div class="toc">
+                <h2>Browse by Category</h2>
+                <div class="toc-grid">
+                    <a href="#letter-a">Algorithm &amp; Discovery Terms</a>
+                    <a href="#letter-m">Monetization &amp; Revenue</a>
+                    <a href="#letter-s">SEO &amp; Optimization</a>
+                    <a href="#letter-a">Analytics &amp; Metrics</a>
+                    <a href="#letter-c">Content Strategy</a>
+                    <a href="#letter-e">Engagement &amp; Community</a>
+                    <a href="#letter-p">Production &amp; Technical</a>
+                    <a href="#letter-b">Branding &amp; Growth</a>
+                </div>
+            </div>
+
+            <!-- Letter A -->
+            <section id="letter-a" class="letter-section">
+                <div class="letter-heading">
+                    <span class="letter-badge">A</span>
+                    <h2>A Terms</h2>
+                </div>
+                <div class="term-grid">
+                    <a href="algorithm.html" class="term-card">
+                        <h3>Algorithm</h3>
+                        <p>YouTube's recommendation system that determines which videos appear in search results, suggested videos, and home feeds based on viewer behavior and content signals.</p>
+                        <span class="read-more">Learn more →</span>
+                    </a>
+                    <a href="analytics.html" class="term-card">
+                        <h3>Analytics</h3>
+                        <p>YouTube Studio's data dashboard providing insights into video performance, audience demographics, traffic sources, and engagement metrics.</p>
+                        <span class="read-more">Learn more →</span>
+                    </a>
+                    <a href="average-view-duration.html" class="term-card">
+                        <h3>Average View Duration (AVD)</h3>
+                        <p>The mean time viewers spend watching a video. A critical metric that indicates content quality and directly influences algorithmic recommendations.</p>
+                        <span class="read-more">Learn more →</span>
+                    </a>
+                    <a href="audience-retention.html" class="term-card">
+                        <h3>Audience Retention</h3>
+                        <p>A graph showing the percentage of viewers still watching at each moment of your video. Used to identify drop-off points and optimize content structure.</p>
+                        <span class="read-more">Learn more →</span>
+                    </a>
+                    <a href="adsense.html" class="term-card">
+                        <h3>AdSense</h3>
+                        <p>Google's advertising platform that enables monetized YouTube channels to earn revenue from ads displayed on their videos.</p>
+                        <span class="read-more">Learn more →</span>
+                    </a>
+                    <a href="a-b-testing.html" class="term-card">
+                        <h3>A/B Testing</h3>
+                        <p>Comparing two versions of thumbnails, titles, or content to determine which performs better with your audience.</p>
+                        <span class="read-more">Learn more →</span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Letter B -->
+            <section id="letter-b" class="letter-section">
+                <div class="letter-heading">
+                    <span class="letter-badge">B</span>
+                    <h2>B Terms</h2>
+                </div>
+                <div class="term-grid">
+                    <a href="browse-features.html" class="term-card">
+                        <h3>Browse Features</h3>
+                        <p>Traffic source category including YouTube homepage, subscription feed, and other browsing surfaces where videos are suggested to viewers.</p>
+                        <span class="read-more">Learn more →</span>
+                    </a>
+                    <a href="brand-account.html" class="term-card">
+                        <h3>Brand Account</h3>
+                        <p>A YouTube channel type managed through Google Brand Accounts, allowing multiple users to manage a channel without sharing personal credentials.</p>
+                        <span class="read-more">Learn more →</span>
+                    </a>
+                    <a href="b-roll.html" class="term-card">
+                        <h3>B-Roll</h3>
+                        <p>Supplementary footage intercut with main footage to add visual interest, illustrate points, and maintain viewer engagement.</p>
+                        <span class="read-more">Learn more →</span>
+                    </a>
+                    <a href="bumper-ads.html" class="term-card">
+                        <h3>Bumper Ads</h3>
+                        <p>Non-skippable 6-second video ads that play before, during, or after videos. A monetization format that provides consistent ad revenue.</p>
+                        <span class="read-more">Learn more →</span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Letter C -->
+            <section id="letter-c" class="letter-section">
+                <div class="letter-heading">
+                    <span class="letter-badge">C</span>
+                    <h2>C Terms</h2>
+                </div>
+                <div class="term-grid">
+                    <a href="ctr.html" class="term-card">
+                        <h3>CTR (Click-Through Rate)</h3>
+                        <p>The percentage of impressions that result in video views. Calculated as clicks divided by impressions. A key metric for thumbnail and title effectiveness.</p>
+                        <span class="read-more">Learn more →</span>
+                    </a>
+                    <a href="cpm.html" class="term-card">
+                        <h3>CPM (Cost Per Mille)</h3>
+                        <p>The amount advertisers pay per 1,000 ad impressions. Higher CPM niches include finance, business, and technology content.</p>
+                        <span class="read-more">Learn more →</span>
+                    </a>
+                    <a href="channel-keywords.html" class="term-card">
+                        <h3>Channel Keywords</h3>
+                        <p>Tags added to your channel settings that help YouTube understand your content niche and improve discoverability in search results.</p>
+                        <span class="read-more">Learn more →</span>
+                    </a>
+                    <a href="community-tab.html" class="term-card">
+                        <h3>Community Tab</h3>
+                        <p>A channel feature (available at 500+ subscribers) for posting polls, images, and text updates to engage subscribers between video uploads.</p>
+                        <span class="read-more">Learn more →</span>
+                    </a>
+                    <a href="cards.html" class="term-card">
+                        <h3>Cards</h3>
+                        <p>Interactive elements added to videos that promote other content, channels, polls, or external links. Appear as small rectangles viewers can click.</p>
+                        <span class="read-more">Learn more →</span>
+                    </a>
+                    <a href="content-id.html" class="term-card">
+                        <h3>Content ID</h3>
+                        <p>YouTube's automated system for identifying and managing copyrighted content. Rights holders can track, monetize, or block matching videos.</p>
+                        <span class="read-more">Learn more →</span>
+                    </a>
+                    <a href="chapters.html" class="term-card">
+                        <h3>Chapters</h3>
+                        <p>Video segments defined by timestamps in the description that create a visual progress bar and improve navigation and SEO.</p>
+                        <span class="read-more">Learn more →</span>
+                    </a>
+                    <a href="collab.html" class="term-card">
+                        <h3>Collaboration</h3>
+                        <p>Creating content with other creators to cross-promote channels, share audiences, and accelerate subscriber growth.</p>
+                        <span class="read-more">Learn more →</span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Letter D -->
+            <section id="letter-d" class="letter-section">
+                <div class="letter-heading">
+                    <span class="letter-badge">D</span>
+                    <h2>D Terms</h2>
+                </div>
+                <div class="term-grid">
+                    <a href="demonetization.html" class="term-card">
+                        <h3>Demonetization</h3>
+                        <p>When YouTube restricts or removes advertising from videos due to content guideline violations or advertiser-unfriendly content.</p>
+                        <span class="read-more">Learn more →</span>
+                    </a>
+                    <a href="description.html" class="term-card">
+                        <h3>Description</h3>
+                        <p>The text field below videos used for SEO keywords, timestamps, links, and additional context. First 150 characters appear in search results.</p>
+                        <span class="read-more">Learn more →</span>
+                    </a>
+                    <a href="discovery.html" class="term-card">
+                        <h3>Discovery</h3>
+                        <p>How viewers find your content through search, suggested videos, browse features, and external sources. Optimizing for discovery is key to growth.</p>
+                        <span class="read-more">Learn more →</span>
+                    </a>
+                    <a href="drop-off-point.html" class="term-card">
+                        <h3>Drop-Off Point</h3>
+                        <p>Moments in a video where significant viewer loss occurs. Identified through audience retention graphs to improve future content.</p>
+                        <span class="read-more">Learn more →</span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Letter E -->
+            <section id="letter-e" class="letter-section">
+                <div class="letter-heading">
+                    <span class="letter-badge">E</span>
+                    <h2>E Terms</h2>
+                </div>
+                <div class="term-grid">
+                    <a href="end-screen.html" class="term-card">
+                        <h3>End Screen</h3>
+                        <p>Interactive elements appearing in the final 5-20 seconds of videos promoting other videos, playlists, subscribe buttons, or external links.</p>
+                        <span class="read-more">Learn more →</span>
+                    </a>
+                    <a href="engagement-rate.html" class="term-card">
+                        <h3>Engagement Rate</h3>
+                        <p>The ratio of interactions (likes, comments, shares) to views. High engagement signals quality content to the algorithm.</p>
+                        <span class="read-more">Learn more →</span>
+                    </a>
+                    <a href="evergreen-content.html" class="term-card">
+                        <h3>Evergreen Content</h3>
+                        <p>Videos that remain relevant over time without being tied to current events or trends. Provides consistent long-term traffic.</p>
+                        <span class="read-more">Learn more →</span>
+                    </a>
+                    <a href="external-traffic.html" class="term-card">
+                        <h3>External Traffic</h3>
+                        <p>Views originating from outside YouTube, including social media, websites, and direct links. Valuable for initial video momentum.</p>
+                        <span class="read-more">Learn more →</span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Letter F -->
+            <section id="letter-f" class="letter-section">
+                <div class="letter-heading">
+                    <span class="letter-badge">F</span>
+                    <h2>F Terms</h2>
+                </div>
+                <div class="term-grid">
+                    <a href="feature-channels.html" class="term-card">
+                        <h3>Featured Channels</h3>
+                        <p>A channel page section showcasing other channels you recommend. Used for cross-promotion and building creator networks.</p>
+                        <span class="read-more">Learn more →</span>
+                    </a>
+                    <a href="first-48-hours.html" class="term-card">
+                        <h3>First 48 Hours</h3>
+                        <p>The critical initial period after upload when algorithm testing occurs. Strong early performance leads to wider distribution.</p>
+                        <span class="read-more">Learn more →</span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Letter G -->
+            <section id="letter-g" class="letter-section">
+                <div class="letter-heading">
+                    <span class="letter-badge">G</span>
+                    <h2>G Terms</h2>
+                </div>
+                <div class="term-grid">
+                    <a href="google-trends.html" class="term-card">
+                        <h3>Google Trends</h3>
+                        <p>Free tool for researching search term popularity over time. Essential for identifying trending topics and seasonal content opportunities.</p>
+                        <span class="read-more">Learn more →</span>
+                    </a>
+                    <a href="growth-hacking.html" class="term-card">
+                        <h3>Growth Hacking</h3>
+                        <p>Strategic techniques for accelerating channel growth through optimization, collaboration, trend-jacking, and audience development tactics.</p>
+                        <span class="read-more">Learn more →</span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Letter H -->
+            <section id="letter-h" class="letter-section">
+                <div class="letter-heading">
+                    <span class="letter-badge">H</span>
+                    <h2>H Terms</h2>
+                </div>
+                <div class="term-grid">
+                    <a href="hook.html" class="term-card">
+                        <h3>Hook</h3>
+                        <p>The opening seconds of a video designed to capture attention and convince viewers to keep watching. Critical for retention metrics.</p>
+                        <span class="read-more">Learn more →</span>
+                    </a>
+                    <a href="hashtags.html" class="term-card">
+                        <h3>Hashtags</h3>
+                        <p>Clickable keywords added to titles or descriptions that categorize content and improve discoverability in hashtag search pages.</p>
+                        <span class="read-more">Learn more →</span>
+                    </a>
+                    <a href="homepage.html" class="term-card">
+                        <h3>Homepage (YouTube)</h3>
+                        <p>The main YouTube landing page where personalized video recommendations appear. A major traffic source for established channels.</p>
+                        <span class="read-more">Learn more →</span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Letter I -->
+            <section id="letter-i" class="letter-section">
+                <div class="letter-heading">
+                    <span class="letter-badge">I</span>
+                    <h2>I Terms</h2>
+                </div>
+                <div class="term-grid">
+                    <a href="impressions.html" class="term-card">
+                        <h3>Impressions</h3>
+                        <p>The number of times your video thumbnail is shown to viewers on YouTube. Not all impressions result in views (see CTR).</p>
+                        <span class="read-more">Learn more →</span>
+                    </a>
+                    <a href="info-cards.html" class="term-card">
+                        <h3>Info Cards</h3>
+                        <p>See "Cards" - interactive elements that appear during videos to promote related content and drive engagement.</p>
+                        <span class="read-more">Learn more →</span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Letter K -->
+            <section id="letter-k" class="letter-section">
+                <div class="letter-heading">
+                    <span class="letter-badge">K</span>
+                    <h2>K Terms</h2>
+                </div>
+                <div class="term-grid">
+                    <a href="keywords.html" class="term-card">
+                        <h3>Keywords</h3>
+                        <p>Search terms and phrases that describe your content. Used in titles, descriptions, and tags to improve video discoverability.</p>
+                        <span class="read-more">Learn more →</span>
+                    </a>
+                    <a href="key-moments.html" class="term-card">
+                        <h3>Key Moments</h3>
+                        <p>Timestamps that appear in Google search results, allowing viewers to jump directly to relevant sections of your video.</p>
+                        <span class="read-more">Learn more →</span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Letter L -->
+            <section id="letter-l" class="letter-section">
+                <div class="letter-heading">
+                    <span class="letter-badge">L</span>
+                    <h2>L Terms</h2>
+                </div>
+                <div class="term-grid">
+                    <a href="live-streaming.html" class="term-card">
+                        <h3>Live Streaming</h3>
+                        <p>Real-time video broadcasting on YouTube. Enables Super Chat monetization, real-time engagement, and builds community connection.</p>
+                        <span class="read-more">Learn more →</span>
+                    </a>
+                    <a href="long-form-content.html" class="term-card">
+                        <h3>Long-Form Content</h3>
+                        <p>Videos typically over 10 minutes that allow for mid-roll ads and deeper topic exploration. Often preferred by the algorithm for watch time.</p>
+                        <span class="read-more">Learn more →</span>
+                    </a>
+                    <a href="long-tail-keywords.html" class="term-card">
+                        <h3>Long-Tail Keywords</h3>
+                        <p>Specific, multi-word search phrases with lower competition but higher intent. Essential for new channels to gain traction.</p>
+                        <span class="read-more">Learn more →</span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Letter M -->
+            <section id="letter-m" class="letter-section">
+                <div class="letter-heading">
+                    <span class="letter-badge">M</span>
+                    <h2>M Terms</h2>
+                </div>
+                <div class="term-grid">
+                    <a href="monetization.html" class="term-card">
+                        <h3>Monetization</h3>
+                        <p>Earning revenue from YouTube through ads, memberships, Super Chat, merchandise, and affiliate marketing. Requires YPP eligibility.</p>
+                        <span class="read-more">Learn more →</span>
+                    </a>
+                    <a href="metadata.html" class="term-card">
+                        <h3>Metadata</h3>
+                        <p>All text information associated with a video including title, description, tags, and captions. Critical for SEO and discoverability.</p>
+                        <span class="read-more">Learn more →</span>
+                    </a>
+                    <a href="mid-roll-ads.html" class="term-card">
+                        <h3>Mid-Roll Ads</h3>
+                        <p>Advertisements that play during videos (available for videos 8+ minutes). Placement can be automatic or manually set for optimal revenue.</p>
+                        <span class="read-more">Learn more →</span>
+                    </a>
+                    <a href="memberships.html" class="term-card">
+                        <h3>Channel Memberships</h3>
+                        <p>Paid subscription feature allowing viewers to support creators monthly in exchange for perks like badges, emojis, and exclusive content.</p>
+                        <span class="read-more">Learn more →</span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Letter N -->
+            <section id="letter-n" class="letter-section">
+                <div class="letter-heading">
+                    <span class="letter-badge">N</span>
+                    <h2>N Terms</h2>
+                </div>
+                <div class="term-grid">
+                    <a href="niche.html" class="term-card">
+                        <h3>Niche</h3>
+                        <p>A specific topic area or audience segment a channel focuses on. Niching down helps build dedicated audiences and algorithmic recognition.</p>
+                        <span class="read-more">Learn more →</span>
+                    </a>
+                    <a href="notification-bell.html" class="term-card">
+                        <h3>Notification Bell</h3>
+                        <p>Feature allowing subscribers to receive alerts for new uploads. "Bell subscribers" provide reliable early views for new content.</p>
+                        <span class="read-more">Learn more →</span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Letter O -->
+            <section id="letter-o" class="letter-section">
+                <div class="letter-heading">
+                    <span class="letter-badge">O</span>
+                    <h2>O Terms</h2>
+                </div>
+                <div class="term-grid">
+                    <a href="organic-traffic.html" class="term-card">
+                        <h3>Organic Traffic</h3>
+                        <p>Views gained naturally through YouTube's recommendation system without paid promotion. The goal of sustainable channel growth.</p>
+                        <span class="read-more">Learn more →</span>
+                    </a>
+                    <a href="optimization.html" class="term-card">
+                        <h3>Optimization</h3>
+                        <p>The process of improving video elements (titles, thumbnails, descriptions, tags) to maximize discoverability and performance.</p>
+                        <span class="read-more">Learn more →</span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Letter P -->
+            <section id="letter-p" class="letter-section">
+                <div class="letter-heading">
+                    <span class="letter-badge">P</span>
+                    <h2>P Terms</h2>
+                </div>
+                <div class="term-grid">
+                    <a href="playlist.html" class="term-card">
+                        <h3>Playlist</h3>
+                        <p>Organized collections of videos that play sequentially. Increases session time, improves channel organization, and creates binge-watching opportunities.</p>
+                        <span class="read-more">Learn more →</span>
+                    </a>
+                    <a href="premiere.html" class="term-card">
+                        <h3>Premiere</h3>
+                        <p>Feature allowing creators to schedule a public video debut with live chat. Creates event excitement and concentrated early engagement.</p>
+                        <span class="read-more">Learn more →</span>
+                    </a>
+                    <a href="pattern-interrupt.html" class="term-card">
+                        <h3>Pattern Interrupt</h3>
+                        <p>Editing technique using visual or audio changes to recapture viewer attention and improve retention throughout longer videos.</p>
+                        <span class="read-more">Learn more →</span>
+                    </a>
+                    <a href="publishing-schedule.html" class="term-card">
+                        <h3>Publishing Schedule</h3>
+                        <p>Consistent upload timing that trains your audience when to expect new content and helps build subscriber loyalty.</p>
+                        <span class="read-more">Learn more →</span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Letter R -->
+            <section id="letter-r" class="letter-section">
+                <div class="letter-heading">
+                    <span class="letter-badge">R</span>
+                    <h2>R Terms</h2>
+                </div>
+                <div class="term-grid">
+                    <a href="rpm.html" class="term-card">
+                        <h3>RPM (Revenue Per Mille)</h3>
+                        <p>Total revenue earned per 1,000 views after YouTube's cut. Includes ads, memberships, Super Chat, and YouTube Premium revenue.</p>
+                        <span class="read-more">Learn more →</span>
+                    </a>
+                    <a href="retention.html" class="term-card">
+                        <h3>Retention</h3>
+                        <p>How well your video keeps viewers watching. High retention signals quality content and triggers broader algorithmic distribution.</p>
+                        <span class="read-more">Learn more →</span>
+                    </a>
+                    <a href="recommended-videos.html" class="term-card">
+                        <h3>Recommended Videos</h3>
+                        <p>Suggested videos appearing in the sidebar, end screens, and homepage. The primary traffic source for most successful channels.</p>
+                        <span class="read-more">Learn more →</span>
+                    </a>
+                    <a href="re-upload.html" class="term-card">
+                        <h3>Re-Upload</h3>
+                        <p>Publishing a previously uploaded video again (usually with improvements). Can reset algorithmic performance but risks duplicate content issues.</p>
+                        <span class="read-more">Learn more →</span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Letter S -->
+            <section id="letter-s" class="letter-section">
+                <div class="letter-heading">
+                    <span class="letter-badge">S</span>
+                    <h2>S Terms</h2>
+                </div>
+                <div class="term-grid">
+                    <a href="seo.html" class="term-card">
+                        <h3>SEO (Search Engine Optimization)</h3>
+                        <p>Techniques for improving video visibility in YouTube and Google search results through keyword optimization, metadata, and content strategy.</p>
+                        <span class="read-more">Learn more →</span>
+                    </a>
+                    <a href="shorts.html" class="term-card">
+                        <h3>YouTube Shorts</h3>
+                        <p>Vertical videos under 60 seconds designed for mobile viewing. Separate algorithm with potential for massive reach and new audience discovery.</p>
+                        <span class="read-more">Learn more →</span>
+                    </a>
+                    <a href="subscribers.html" class="term-card">
+                        <h3>Subscribers</h3>
+                        <p>Users who follow your channel to see new uploads in their subscription feed. A key growth metric and source of loyal viewership.</p>
+                        <span class="read-more">Learn more →</span>
+                    </a>
+                    <a href="suggested-videos.html" class="term-card">
+                        <h3>Suggested Videos</h3>
+                        <p>Videos recommended alongside the currently playing video. Appearing in suggestions of popular videos drives significant traffic.</p>
+                        <span class="read-more">Learn more →</span>
+                    </a>
+                    <a href="super-chat.html" class="term-card">
+                        <h3>Super Chat</h3>
+                        <p>Live stream feature allowing viewers to pay for highlighted messages. A direct monetization method for live content creators.</p>
+                        <span class="read-more">Learn more →</span>
+                    </a>
+                    <a href="session-time.html" class="term-card">
+                        <h3>Session Time</h3>
+                        <p>Total time a viewer spends on YouTube after watching your video. Videos that lead to longer sessions are favored by the algorithm.</p>
+                        <span class="read-more">Learn more →</span>
+                    </a>
+                    <a href="search-traffic.html" class="term-card">
+                        <h3>Search Traffic</h3>
+                        <p>Views originating from YouTube or Google search results. Often indicates high-intent viewers actively seeking your content topic.</p>
+                        <span class="read-more">Learn more →</span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Letter T -->
+            <section id="letter-t" class="letter-section">
+                <div class="letter-heading">
+                    <span class="letter-badge">T</span>
+                    <h2>T Terms</h2>
+                </div>
+                <div class="term-grid">
+                    <a href="thumbnail.html" class="term-card">
+                        <h3>Thumbnail</h3>
+                        <p>Custom preview image representing your video. The most important factor for CTR, directly impacting whether viewers click on your content.</p>
+                        <span class="read-more">Learn more →</span>
+                    </a>
+                    <a href="tags.html" class="term-card">
+                        <h3>Tags</h3>
+                        <p>Keywords added to videos to help YouTube understand content context. Less important than titles/descriptions but still useful for discoverability.</p>
+                        <span class="read-more">Learn more →</span>
+                    </a>
+                    <a href="trending.html" class="term-card">
+                        <h3>Trending</h3>
+                        <p>YouTube's curated list of popular and rising videos. Appearing on Trending can provide massive exposure but requires significant velocity.</p>
+                        <span class="read-more">Learn more →</span>
+                    </a>
+                    <a href="traffic-sources.html" class="term-card">
+                        <h3>Traffic Sources</h3>
+                        <p>Analytics showing where your views originate (search, suggested, browse, external). Essential for understanding how viewers find your content.</p>
+                        <span class="read-more">Learn more →</span>
+                    </a>
+                    <a href="title.html" class="term-card">
+                        <h3>Title</h3>
+                        <p>The headline of your video, crucial for SEO and viewer attraction. Effective titles balance keywords with curiosity and clarity.</p>
+                        <span class="read-more">Learn more →</span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Letter U -->
+            <section id="letter-u" class="letter-section">
+                <div class="letter-heading">
+                    <span class="letter-badge">U</span>
+                    <h2>U Terms</h2>
+                </div>
+                <div class="term-grid">
+                    <a href="upload-defaults.html" class="term-card">
+                        <h3>Upload Defaults</h3>
+                        <p>Pre-configured settings in YouTube Studio that automatically apply to new uploads, saving time on repetitive metadata entry.</p>
+                        <span class="read-more">Learn more →</span>
+                    </a>
+                    <a href="unlisted.html" class="term-card">
+                        <h3>Unlisted</h3>
+                        <p>Privacy setting where videos don't appear in search or channel pages but can be viewed via direct link. Used for preview sharing.</p>
+                        <span class="read-more">Learn more →</span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Letter V -->
+            <section id="letter-v" class="letter-section">
+                <div class="letter-heading">
+                    <span class="letter-badge">V</span>
+                    <h2>V Terms</h2>
+                </div>
+                <div class="term-grid">
+                    <a href="views.html" class="term-card">
+                        <h3>Views</h3>
+                        <p>The count of legitimate video plays. YouTube filters artificial views and requires minimum watch time for a view to count.</p>
+                        <span class="read-more">Learn more →</span>
+                    </a>
+                    <a href="viral-video.html" class="term-card">
+                        <h3>Viral Video</h3>
+                        <p>Content that achieves exponential sharing and viewership, typically through emotional resonance, trending topics, or algorithm favor.</p>
+                        <span class="read-more">Learn more →</span>
+                    </a>
+                    <a href="video-seo.html" class="term-card">
+                        <h3>Video SEO</h3>
+                        <p>Optimization specifically for video content, including YouTube and Google Video search visibility through metadata and engagement optimization.</p>
+                        <span class="read-more">Learn more →</span>
+                    </a>
+                    <a href="velocity.html" class="term-card">
+                        <h3>Velocity</h3>
+                        <p>The speed at which a video accumulates views, especially in the first hours. High velocity signals trending content to the algorithm.</p>
+                        <span class="read-more">Learn more →</span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Letter W -->
+            <section id="letter-w" class="letter-section">
+                <div class="letter-heading">
+                    <span class="letter-badge">W</span>
+                    <h2>W Terms</h2>
+                </div>
+                <div class="term-grid">
+                    <a href="watch-time.html" class="term-card">
+                        <h3>Watch Time</h3>
+                        <p>Total accumulated minutes viewers spend watching your videos. The most important ranking factor for YouTube's algorithm.</p>
+                        <span class="read-more">Learn more →</span>
+                    </a>
+                    <a href="watch-page.html" class="term-card">
+                        <h3>Watch Page</h3>
+                        <p>The page where viewers watch your video, including the player, description, comments, and suggested videos sidebar.</p>
+                        <span class="read-more">Learn more →</span>
+                    </a>
+                    <a href="watermark.html" class="term-card">
+                        <h3>Branding Watermark</h3>
+                        <p>Custom subscribe button overlay that appears on videos. Clicking it subscribes viewers to your channel without leaving the video.</p>
+                        <span class="read-more">Learn more →</span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Letter Y -->
+            <section id="letter-y" class="letter-section">
+                <div class="letter-heading">
+                    <span class="letter-badge">Y</span>
+                    <h2>Y Terms</h2>
+                </div>
+                <div class="term-grid">
+                    <a href="ypp.html" class="term-card">
+                        <h3>YPP (YouTube Partner Program)</h3>
+                        <p>Monetization program requiring 1,000 subscribers and 4,000 watch hours (or 10M Shorts views). Enables ad revenue, memberships, and more.</p>
+                        <span class="read-more">Learn more →</span>
+                    </a>
+                    <a href="youtube-studio.html" class="term-card">
+                        <h3>YouTube Studio</h3>
+                        <p>Creator dashboard for managing channels, uploading videos, viewing analytics, responding to comments, and accessing monetization features.</p>
+                        <span class="read-more">Learn more →</span>
+                    </a>
+                    <a href="youtube-search.html" class="term-card">
+                        <h3>YouTube Search</h3>
+                        <p>YouTube's internal search engine. Optimizing for YouTube search requires keyword research, metadata optimization, and engagement signals.</p>
+                        <span class="read-more">Learn more →</span>
+                    </a>
+                </div>
+            </section>
+
+            <div class="cluster-links">
+                <h2>Related Growth Resources</h2>
+                <div class="cluster-grid">
+                    <a href="/youtube-algorithm/" class="cluster-card">
+                        <h4>Algorithm Deep Dive</h4>
+                        <p>Understand how YouTube's recommendation system works in detail.</p>
+                    </a>
+                    <a href="/youtube-growth/" class="cluster-card">
+                        <h4>YouTube Growth Hub</h4>
+                        <p>Complete roadmap for growing your channel from 0 to 100K subscribers.</p>
+                    </a>
+                    <a href="/video-optimization/" class="cluster-card">
+                        <h4>Video Optimization Guide</h4>
+                        <p>Master titles, thumbnails, descriptions, and tags for maximum reach.</p>
+                    </a>
+                    <a href="/viral-videos/" class="cluster-card">
+                        <h4>Viral Video Strategies</h4>
+                        <p>Learn what makes content go viral and how to engineer shareability.</p>
+                    </a>
+                    <a href="/tools/" class="cluster-card">
+                        <h4>Free YouTube Tools</h4>
+                        <p>Thumbnail previewer, earnings calculator, title analyzer, and more.</p>
+                    </a>
+                    <a href="/monetization.html" class="cluster-card">
+                        <h4>Monetization Guide</h4>
+                        <p>All the ways to earn money from your YouTube content.</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer role="contentinfo">
+        <div class="container">
+            <p>&copy; 2025 ViewsGrowth. Your complete resource for YouTube channel growth.</p>
+            <p><a href="/glossary/">Glossary</a> | <a href="/tools/">Tools</a> | <a href="/youtube-growth/">Growth Guide</a></p>
+        </div>
+    </footer>
+
+    <a href="#" class="back-to-top" aria-label="Back to top">↑</a>
+
+    <script>
+        // Hamburger menu
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        const navOverlay = document.querySelector('.nav-overlay');
+
+        function toggleMenu() {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            navOverlay.classList.toggle('active');
+            hamburger.setAttribute('aria-expanded', navMenu.classList.contains('active'));
+        }
+
+        hamburger.addEventListener('click', toggleMenu);
+        navOverlay.addEventListener('click', toggleMenu);
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && navMenu.classList.contains('active')) toggleMenu();
+        });
+
+        // Back to top button
+        const backToTop = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

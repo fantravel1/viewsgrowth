@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Description on YouTube: SEO Best Practices Guide | ViewsGrowth Glossary</title>
+    <meta name="description" content="Learn how to write effective YouTube video descriptions that boost SEO, increase discoverability, and drive more views. Complete guide with templates and best practices.">
+    <meta name="keywords" content="YouTube description, video description SEO, YouTube description template, how to write YouTube description, description optimization">
+    <link rel="canonical" href="https://viewsgrowth.com/glossary/description.html">
+
+    <meta property="og:title" content="YouTube Video Description: The Complete SEO Guide">
+    <meta property="og:description" content="Master YouTube descriptions for better SEO and discoverability. Learn optimal length, keyword placement, and formatting strategies.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://viewsgrowth.com/glossary/description.html">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <style>
+        body { margin: 0; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.6; color: #212121; background: #fff; }
+        .container { max-width: 800px; margin: 0 auto; padding: 0 20px; }
+        .skip-link { position: absolute; top: -40px; left: 0; background: #0066cc; color: #fff; padding: 8px 16px; z-index: 100; }
+        .skip-link:focus { top: 0; }
+        h1 { font-size: 2.2rem; margin-bottom: 1rem; color: #212121; }
+        h2 { font-size: 1.5rem; color: #7c3aed; margin-top: 2.5rem; }
+        h3 { font-size: 1.25rem; color: #212121; margin-top: 2rem; }
+        p { margin: 1rem 0; }
+        @media(max-width:768px) { h1 { font-size: 1.7rem; } h2 { font-size: 1.3rem; } }
+
+        nav[role="navigation"] { background: #212121; padding: 1rem 0; position: sticky; top: 0; z-index: 1000; }
+        nav .container { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; }
+        .nav-brand { color: #fff; text-decoration: none; font-weight: 700; font-size: 1.25rem; }
+        .hamburger { background: none; border: none; cursor: pointer; padding: 8px; display: flex; flex-direction: column; gap: 5px; }
+        .hamburger span { display: block; width: 24px; height: 2px; background: #fff; transition: 0.3s; }
+        .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
+        .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+        .nav-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); opacity: 0; visibility: hidden; transition: 0.3s; z-index: 998; }
+        .nav-overlay.active { opacity: 1; visibility: visible; }
+        .nav-menu { position: fixed; top: 0; right: -280px; width: 280px; height: 100%; background: #fff; transition: 0.3s; z-index: 999; overflow-y: auto; padding: 2rem 0; }
+        .nav-menu.active { right: 0; }
+        .nav-menu a { display: block; padding: 0.75rem 1.5rem; color: #212121; text-decoration: none; border-bottom: 1px solid #eee; }
+        .nav-menu a:hover { background: #f0e6ff; color: #8b5cf6; }
+        .nav-section { padding: 0.75rem 1.5rem; font-weight: 600; color: #666; font-size: 0.85rem; text-transform: uppercase; background: #f8f9fa; }
+
+        .breadcrumb { background: #f8f9fa; padding: 1rem 0; }
+        .breadcrumb .container { max-width: 1200px; }
+        .breadcrumb ol { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+        .breadcrumb li:not(:last-child)::after { content: ">"; margin-left: 0.5rem; color: #666; }
+        .breadcrumb a { color: #0066cc; text-decoration: none; }
+
+        .term-header { background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%); color: #fff; padding: 3rem 0; margin-bottom: 2rem; }
+        .term-category { display: inline-block; background: rgba(255,255,255,0.2); padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.85rem; margin-bottom: 1rem; }
+        .term-header h1 { margin: 0; }
+        .term-header .pronunciation { font-style: italic; opacity: 0.9; margin-top: 0.5rem; }
+
+        .definition-box { background: #f5f3ff; border-left: 4px solid #8b5cf6; padding: 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0; }
+        .definition-box strong { color: #7c3aed; font-size: 1.1rem; }
+        .definition-box p { margin: 0.5rem 0 0 0; font-size: 1.1rem; }
+
+        .key-points { background: #fff; border: 1px solid #e9e3ff; border-radius: 12px; padding: 1.5rem; margin: 2rem 0; }
+        .key-points h3 { margin-top: 0; color: #7c3aed; }
+        .key-points ul { margin: 0; padding-left: 1.5rem; }
+        .key-points li { margin: 0.5rem 0; }
+
+        .example-box { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 12px; padding: 1.5rem; margin: 2rem 0; }
+        .example-box h3 { margin-top: 0; color: #15803d; }
+        .example-box code { background: #dcfce7; padding: 0.2rem 0.5rem; border-radius: 4px; }
+        .example-box pre { background: #1e1b4b; color: #a5b4fc; padding: 1rem; border-radius: 8px; overflow-x: auto; font-size: 0.9rem; }
+
+        .warning-box { background: #fef3c7; border: 1px solid #fcd34d; border-radius: 12px; padding: 1.5rem; margin: 2rem 0; }
+        .warning-box h3 { margin-top: 0; color: #b45309; }
+
+        .tip-box { background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 12px; padding: 1.5rem; margin: 2rem 0; }
+        .tip-box h3 { margin-top: 0; color: #1d4ed8; }
+
+        .related-terms { background: #f8f9fa; padding: 2rem; border-radius: 12px; margin: 3rem 0; }
+        .related-terms h2 { margin-top: 0; }
+        .term-links { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+        .term-link { display: inline-block; background: #fff; border: 1px solid #e9e3ff; padding: 0.5rem 1rem; border-radius: 20px; text-decoration: none; color: #7c3aed; font-size: 0.9rem; transition: all 0.2s; }
+        .term-link:hover { background: #8b5cf6; color: #fff; border-color: #8b5cf6; }
+
+        .cta-box { background: linear-gradient(135deg, #8b5cf6, #7c3aed); color: #fff; padding: 2rem; border-radius: 12px; margin: 3rem 0; text-align: center; }
+        .cta-box h3 { margin-top: 0; }
+        .cta-box a { display: inline-block; background: #fff; color: #7c3aed; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600; margin-top: 1rem; }
+
+        .nav-bottom { display: flex; justify-content: space-between; gap: 1rem; margin: 3rem 0; flex-wrap: wrap; }
+        .nav-bottom a { flex: 1; min-width: 200px; padding: 1rem; background: #f8f9fa; border-radius: 8px; text-decoration: none; color: #212121; }
+        .nav-bottom a:hover { background: #f0e6ff; }
+        .nav-bottom .label { font-size: 0.85rem; color: #666; }
+        .nav-bottom .title { font-weight: 600; color: #7c3aed; }
+        .nav-bottom .next { text-align: right; }
+
+        footer { background: #212121; color: #fff; padding: 2rem 0; margin-top: 4rem; text-align: center; }
+        footer a { color: #8b5cf6; }
+        .back-to-top { position: fixed; bottom: 2rem; right: 2rem; background: #8b5cf6; color: #fff; width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 1.5rem; box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3); }
+    </style>
+    <link rel="stylesheet" href="../css/style.css">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "DefinedTerm",
+        "name": "Video Description",
+        "description": "The text field below YouTube videos that provides context, keywords, links, and additional information about the video content for both viewers and search engines.",
+        "inDefinedTermSet": "https://viewsgrowth.com/glossary/"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://viewsgrowth.com/"},
+            {"@type": "ListItem", "position": 2, "name": "Glossary", "item": "https://viewsgrowth.com/glossary/"},
+            {"@type": "ListItem", "position": 3, "name": "Description", "item": "https://viewsgrowth.com/glossary/description.html"}
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How long should a YouTube description be?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "YouTube allows up to 5,000 characters in descriptions, but the optimal length is 200-350 words (1,000-2,000 characters). The first 150-200 characters are most important as they appear in search results and above the 'Show more' fold. Include keywords naturally in the first 2-3 sentences."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What should I include in my YouTube video description?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "An effective YouTube description should include: 1) A compelling summary with target keywords in the first 2-3 sentences, 2) Timestamps/chapters for longer videos, 3) Links to related content and resources, 4) A call-to-action (subscribe, comment, etc.), 5) Social media links and contact info, and 6) Relevant hashtags (3-5 maximum)."
+                }
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <nav role="navigation" aria-label="Main navigation">
+        <div class="container">
+            <a href="/" class="nav-brand">ViewsGrowth</a>
+            <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+        <div class="nav-overlay"></div>
+        <div class="nav-menu" role="menu">
+            <div class="nav-section">Getting Started</div>
+            <a href="/getting-started.html" role="menuitem">Getting Started Guide</a>
+            <a href="/algorithm.html" role="menuitem">Algorithm Explained</a>
+            <div class="nav-section">Free Tools</div>
+            <a href="/tools/thumbnail-preview.html" role="menuitem">Thumbnail Preview</a>
+            <a href="/tools/earnings-calculator.html" role="menuitem">Earnings Calculator</a>
+            <a href="/tools/title-analyzer.html" role="menuitem">Title Analyzer</a>
+            <a href="/tools/" role="menuitem">All Tools</a>
+            <div class="nav-section">Growth Guides</div>
+            <a href="/youtube-growth/" role="menuitem">YouTube Growth Hub</a>
+            <a href="/youtube-algorithm/" role="menuitem">Algorithm Deep Dive</a>
+            <a href="/viral-videos/" role="menuitem">Viral Video Strategies</a>
+            <div class="nav-section">Resources</div>
+            <a href="/glossary/" role="menuitem">YouTube Glossary</a>
+            <a href="/analytics.html" role="menuitem">Analytics Guide</a>
+            <a href="/monetization.html" role="menuitem">Monetization</a>
+        </div>
+    </nav>
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <div class="container">
+            <ol>
+                <li><a href="/">Home</a></li>
+                <li><a href="/glossary/">Glossary</a></li>
+                <li aria-current="page">Description</li>
+            </ol>
+        </div>
+    </nav>
+
+    <header class="term-header">
+        <div class="container">
+            <span class="term-category">Video SEO</span>
+            <h1>Video Description</h1>
+        </div>
+    </header>
+
+    <main id="main-content" role="main">
+        <article class="container">
+            <div class="definition-box">
+                <strong>Definition</strong>
+                <p>A video description is the text field below YouTube videos that provides context, keywords, links, and additional information about the content. It serves both viewers seeking more details and search engines indexing the video for <a href="discovery.html">discovery</a>.</p>
+            </div>
+
+            <h2>Why Descriptions Matter for YouTube Success</h2>
+            <p>The description is one of YouTube's primary sources for understanding your video content. While the <a href="algorithm.html">algorithm</a> can analyze audio and visuals, the description provides explicit context that helps:</p>
+
+            <div class="key-points">
+                <h3>Description Impact Areas</h3>
+                <ul>
+                    <li><strong>Search Rankings:</strong> Keywords in descriptions help videos appear in YouTube and Google search results</li>
+                    <li><strong><a href="seo.html">SEO</a> Signals:</strong> Descriptions provide context for topic categorization and related video suggestions</li>
+                    <li><strong>Viewer Information:</strong> Links, timestamps, and details improve user experience and engagement</li>
+                    <li><strong>Click-Through Rate:</strong> The first 100-150 characters appear in search, influencing whether viewers click</li>
+                    <li><strong>Accessibility:</strong> Descriptions help viewers with disabilities understand video content</li>
+                </ul>
+            </div>
+
+            <h2>Anatomy of an Effective Description</h2>
+            <p>Structure your description strategically, placing the most important elements where they'll have the greatest impact:</p>
+
+            <h3>Above the Fold (First 150-200 Characters)</h3>
+            <p>This text appears in search results and before the "Show more" button. Make every character count:</p>
+            <ul>
+                <li>Lead with your primary keyword naturally</li>
+                <li>Summarize the video's value proposition</li>
+                <li>Create curiosity without clickbait</li>
+                <li>Include a secondary keyword if possible</li>
+            </ul>
+
+            <h3>Body Section (200-1,000 Characters)</h3>
+            <p>Expand on the video content with:</p>
+            <ul>
+                <li>Detailed summary of what viewers will learn</li>
+                <li>Related keywords and phrases (naturally integrated)</li>
+                <li>Context that helps both viewers and the algorithm</li>
+                <li>Timestamps for longer videos (creates <a href="chapters.html">chapters</a>)</li>
+            </ul>
+
+            <h3>Links and Resources Section</h3>
+            <ul>
+                <li>Links to related videos on your channel</li>
+                <li>External resources mentioned in the video</li>
+                <li>Social media profiles</li>
+                <li>Affiliate links (with proper disclosure)</li>
+            </ul>
+
+            <h3>Footer Section</h3>
+            <ul>
+                <li>Subscribe call-to-action</li>
+                <li>Channel description boilerplate</li>
+                <li>Contact information</li>
+                <li>Hashtags (3-5 relevant tags)</li>
+            </ul>
+
+            <div class="example-box">
+                <h3>Example: Description Template</h3>
+                <pre>Learn how to [main topic] in this complete guide. Whether you're [audience], this video covers [key points] to help you [benefit].
+
+TIMESTAMPS:
+0:00 Introduction
+1:30 [Topic 1]
+4:45 [Topic 2]
+8:20 [Topic 3]
+12:00 Summary
+
+RESOURCES MENTIONED:
+[Link to resource 1]
+[Link to resource 2]
+
+RELATED VIDEOS:
+[Video title] - [URL]
+[Video title] - [URL]
+
+SUBSCRIBE for more [topic] content: [Channel URL]
+
+CONNECT:
+Instagram: @yourhandle
+Twitter: @yourhandle
+
+#YouTubeTips #[YourNiche] #[Topic]</pre>
+            </div>
+
+            <h2>Description Best Practices</h2>
+
+            <div class="tip-box">
+                <h3>Keyword Optimization Tips</h3>
+                <ul>
+                    <li><strong>Primary keyword in first sentence:</strong> "This YouTube SEO tutorial teaches you..."</li>
+                    <li><strong>Natural language:</strong> Write for humans first, algorithms second</li>
+                    <li><strong>Long-tail variations:</strong> Include related phrases and questions</li>
+                    <li><strong>No keyword stuffing:</strong> Repeating keywords unnaturally hurts rankings</li>
+                </ul>
+            </div>
+
+            <h3>Timestamps Create Chapters</h3>
+            <p>When you add timestamps in a specific format, YouTube automatically creates clickable chapters:</p>
+            <ul>
+                <li>Start with <code>0:00</code> for the beginning</li>
+                <li>Use <code>MM:SS</code> or <code>H:MM:SS</code> format</li>
+                <li>Include at least 3 timestamps (minimum 10 seconds apart)</li>
+                <li>Write descriptive chapter titles</li>
+            </ul>
+
+            <h3>Hashtags Strategy</h3>
+            <p>Add 3-5 relevant hashtags at the end of your description:</p>
+            <ul>
+                <li>First 3 hashtags appear above the video title</li>
+                <li>Use specific niche hashtags, not just generic ones</li>
+                <li>Research hashtags competitors use successfully</li>
+                <li>Don't exceed 15 hashtags (can trigger spam filters)</li>
+            </ul>
+
+            <div class="warning-box">
+                <h3>Description Mistakes to Avoid</h3>
+                <ul>
+                    <li><strong>Empty descriptions:</strong> Missing a huge SEO opportunity</li>
+                    <li><strong>Keyword stuffing:</strong> Unnatural repetition hurts rankings and viewer trust</li>
+                    <li><strong>Misleading content:</strong> Descriptions that don't match video content increase bounce rates</li>
+                    <li><strong>Too many links:</strong> Can appear spammy; prioritize quality over quantity</li>
+                    <li><strong>Ignoring the fold:</strong> Not optimizing the visible first 150 characters</li>
+                    <li><strong>No call-to-action:</strong> Missing opportunity to drive engagement and <a href="subscribers.html">subscriptions</a></li>
+                </ul>
+            </div>
+
+            <h2>Description Length Guidelines</h2>
+            <ul>
+                <li><strong>Minimum recommended:</strong> 200+ characters (for basic SEO value)</li>
+                <li><strong>Optimal length:</strong> 200-350 words (1,000-2,000 characters)</li>
+                <li><strong>Maximum allowed:</strong> 5,000 characters</li>
+                <li><strong>Above the fold:</strong> First 150-200 characters are most critical</li>
+            </ul>
+
+            <h2>Default Description Settings</h2>
+            <p>Save time by setting a default description in YouTube Studio that appears on all new uploads. Include:</p>
+            <ul>
+                <li>Standard subscribe link</li>
+                <li>Social media links</li>
+                <li>Channel boilerplate</li>
+                <li>Common hashtags</li>
+            </ul>
+
+            <div class="related-terms">
+                <h2>Related Terms</h2>
+                <div class="term-links">
+                    <a href="seo.html" class="term-link">SEO</a>
+                    <a href="discovery.html" class="term-link">Discovery</a>
+                    <a href="algorithm.html" class="term-link">Algorithm</a>
+                    <a href="thumbnail.html" class="term-link">Thumbnail</a>
+                    <a href="ctr.html" class="term-link">CTR</a>
+                    <a href="watch-time.html" class="term-link">Watch Time</a>
+                    <a href="analytics.html" class="term-link">Analytics</a>
+                    <a href="subscribers.html" class="term-link">Subscribers</a>
+                    <a href="impressions.html" class="term-link">Impressions</a>
+                </div>
+            </div>
+
+            <div class="cta-box">
+                <h3>Analyze Your Video Titles</h3>
+                <p>Test your video titles for SEO effectiveness and click-through potential.</p>
+                <a href="/tools/title-analyzer.html">Try Title Analyzer Tool</a>
+            </div>
+
+            <div class="nav-bottom">
+                <a href="/glossary/" class="prev">
+                    <span class="label">Back to</span>
+                    <span class="title">Glossary</span>
+                </a>
+                <a href="discovery.html" class="next">
+                    <span class="label">Next Term</span>
+                    <span class="title">Discovery</span>
+                </a>
+            </div>
+        </article>
+    </main>
+
+    <footer role="contentinfo">
+        <div class="container">
+            <p>&copy; 2025 ViewsGrowth. Your complete resource for YouTube channel growth.</p>
+            <p><a href="/glossary/">Glossary</a> | <a href="/tools/">Tools</a> | <a href="/youtube-growth/">Growth Guide</a></p>
+        </div>
+    </footer>
+
+    <a href="#" class="back-to-top" aria-label="Back to top">↑</a>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        const navOverlay = document.querySelector('.nav-overlay');
+        function toggleMenu() {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            navOverlay.classList.toggle('active');
+        }
+        hamburger.addEventListener('click', toggleMenu);
+        navOverlay.addEventListener('click', toggleMenu);
+    </script>
+</body>
+</html>
