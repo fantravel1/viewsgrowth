@@ -643,19 +643,66 @@
 
     <!-- Footer -->
     <footer role="contentinfo">
-        <div class="container">
-            <p>&copy; 2025 ViewsGrowth. Create more content in less time. <a href="downloads/complete-guide.pdf" download>Download Complete PDF Guide</a></p>
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <a href="/" class="nav-brand">ViewsGrowth</a>
+                        <p>The most comprehensive free resource for YouTube creators. Data-driven strategies, expert tutorials, and interactive tools to scale your channel.</p>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Guides</h4>
+                        <ul>
+                            <li><a href="getting-started.html">Getting Started</a></li>
+                            <li><a href="algorithm.html">Algorithm Mastery</a></li>
+                            <li><a href="production.html">Production Systems</a></li>
+                            <li><a href="analytics.html">Analytics Guide</a></li>
+                            <li><a href="monetization.html">Monetization</a></li>
+                            <li><a href="ai-tools.html">AI Tools</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Free Tools</h4>
+                        <ul>
+                            <li><a href="tools/thumbnail-preview.html">Thumbnail Preview</a></li>
+                            <li><a href="tools/earnings-calculator.html">Earnings Calculator</a></li>
+                            <li><a href="tools/title-analyzer.html">Title Analyzer</a></li>
+                            <li><a href="tools/channel-audit.html">Channel Audit</a></li>
+                            <li><a href="tools/">All Tools</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Resources</h4>
+                        <ul>
+                            <li><a href="case-studies.html">Case Studies</a></li>
+                            <li><a href="tools-reviews/">Tool Reviews</a></li>
+                            <li><a href="youtube-growth/">Growth Strategies</a></li>
+                            <li><a href="viral-videos/">Viral Videos</a></li>
+                            <li><a href="trending-channels/">Trending Channels</a></li>
+                            <li><a href="resources.html">All Resources</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2025 ViewsGrowth. Based on experts that scaled channels to millions.</p>
+                <a href="downloads/complete-guide.pdf" download>Download Complete PDF Guide</a>
+            </div>
         </div>
     </footer>
 
     <!-- Back to Top Button -->
-    <a href="#" class="back-to-top" aria-label="Back to top">↑</a>
+    <a href="#" class="back-to-top" aria-label="Back to top" id="back-to-top">&#8593;</a>
 
     <script>
     (function() {
-        const hamburger = document.querySelector('.hamburger');
-        const navMenu = document.querySelector('.nav-menu');
-        const navOverlay = document.querySelector('.nav-overlay');
+        var hamburger = document.querySelector('.hamburger');
+        var navMenu = document.querySelector('.nav-menu');
+        var navOverlay = document.querySelector('.nav-overlay');
+        var nav = document.querySelector('nav');
+
         function toggleMenu() {
             hamburger.classList.toggle('active');
             navMenu.classList.toggle('active');
@@ -663,6 +710,7 @@
             document.body.classList.toggle('menu-open');
             hamburger.setAttribute('aria-expanded', navMenu.classList.contains('active'));
         }
+
         function closeMenu() {
             hamburger.classList.remove('active');
             navMenu.classList.remove('active');
@@ -670,12 +718,50 @@
             document.body.classList.remove('menu-open');
             hamburger.setAttribute('aria-expanded', 'false');
         }
+
         hamburger.addEventListener('click', toggleMenu);
         navOverlay.addEventListener('click', closeMenu);
+
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape' && navMenu.classList.contains('active')) closeMenu();
         });
-        navMenu.querySelectorAll('a').forEach(function(link) { link.addEventListener('click', closeMenu); });
+
+        navMenu.querySelectorAll('a').forEach(function(link) {
+            link.addEventListener('click', closeMenu);
+        });
+
+        // Scroll effects
+        var backToTop = document.getElementById('back-to-top');
+
+        window.addEventListener('scroll', function() {
+            var scrollY = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+            if (scrollY > 600) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        }, { passive: true });
+
+        // Scroll animations
+        var animated = document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right, .scale-in, .stagger-children');
+        if ('IntersectionObserver' in window) {
+            var obs = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        obs.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+            animated.forEach(function(el) { obs.observe(el); });
+        } else {
+            animated.forEach(function(el) { el.classList.add('visible'); });
+        }
     })();
     </script>
 </body>
